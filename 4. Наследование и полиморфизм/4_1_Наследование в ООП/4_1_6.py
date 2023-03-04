@@ -139,7 +139,6 @@ class DetailView(GenericView):
         else:
             raise TypeError('request не является словарем')
 
-
 # # TEST
 # dv0 = DetailView()  # по умолчанию methods=('GET',)
 # dv1 = DetailView(methods=('PUT', 'POST'))

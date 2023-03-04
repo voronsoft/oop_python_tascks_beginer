@@ -27,7 +27,7 @@ class DigitRetrieve:
     @staticmethod
     def validate(string):
         if '.' not in string and string.isdigit() or (string[0] == '-') and ('.' not in string) and (
-        string[1:].isdigit()):
+                string[1:].isdigit()):
             return True
         else:
             return None

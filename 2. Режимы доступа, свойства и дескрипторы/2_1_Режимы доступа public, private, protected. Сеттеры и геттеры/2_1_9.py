@@ -133,6 +133,7 @@ class ObjList:
     def get_data(self):
         return self.__data
 
+
 # Создавать объекты класса ObjList предполагается командой:
 lst = LinkedList()
 lst.add_obj(ObjList("данные 1"))

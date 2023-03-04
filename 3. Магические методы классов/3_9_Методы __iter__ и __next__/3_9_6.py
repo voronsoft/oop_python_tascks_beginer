@@ -42,8 +42,6 @@ class TriangleListIterator:
                 x = self.lst[i][j]
                 yield x
 
-
-
 # # TEST
 # lst = [['x00', 'x00', 'x00', 'x00'],
 #        ['x10', 'x11', 'x12', 'x13'],
@@ -54,5 +52,3 @@ class TriangleListIterator:
 # it = TriangleListIterator(lst)
 # for _ in it:  # последовательный перебор всех элементов списка: x00, x10, x11, x20, ...
 #     print(_, end=' ')
-
-

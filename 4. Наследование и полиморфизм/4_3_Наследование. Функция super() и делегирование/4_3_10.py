@@ -39,7 +39,6 @@ class Point(ItemAttrs):
     def __init__(self, x, y):
         super().__init__(x, y)
 
-
 # # TEST
 # pt = Point(1, 2.5)
 # x = pt[0]   # 1

@@ -108,7 +108,6 @@ class Cell:
     def __init__(self, value):
         self.value = value
 
-
 # TEST
 # st = SparseTable()
 # st.add_data(2, 5, Cell(25))

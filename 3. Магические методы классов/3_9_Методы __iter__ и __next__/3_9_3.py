@@ -40,7 +40,6 @@ class GeomRange:
 
 g = GeomRange(1, 1.2, 2)
 
-
 # for x in g: print(x)
 #
 # it = iter(g); res = next(g)
@@ -49,4 +48,5 @@ res = next(g)
 #
 # for x in g: print(x); for x in g: print(x)
 #
-res = next(g); res = next(g)
+res = next(g);
+res = next(g)

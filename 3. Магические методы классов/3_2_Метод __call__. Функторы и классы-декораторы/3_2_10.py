@@ -39,6 +39,7 @@ res = input_dg()
 
 class RenderDigit:
     """объект для преобразования"""
+
     def __call__(self, string, *args, **kwargs):
         if string.isdigit() and '.' not in string:
             return int(string)
@@ -46,22 +47,24 @@ class RenderDigit:
             return int(string)
         else:
             return None
-        
-@RenderDigit       
+
+
+@RenderDigit
 class InputValues:
     """для преобразования данных из строк в другой тип данных"""
-    def __init__(self, render):     # render - ссылка на функцию или объект для преобразования
+
+    def __init__(self, render):  # render - ссылка на функцию или объект для преобразования
         self.render = render
 
-    def __call__(self, func, *args, **kwargs):     # func - ссылка на декорируемую функцию
+    def __call__(self, func, *args, **kwargs):  # func - ссылка на декорируемую функцию
         def wrapper(*args, **kwargs):
             return list(map(self.render, func(*args, **kwargs).split()))
+
         return wrapper
-        
+
 
 # ПРОВЕРКА
 # render = RenderDigit()
 input_dg = InputValues(input)
 res = input_dg()
 print(res)
-      

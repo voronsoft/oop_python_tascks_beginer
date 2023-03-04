@@ -123,7 +123,6 @@ class TableValues:  # для работы с таблицей в целом.
     def __setitem__(self, key, value):
         self.cells[key[0]][key[1]].value = value
 
-
 # # TEST
 # tb = TableValues(3, 2, cell=CellInteger)
 # tb[0, 0] = 1

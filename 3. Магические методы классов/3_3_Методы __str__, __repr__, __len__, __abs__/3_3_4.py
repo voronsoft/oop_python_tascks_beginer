@@ -26,7 +26,7 @@ P.S. В программе нужно только объявить класс, 
 
 
 class WordString:
-    
+
     def __init__(self, string=''):
         self.__string = string
 
@@ -45,7 +45,7 @@ class WordString:
         self.__string = self.__string.strip()
         while '  ' in self.__string:
             self.__string = self.__string.replace('  ', ' ')
-        
+
         return len(self.__string.split(' '))
 
     def __call__(self, indx, *args, **kwargs):

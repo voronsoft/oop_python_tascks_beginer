@@ -91,7 +91,8 @@ class TicTacToe:
             return tuple(_.value for _ in self.pole[item[0]])
 
         if isinstance(item[0], int) and isinstance(item[1], int):
-            if 0 <= item[0] < len(self.pole[0]) and 0 <= item[1] < len(self.pole[0]) and self.pole[item[0]][item[0]].is_free:
+            if 0 <= item[0] < len(self.pole[0]) and 0 <= item[1] < len(self.pole[0]) and self.pole[item[0]][
+                item[0]].is_free:
                 return self.pole[item[0]][item[1]].value
             else:
                 raise IndexError('неверный индекс клетки')
@@ -110,7 +111,6 @@ class Cell:
     # - bool(cell) которая возвращает True, если клетка свободна (cell.is_free=True) и False в противном случае.
     def __bool__(self):
         return self.is_free is True
-
 
 # # TEST
 # g = TicTacToe()

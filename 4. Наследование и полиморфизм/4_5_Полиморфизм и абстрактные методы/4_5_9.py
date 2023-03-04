@@ -43,7 +43,7 @@ P.S. В программе требуется объявить только кл
 class Track:
     start_x = None
     start_y = None
-    
+
     def __new__(cls, *args, **kwargs):
         if len(args) == 2 and all(True if type(i) in (int, float) else False for i in args):
             cls.start_x = args[0]
@@ -51,7 +51,7 @@ class Track:
             return super().__new__(cls)
         elif all(True if isinstance(i, PointTrack) else False for i in args):
             return super().__new__(cls)
-    
+
     def __init__(self, *args):
         if all(True if isinstance(i, PointTrack) else False for i in args) and self.start_x != None:
             self.__points = list()
@@ -60,12 +60,11 @@ class Track:
             self.__points.extend(args)
         else:
             self.__points = list()
-            
+
         if all(True if isinstance(i, PointTrack) else False for i in args) and self.start_x == None:
             self.__points = list()
             self.__points.extend(args)
 
-            
     @property
     def points(self):
         return tuple(self.__points)
@@ -114,8 +113,7 @@ class PointTrack:
 
     def __str__(self):
         return f"PointTrack: {self.x}, {self.y}"
-    
-    
+
 # # TEST
 # tr = Track(0,0)
 # tr = Track(PointTrack(10, 10), PointTrack(1.2, -0.5), PointTrack(2.4, -1.5))
@@ -123,4 +121,3 @@ class PointTrack:
 # tr.pop_front()
 # for pt in tr.points:
 #     print(pt)
-

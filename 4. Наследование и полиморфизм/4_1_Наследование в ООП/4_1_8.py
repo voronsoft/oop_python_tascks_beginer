@@ -78,7 +78,6 @@ class FloatValidator(Validator):  # - для проверки, что data - FLO
         else:
             return False
 
-
 # # TEST
 # integer_validator = IntegerValidator(-10, 10)
 # float_validator = FloatValidator(-1, 1)

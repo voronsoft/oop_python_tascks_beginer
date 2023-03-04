@@ -71,7 +71,7 @@ class Note:
 class Notes:
     SS = None
     __slots__ = ['_do', '_re', '_mi', '_fa', '_solt', '_la', '_si']
-    
+
     def __new__(cls, *args, **kwargs):
         if cls.SS is None:
             cls.SS = super().__new__(cls)

@@ -32,21 +32,20 @@ def get(self, func, request, *args, **kwargs): ...
 class HandlerGET:
     def __init__(self, func):
         self.fn = func
-    
+
     def __call__(self, *args, **kwargs):
-        
+
         if "method" in args[0] and args[0]["method"] == 'GET':
             return ' '.join(['GET:', self.fn(args[0])])
-        
+
         elif len(args[0]) == 0:
             return ' '.join(['GET:', self.fn(args[0])])
-        
+
         else:
             return None
 
     def get(self, func, request, *args, **kwargs):
         return f"GET: {func(request)}"
-    
 
 
 # # ПРОВЕРКА
@@ -54,6 +53,7 @@ class HandlerGET:
 @HandlerGET
 def index(request):
     return "главная страница сайта"
+
 
 res = index({"method": "GET"})
 # assert res == "GET: главная страница сайта", "декорированная функция вернула неверные данные"

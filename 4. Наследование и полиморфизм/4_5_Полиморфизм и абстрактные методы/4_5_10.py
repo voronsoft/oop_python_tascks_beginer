@@ -51,7 +51,6 @@ class FishFood(Food):
         super().__init__(name, weight, calories)
         self._fish = fish  # fish - вид рыбы (семга, окунь, сардина и т.д.)
 
-
 # # TEST
 # bf = BreadFood("Бородинский хлеб", 34.5, 512, False)
 # sf = SoupFood("Черепаший суп", 520, 890.5, False)

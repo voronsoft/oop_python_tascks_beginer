@@ -38,7 +38,7 @@ class Box3D:
     # box = 3 * box2    # Box3D: width=6, height=12, depth=18
     def __mul__(self, other):
         return Box3D(self.width * other, self.height * other, self.depth * other)
-    
+
     def __rmul__(self, other):
         return Box3D(self.width * other, self.height * other, self.depth * other)
 
@@ -54,7 +54,6 @@ class Box3D:
     def __mod__(self, other):
         return Box3D(self.width % other, self.height % other, self.depth % other)
     # При каждой арифметической операции следует создавать новый объект класса Box3D с соответствующими значениями локальных атрибутов.
-
 
 # TEST
 # box1 = Box3D(1, 2, 3)

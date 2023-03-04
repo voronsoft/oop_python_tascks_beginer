@@ -75,7 +75,7 @@ class Model(ABC):
 
     def get_info(self):
         return f'Базовый класс Model'
-    
+
 
 # На основе класса Model объявите дочерний класс ModelForm, объекты которого создаются командой:
 # form = ModelForm(login, password)
@@ -85,24 +85,23 @@ class Model(ABC):
 # а также автоматически появляться локальный атрибут _id с уникальным целочисленным значением для каждого объекта класса ModelForm.        
 class ModelForm(Model):
     ID = 0
-    
+
     def __init__(self, login, password):
         self._login = str(login)  # заголовок перед полем ввода логина (строка)
         self._password = str(password)  # заголовок перед полем ввода пароля (строка)
         self._id = self.gen_id()  # уникальный идентификатор
-        
+
     @classmethod
     def gen_id(cls):
         cls.ID += 1
         return cls.ID
-    
+
     # В классе ModelForm переопределите метод:
     # def get_pk(self): ...
     # который должен возвращать значение атрибута _id.
     def get_pk(self):
         return self._id
-        
-    
+
 # # TEST
 # form = ModelForm("Логин", "Пароль")
 # print(form.get_pk())

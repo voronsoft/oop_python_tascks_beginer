@@ -24,13 +24,12 @@ Sample Output:
 
 # считывание строки и разбиение ее по пробелам
 lst_in = input().split()
-#lst_in = '8 11 abcd -7.5 2.0 -5'.split()
+# lst_in = '8 11 abcd -7.5 2.0 -5'.split()
 answer = 0
 for i in lst_in:
     try:
         answer += int(i)
     except:
         continue
-        
+
 print(answer)
-        

@@ -18,7 +18,7 @@ P.S. На экран ничего выводить не нужно, только
 class Rect:
     def __init__(self, x, y, width, height):
         if type(x) in (int, float) and type(y) in (int, float) and type(width) in (int, float) and type(height) in (
-        int, float):
+                int, float):
             self.x = x
             self.y = y
             self.width = width

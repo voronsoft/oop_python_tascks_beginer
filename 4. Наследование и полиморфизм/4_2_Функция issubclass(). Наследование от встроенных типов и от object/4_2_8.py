@@ -13,8 +13,10 @@
 class cls2():
     pass
 
+
 class cls1(cls2):
     pass
+
 
 obj = cls1()
 x = isinstance(obj, cls1)

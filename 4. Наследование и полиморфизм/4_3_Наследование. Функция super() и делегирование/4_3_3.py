@@ -39,7 +39,6 @@ class DigitBook(Book):
         super().__init__(title, author, pages, year)
         self.size = size  # размер книги в байтах (целое число)
         self.frm = frm  # формат книги (строка: 'pdf', 'doc', 'fb2', 'txt')
-        
-        
+
 # # TEST
 # obj = DigitBook('Title', 'Norov', 155, 1977, 1333, 'doc')

@@ -31,6 +31,7 @@ P.P.S. Для создания локальных атрибутов испол�
 
 class Record:
     """Record (запись)"""
+
     def __init__(self, **kwargs):
         for _ in kwargs.items():
             self.__dict__.update({_[0]: _[1]})

@@ -43,21 +43,22 @@ P.S. В программе требуется только объявить кл
 
 class Budget:
     """Для управления семейным бюджетом"""
+
     def __init__(self):
         self.lst_budget = list()
 
     def add_item(self, it):
         """Добавление статьи расхода в бюджет (it - объект класса Item)"""
         self.lst_budget.append(it)
-    
+
     def remove_item(self, indx):
         """Удаление статьи расхода из бюджета по его порядковому номеру indx (индексу: отсчитывается с нуля)"""
         del self.lst_budget[indx]
-    
+
     def get_items(self):
         """Возвращает список всех статей расходов (список из объектов класса Item)"""
         return self.lst_budget
-    
+
 
 class Item:
     """Пункт расходов бюджета"""
@@ -66,7 +67,7 @@ class Item:
         if type(name) == str and type(money) in (int, float):
             self.name = name  # название статьи расхода;
             self.money = money  # сумма расходов (вещественное или целое число).
-            
+
     # Также с объектами класса Item должны выполняться следующие операторы:
     # -s = it1 + it2 # сумма для двух статей расходов
     # и в общем случае:
@@ -77,15 +78,13 @@ class Item:
         # если объект
         if isinstance(other, Item):
             return self.money + other.money
-        
+
         if isinstance(other, int):
             return self.money + other
-    
+
     # если число слева от объекта
     def __radd__(self, other):
         return self.money + other
-    
-
 
 # # TEST
 # my_budget = Budget()

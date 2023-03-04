@@ -64,7 +64,6 @@ class VideoItem:
         self.path = path  # путь к видеофайлу
         self.rating = VideoRating()
 
-
 # # TEST
 # v = VideoItem('Курс по Python ООП', 'Подробный курс по Python ООР', 'D:/videos/python_oop.mp4')
 # print(v.rating.rating)  # 0

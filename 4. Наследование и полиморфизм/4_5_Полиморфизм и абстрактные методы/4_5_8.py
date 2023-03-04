@@ -102,7 +102,6 @@ class Country(CountryInterface):
     def get_info(self):  # метод для получения сводной информации о стране.
         return f'{self.__name}: {self.__square}, {self.__population}'
 
-
 # #TEST
 # country = Country("Россия", 140000000, 324005489.55)
 # name = country.name

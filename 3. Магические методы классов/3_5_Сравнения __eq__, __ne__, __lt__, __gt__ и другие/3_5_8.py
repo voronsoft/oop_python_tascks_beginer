@@ -76,16 +76,15 @@ class CentralBank:
         r = cls.rates['rub']
         d = cls.rates['dollar']
         e = cls.rates['euro']
-        
+
         if type(obj_cash) == MoneyR:
             return obj_cash.volume / r
-        
+
         elif type(obj_cash) == MoneyD:
             return obj_cash.volume / d
-        
+
         elif type(obj_cash) == MoneyE:
             return obj_cash.volume / e
-        
 
 
 # DESCRIPTOR
@@ -274,7 +273,6 @@ class MoneyE:  # - для евро-кошельков
             raise ValueError('Неизвестен курс валют')
 
     # ########## END операции сравнения
-
 
 # # TEST
 # bank = CentralBank()

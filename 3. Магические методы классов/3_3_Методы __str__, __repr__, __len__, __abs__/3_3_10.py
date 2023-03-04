@@ -25,17 +25,16 @@ class PolyLine:
     # add_coord(x, y) - добавление новой координаты (в конец);
     def add_coord(self, *args):
         self.lst_coords.append(args)
-    
+
     # remove_coord(indx) - удаление координаты по индексу (порядковому номеру, начинается с нуля);
     def remove_coord(self, indx):
         if indx == 0:
             self.start_coord = self.lst_coords[1]
         del self.lst_coords[indx]
-    
+
     # get_coords() - получение списка координат (в виде списка из кортежей).
     def get_coords(self):
         return self.lst_coords
-    
 
 # # TEST
 # poly = PolyLine((1, 2), (3, 5), (0, 10), (-1, 8))

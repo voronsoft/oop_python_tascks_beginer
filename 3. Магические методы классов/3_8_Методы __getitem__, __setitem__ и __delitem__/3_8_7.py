@@ -48,7 +48,6 @@ class RadiusVector:
         """Запись координат"""
         self.coords[key] = value
 
-
 # # TEST
 # # Пример использования класса (эти строчки в программе не писать):
 # v = RadiusVector(1, 1, 1, 1, 1)

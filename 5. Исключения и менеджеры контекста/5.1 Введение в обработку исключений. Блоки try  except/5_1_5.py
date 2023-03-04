@@ -17,6 +17,7 @@ pt = Point(1, 2)
 Подсказка: при обращении к несуществующему атрибуту генерируется исключение AttributeError.
 """
 
+
 class Point:
     def __init__(self, x, y):
         self._x = x
@@ -29,5 +30,3 @@ try:
     pt.z
 except AttributeError:
     print('Атрибут с именем z не существует')
-    
-    

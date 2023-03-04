@@ -15,20 +15,22 @@ res = input_dg()
 P.S. На экран ничего выводить не нужно.
 """
 
+
 class InputDigits:
-    
+
     def __init__(self, string):
         self.string = string
-    
+
     def __call__(self, string, *args, **kwargs):
         lst = list(map(int, string.split(' ')))
         return lst
+
 
 @InputDigits
 def input_dg(x):
     return x
 
+
 # ПРОВЕРКА
 st = input()
 res = input_dg(st)
-

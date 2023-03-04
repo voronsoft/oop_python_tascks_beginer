@@ -48,23 +48,21 @@ class Handler:
 class Handler:
     def __init__(self, methods=('GET',)):
         self.methods = methods
-    
+
     def __call__(self, func, *args, **kwargs):
         def wrapper(request, *args, **kwargs):
-            x = request.get('method','GET')
+            x = request.get('method', 'GET')
             if x in self.methods:
                 method = x.lower()
                 return self.__getattribute__(method)(func, request)
+
         return wrapper
-            
+
     def get(self, func, request, *args, **kwargs):
         return f"GET: {func(request)}"
-    
+
     def post(self, func, request, *args, **kwargs):
         return f"POST: {func(request)}"
-    
-    
-    
 
 # # # ТЕСТ
 # assert hasattr(Handler, 'get') and hasattr(Handler, 'post'), "класс Handler должен содержать методы get и post"
@@ -85,4 +83,3 @@ class Handler:
 # assert index({"method": "POST"}) == "POST: index", "декорированная функция вернула неверные данные"
 # assert index({"method": "GET"}) is None, "декорированная функция вернула неверные данные"
 # assert index({"method": "DELETE"}) is None, "декорированная функция вернула неверные данные"
-

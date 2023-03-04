@@ -70,7 +70,6 @@ class Track:
         else:
             raise IndexError('некорректный индекс')
 
-
 # TEST
 # tr = Track(10, -5.4)
 # tr.add_point(20, 0, 100) # первый линейный сегмент: indx = 0

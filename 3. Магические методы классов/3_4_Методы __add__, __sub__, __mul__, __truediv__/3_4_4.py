@@ -83,7 +83,6 @@ class NewList:
         """для возвращения результирующего списка объекта класса NewList"""
         return self.lst
 
-
 # # TEST
 # lst = NewList()
 # lst1 = NewList([0, 1, -3.4, "abc", True])

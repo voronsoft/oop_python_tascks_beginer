@@ -68,7 +68,6 @@ class Clock:
         """возвращает текущее время в секундах (то есть, значение hours * 3600 + minutes * 60 + seconds)"""
         return self.hours * 3600 + self.minutes * 60 + self.seconds
 
-
 # # TEST
 # a = Clock(2, 45, 0)
 # b = Clock(1, 15, 0)

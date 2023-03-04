@@ -36,19 +36,19 @@ dlg = FileDialogFactory('Изображения', 'd:/images/', ('jpg', 'gif', '
 P.S. В программе нужно дополнительно объявить только класс FileDialogFactory. На экран выводить ничего не нужно.
 """
 
-CURRENT_OS = 'windows'   # 'windows', 'linux'
+CURRENT_OS = 'windows'  # 'windows', 'linux'
 
 
 class WindowsFileDialog:
     def __init__(self, title, path, exts):
-        self.__title = title # заголовок диалогового окна
+        self.__title = title  # заголовок диалогового окна
         self.__path = path  # начальный каталог с файлами
         self.__exts = exts  # кортеж из отображаемых расширений файлов
 
 
 class LinuxFileDialog:
     def __init__(self, title, path, exts):
-        self.__title = title # заголовок диалогового окна
+        self.__title = title  # заголовок диалогового окна
         self.__path = path  # начальный каталог с файлами
         self.__exts = exts  # кортеж из отображаемых расширений файлов
 
@@ -74,4 +74,3 @@ class FileDialogFactory:
 # Подумайте, как это правильно сделать, чтобы не создавался объект самого класса,
 # а лишь возвращался объект или класса WindowsFileDialog, или класса LinuxFileDialog.
 dlg = FileDialogFactory('Изображения', 'd:/images/', ('jpg', 'gif', 'bmp', 'png'))
-

@@ -33,7 +33,6 @@ class FileAcceptor:
     def __init__(self, *args):
         self.lst = args
 
-
     # После этого предполагается использовать объект acceptor в стандартной функции filter языка Python следующим образом:
     # filenames = list(filter(acceptor, filenames))
     # То есть, объект acceptor должен вызываться как функция:
@@ -48,7 +47,6 @@ class FileAcceptor:
     # Здесь формируется новый объект acceptor12 с уникальными расширениями первого и второго объектов.
     def __add__(self, other):
         return FileAcceptor(*tuple(set(self.lst + other.lst)))
-
 
 # TEST
 # acceptor = FileAcceptor('jpg', 'bmp', 'jpeg')

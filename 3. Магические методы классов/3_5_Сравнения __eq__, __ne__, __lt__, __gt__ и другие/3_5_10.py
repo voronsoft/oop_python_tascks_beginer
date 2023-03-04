@@ -100,7 +100,6 @@ class Thing:
     def __ne__(self, other):  # !=
         return self.name.lower() != other.name.lower() or self.mass != other.mass
 
-
 # # TEST
 # b1 = Box()
 # b2 = Box()

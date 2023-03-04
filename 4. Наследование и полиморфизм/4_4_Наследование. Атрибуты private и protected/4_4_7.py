@@ -122,29 +122,31 @@ class Subject:
 
 class Data:
     def __init__(self, temp, press, wet):
-        self.temp = temp    # температура
+        self.temp = temp  # температура
         self.press = press  # давление
-        self.wet = wet      # влажность
+        self.wet = wet  # влажность
 
 
 # здесь объявляйте дочерние классы TemperatureView, PressureView и WetView
 class TemperatureView(Observer):
     """Cлушатель для отображения информации о температуре"""
+
     def update(self, data):
         print(f'Текущая температура {data.temp}')
 
 
 class PressureView(Observer):
     """Cлушатель для отображения информации о давлении"""
+
     def update(self, data):
         print(f'Текущее давление {data.press}')
-        
+
 
 class WetView(Observer):
     """Cлушатель для отображения информации о влажности"""
+
     def update(self, data):
         print(f'Текущая влажность {data.wet}')
-
 
 # # TEST
 # subject = Subject()

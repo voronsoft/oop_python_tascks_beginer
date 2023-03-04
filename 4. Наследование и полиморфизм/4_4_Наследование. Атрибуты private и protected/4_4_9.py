@@ -50,13 +50,14 @@ def class_log(lst):
         for k, v in methods.items():
             setattr(cls, k, log_append(v))
         return cls
-    
+
     def log_append(func):
         def wrapper(*args, **kwargs):
             lst.append(func.__name__)
             return func(*args, **kwargs)
+
         return wrapper
-    
+
     return log_methods
 
 
@@ -73,7 +74,6 @@ class Vector:
 
     def __setitem__(self, key, value):
         self.__coords[key] = value
-
 
 # # TEST
 # v = Vector(1, 2, 3)

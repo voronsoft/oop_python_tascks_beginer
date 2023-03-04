@@ -105,7 +105,6 @@ class RegisterForm:
         """show() - выводит в консоль многострочную строку"""
         print(f'<form>\nЛогин: {self.login}\nПароль:{self.password}\nEmail: {self.email}\n</form>')
 
-
 # ПРОВЕРКА
 # assert hasattr(ValidateString, 'validate'), "в классе ValidateString отсутствует метод validate"
 # 

@@ -44,7 +44,6 @@ class Model:
         else:
             return 'Model'
 
-
 # # TEST
 # model = Model()
 # model.query(id=1, fio='Sergey', old=33)

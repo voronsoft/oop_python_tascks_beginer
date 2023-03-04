@@ -97,7 +97,6 @@ class StackObj:
         self._data = str(data)
         self._next = None
 
-
 # # TEST
 # assert issubclass(Stack, StackInterface), "класс Stack должен наследоваться от класса StackInterface"
 # #

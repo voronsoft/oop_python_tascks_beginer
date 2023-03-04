@@ -136,8 +136,7 @@ class LessonItem:
     def __delattr__(self, item):
         if item not in ('title', 'practices', 'duration'):
             return object.__delattr__(self, item)
-        
-        
+
 # ПРОВЕРКА
 # Пример использования классов (в программе эти строчки не писать):
 # course = Course("Python ООП")

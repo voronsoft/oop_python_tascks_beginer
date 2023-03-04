@@ -75,8 +75,7 @@ class Dog(Animal):
     # "кот: 4, black, 2.25"
     def get_info(self):
         return f"{self.name}: {self.old}, {self.breed}, {self.size}"
-    
-    
+
 # # TEST
 # cat = Cat('кот', 4, 'black', 2.25)
 # dog = Dog('собака', 10, 'Борзая', (1.0, 0.85) )

@@ -145,7 +145,6 @@ class StackObj:
         self.__data = value
     # END PROPERTY
 
-
 # # TEST
 # assert hasattr(Stack, 'pop_back'), "класс Stack должен иметь метод pop_back"
 # #

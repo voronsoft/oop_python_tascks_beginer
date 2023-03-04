@@ -65,7 +65,6 @@ class FloatValidator(Validator):
     def __call__(self, *args, **kwargs):
         return self._is_valid(*args)
 
-
 # # TEST
 # float_validator = FloatValidator(0, 10.5)
 # res_1 = float_validator(1)  # False (целое число, а не вещественное)

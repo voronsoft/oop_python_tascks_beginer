@@ -25,12 +25,8 @@ class Tuple(tuple):
         super().__init__()
 
     def __add__(self, other):
-        
         other = tuple(self) + tuple(other)
         return Tuple(other)
-
-
-
 
 # # TEST
 # # Пример использования класса (эти строчки в программе не писать):

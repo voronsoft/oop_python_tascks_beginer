@@ -104,7 +104,7 @@ class PriceValue:
 # pr = Product(наименование, цена)
 class Product:
     """Описывает конкретный товар"""
-    
+
     # В этом классе следует объявить следующие дескрипторы:
     name = StringValue()  # min_length - минимально допустимая длина строки; max_length - допустимая длина строки
     price = PriceValue()  # max_value - максимально допустимое значение
@@ -112,7 +112,6 @@ class Product:
     def __init__(self, name, price):
         self.name = name
         self.price = price
-
 
 # # ПРОВЕРКА
 # # Пример использования класса SuperShop (эти строчки в программе писать не нужно):
@@ -146,4 +145,3 @@ class Product:
 #     assert type(t.name) == str, "типы поля name должнен быть str"
 # if hasattr(t, '_price'):
 #     assert type(t.price) in (int, float), "тип поля price должнен быть int или float"
-    

@@ -43,7 +43,7 @@ class Lib:
     def __add__(self, other):
         self.book_list.append(other)
         return self
-    
+
     # lib += book
     def __iadd__(self, other):
         self.book_list.append(other)

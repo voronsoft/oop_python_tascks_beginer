@@ -80,7 +80,6 @@ class Toyota(Auto):
         super().__init__(name, weight, dims, model)
         self.wheel = bool(wheel)  # тип руля: True - лево-рульный, False - право-рульный
 
-
 # # TEST
 # th1 = Thing()
 # # Объекты этих классов создаются командами:

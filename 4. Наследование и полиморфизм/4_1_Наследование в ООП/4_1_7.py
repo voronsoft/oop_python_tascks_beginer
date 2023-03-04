@@ -29,7 +29,6 @@ class Singleton:
         return cls.temp
 
 
-
 class Game(Singleton):
     def __init__(self, name):
         if 'name' not in self.__dict__:

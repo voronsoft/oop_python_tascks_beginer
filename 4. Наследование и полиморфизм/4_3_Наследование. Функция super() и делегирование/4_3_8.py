@@ -20,8 +20,7 @@ class SoftList(list):
             return super().__getitem__(item)
         else:
             return False
-        
-        
+
 # # TEST
 # sl = SoftList("python")
 # sl[0] # 'p'

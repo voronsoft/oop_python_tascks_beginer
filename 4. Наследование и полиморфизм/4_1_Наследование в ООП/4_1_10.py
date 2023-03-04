@@ -81,7 +81,6 @@ class VectorInt(Vector):
         else:
             raise ValueError('координаты должны быть целыми числами')
 
-
 # # TEST
 # v1 = Vector(1, 2, 3)
 # v2 = Vector(3, 4, 5)

@@ -13,7 +13,7 @@ class Point:
 
 class Point:
     def __new__(cls, *args, **kwargs):
-       return super().__new__(cls)
+        return super().__new__(cls)
 
 
 pt = Point(1, 2)

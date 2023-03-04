@@ -70,7 +70,6 @@ class MaxPooling:
 
         return res
 
-
 # # TEST
 # mp = MaxPooling(step=(2, 2), size=(2, 2))
 # m1 = [[1, 10, 10],

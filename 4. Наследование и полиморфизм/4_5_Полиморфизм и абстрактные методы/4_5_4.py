@@ -44,7 +44,6 @@ class ShopItem(ShopInterface):
     def get_id(self):
         return self.__id
 
-
 # # TEST
 # sh1 = ShopItem('имя', 0.10, 100)
 # id_sh1 = sh1.get_id()

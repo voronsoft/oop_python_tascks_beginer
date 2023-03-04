@@ -35,7 +35,7 @@ class TupleLimit(tuple):
 
     def __str__(self):
         return ' '.join(map(str, self))
-    
+
     def __repr__(self):
         return ' '.join(map(str, self))
 

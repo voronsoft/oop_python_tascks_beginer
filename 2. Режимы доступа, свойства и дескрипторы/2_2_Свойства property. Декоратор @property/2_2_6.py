@@ -139,7 +139,6 @@ class Stack:
                 return lst
         return lst
 
-
 # #  Проверка
 # s = Stack()
 # top = StackObj("obj_1")
@@ -176,4 +175,4 @@ class Stack:
 # s.push(top)
 # obj = s.pop()
 # assert obj == top, "метод pop() должен возвращать удаляемый объект"
-# 
+#

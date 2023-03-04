@@ -54,10 +54,11 @@ for x in mus.exhibits:
 # mus = Museum(название музея)
 class Museum:
     """Museum(название музея)"""
+
     # В объектах этого класса должны формироваться следующие локальные атрибуты:
     def __init__(self, name):
         """Инициализатор объектов Museum"""
-        self.name = name   # - name - название музея (строка);
+        self.name = name  # - name - название музея (строка);
         self.exhibits = list()  # - exhibits - список экспонатов (изначально пустой список).
 
     # Сам класс Museum должен иметь методы:
@@ -77,11 +78,11 @@ class Museum:
     def get_info_exhibit(self, indx):
         """Получение информации об экспонате (строка) по индексу списка (нумерация с нуля)."""
         return f"Описание экспоната {self.exhibits[indx].name}: {self.exhibits[indx].descr}"
-    
+
     def __setattr__(self, key, value):
         if key == 'name' and type(value) is str:
             return object.__setattr__(self, key, value)
-        
+
         return object.__setattr__(self, key, value)
 
 
@@ -91,6 +92,7 @@ class Museum:
 # p = Picture(название, художник, описание)
 class Picture:
     """для картин"""
+
     def __init__(self, name, author, descr):
         self.name = name  # name - название;
         self.author = author  # author - художник;
@@ -100,6 +102,7 @@ class Picture:
 # m = Mummies(имя мумии, место находки, описание)
 class Mummies:
     """для мумий"""
+
     def __init__(self, name, location, descr):
         self.name = name  # name - имя мумии;
         self.location = location  # location - место находки;
@@ -109,6 +112,7 @@ class Mummies:
 # pr = Papyri(название папируса, датировка, описание)
 class Papyri:
     """для папирусов"""
+
     def __init__(self, name, date, descr):
         self.name = name  # name - название папируса;
         self.date = date  # date - датировка (строка);
@@ -117,16 +121,17 @@ class Papyri:
     def __setattr__(self, key, value):
         if key == 'date' and type(value) is str:
             return object.__setattr__(self, key, value)
-        
+
         return object.__setattr__(self, key, value)
-        
+
 
 # ПРОВЕРКА
 # Пример использования классов (в программе эти строчки писать не нужно - только для примера):
 # mus = Museum("Эрмитаж")
 # mus.add_exhibit(Picture("Балакирев с подписчиками пишет письмо иноземному султану", "Неизвестный автор", "Вдохновляющая, устрашающая, волнующая картина"))
 # mus.add_exhibit(Mummies("Балакирев", "Древняя Россия", "Просветитель XXI века, удостоенный мумификации"))
-p = Papyri("Ученья для, не злата ради", "Древняя Россия", "Самое древнее найденное рукописное свидетельство о языках программирования")
+p = Papyri("Ученья для, не злата ради", "Древняя Россия",
+           "Самое древнее найденное рукописное свидетельство о языках программирования")
 # mus.add_exhibit(p)
 # for x in mus.exhibits:
 #     print(x.descr)

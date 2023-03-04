@@ -31,7 +31,7 @@ class IterColumn:
     def __init__(self, lst, column):
         self.lst = lst  # ссылка на двумерный список;
         self.column = column  # индекс перебираемого столбца (отсчитывается от 0)
-        
+
     def __iter__(self):
         for i in self.lst:
             for j in range(len(i)):
@@ -40,8 +40,7 @@ class IterColumn:
                     yield x
                 else:
                     continue
-        
-               
+
 # # TEST
 # lst = [['x00', 'x01', 'x02', 'x02'],
 #        ['x10', 'x11', 'x12', 'x13'],

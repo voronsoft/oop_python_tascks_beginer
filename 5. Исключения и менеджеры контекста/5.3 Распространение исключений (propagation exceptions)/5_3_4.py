@@ -55,22 +55,24 @@ sergey
 
 
 # здесь объявляйте классы
-class  ValidatorString:
-    
+class ValidatorString:
+
     def __init__(self, min_length, max_length, chars):
         self.min_length = min_length
         self.max_length = max_length
         self.chars = str(chars)
-        
+
     def is_valid(self, string):
-        
-        if len(self.chars) > 0 and any( [True if i in self.chars else False for i in string]) and isinstance(string, str) and self.min_length <= len(string) <= self.max_length:
+
+        if len(self.chars) > 0 and any([True if i in self.chars else False for i in string]) and isinstance(string,
+                                                                                                            str) and self.min_length <= len(
+            string) <= self.max_length:
             return string
         elif len(self.chars) == 0 and isinstance(string, str) and self.min_length <= len(string) <= self.max_length:
             return string
         else:
             raise ValueError('недопустимая строка')
-        
+
 
 class LoginForm:
     def __init__(self, login_validator, password_validator):
@@ -78,12 +80,12 @@ class LoginForm:
         self.password_validator = password_validator  # валидатор для пароля (объект класса ValidatorString)
 
     def form(self, request):
-        if isinstance(request, dict) and all([True if i in request else False for i in ('login', 'password')]) and all(True if type(i) is str else False for i in request.values()):
+        if isinstance(request, dict) and all([True if i in request else False for i in ('login', 'password')]) and all(
+                True if type(i) is str else False for i in request.values()):
             self._login = self.login_validator.is_valid(request['login'])
             self._password = self.password_validator.is_valid(request['password'])
         else:
             raise TypeError('в запросе отсутствует логин или пароль')
-        
 
 
 # TEST
@@ -97,4 +99,3 @@ except (TypeError, ValueError) as e:
     print(e)
 else:
     print(lg._login)
-    
