@@ -3,7 +3,10 @@ uid: 1005435
 title: "Шутка"
 author: "И.С. Бах"
 pages: 2
-Затем, с помощью функции getattr() прочитайте и выведите на экран значение атрибута author.
+
+Присвойте переменной temp значение атрибута author с помощью функции getattr().
+Затем, выведите на экран значение атрибута temp.
+Запустите файл на исполнение
 """
 
 
@@ -14,6 +17,7 @@ class Notes:
     pages = 2
 
 
+temp = getattr(Notes, 'author')
 print(getattr(Notes, 'author'))
 
 # TEST-TASK___________________________________
@@ -24,3 +28,4 @@ assert hasattr(Notes, 'pages'), "В классе отсутствует атри
 
 assert Notes.uid == 1005435 and Notes.title == "Шутка" and Notes.author == "И.С. Бах" and Notes.pages == 2, "Значение в каком то атрибуте несоответствуют заданию"
 assert getattr(Notes, "author") == "И.С. Бах", 'Неправильное значение атрибута author '
+assert temp == "И.С. Бах", "Неверное значение в переменной temp"

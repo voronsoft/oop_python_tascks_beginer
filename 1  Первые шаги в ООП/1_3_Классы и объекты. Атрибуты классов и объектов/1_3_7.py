@@ -2,8 +2,12 @@
 
 rus: "Питон"
 eng: "Python"
-Затем, с помощью функции getattr() прочитайте и выведите на экран значение атрибута rus_word.
+
+Затем, с помощью функции getattr() прочитайте значение атрибута rus_word.
 Если такого атрибута в классе нет, то функция getattr() должна возвращать булево значение False.
+Полученное значение нужно присвоить переменной temp.
+Выведете на экран значение переменной temp.
+Запустите файл на исполнение.
 """
 
 
@@ -11,11 +15,9 @@ class Dictionary:
     rus = 'Питон'
     eng = 'Python'
 
-    def __getattr__(self, item):
-        print("был вызов")
 
-
-print(getattr(Dictionary, 'rus_word', False))
+temp = getattr(Dictionary, 'rus_word', False)
+print(temp)
 
 # TEST-TASK___________________________________
 try:
@@ -24,4 +26,6 @@ except NameError:
     print("Вы не создали класс - Dictionary")
 
 assert hasattr(Dictionary, 'rus') and hasattr(Dictionary, 'eng'), "В классе должно быть два атрибута - rus, eng"
-assert getattr(Dictionary, 'rus_word', False) is False
+assert hasattr(Dictionary, 'rus_word') == False, "Переменно rus_word не должно быть в классе"
+assert temp is False, "Значение присвоенное переменной temp неверное !!"
+print('Всё правильно, так держать !')
