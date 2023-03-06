@@ -29,3 +29,11 @@ del fig1.color
 # (без значений) объекта fig1 в одну строчку через пробел в порядке, указанном в задании.
 for i in fig1.__dict__:
     print(i, end=' ')
+
+# TEST-TASK___________________________________
+assert issubclass(Figure, object), "Создайте класс - Figure"
+assert hasattr(Figure, "type_fig") and hasattr(Figure, "color")
+assert isinstance(fig1, Figure), "не создан екземпляр класса fig1 "
+assert len(fig1.__dict__) and fig1.start_pt == (10, 5) and fig1.end_pt == (
+100, 20), "В экземпляре класса должно быть 2 локальных атрибута start_pt и end_pt"
+assert 'color' not in fig1.__dict__, "Локальный атрибут color должен быть удален из fig1"

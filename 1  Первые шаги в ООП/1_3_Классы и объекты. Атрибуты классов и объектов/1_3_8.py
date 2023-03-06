@@ -31,3 +31,11 @@ tb2.name = 'Италия'
 tb2.days = 5
 # Увеличьте значение атрибута total_blogs класса TravelBlog на единицу.
 TravelBlog.total_blogs += 1
+
+# TEST-TASK___________________________________
+assert isinstance(tb1, TravelBlog) and isinstance(tb2, TravelBlog), "Вы не создали 2 экземпляра класса - tb1 и tb2"
+assert len(
+    tb1.__dict__) == 2 and "name" in tb1.__dict__ and "days" in tb1.__dict__, "Должно быть только два локальных свойства name и days"
+assert len(
+    tb2.__dict__) == 2 and "name" in tb2.__dict__ and "days" in tb2.__dict__, "Должно быть только два локальных свойства name и days"
+assert TravelBlog.total_blogs == 2, "Атрибут класса total_blogs должен быть равен 2м"

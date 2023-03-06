@@ -16,3 +16,12 @@ setattr(Car, 'model', "Тойота")
 setattr(Car, 'color', "Розовый")
 setattr(Car, 'number', "П111УУ77")
 print(Car.__dict__['color'])
+
+# TEST-TASK___________________________________
+assert hasattr(Car, "model"), "В классе нет атрибута model"
+assert hasattr(Car, "color"), "В классе нет атрибута color"
+assert hasattr(Car, "number"), "В классе нет атрибута number"
+
+assert Car.model == "Тойота", "Значение атрибута неправильное"
+assert Car.color == "Розовый", "Значение атрибута неправильное"
+assert Car.number == "П111УУ77", "Значение атрибута неправильное"
