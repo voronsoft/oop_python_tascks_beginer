@@ -13,13 +13,16 @@ Sergey_Balakirev
 # Запустите файл на исполнение
 
 # Вставьте правильные ответы в переменную
-temp = ["SergeyBalakirev", "Data123", "DataBase"]
+temp = []
 # END
 
 # TEST-TASK___________________________________
-assert len(temp) == 3, "Пока неправильно попробуйте другие варианты"
-assert len(temp) == 3 and "SergeyBalakirev" in temp and "Data123" in temp and \
-       "DataBase" in temp, "Пока неправильно попробуйте другие варианты"
+try:
+    assert temp == 3 and "SergeyBalakirev" in temp and "Data123" in temp and "DataBase" in temp
 
-if len(temp) == 3 and "SergeyBalakirev" in temp and "Data123" in temp and "DataBase" in temp :
+except:
+    print("Пока неправильно попробуйте другие варианты")
+else:
+    [print(_) for _ in temp]
+    print()
     print("Правильно !")
