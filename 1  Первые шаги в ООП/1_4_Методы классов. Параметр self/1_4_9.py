@@ -72,3 +72,17 @@ class DataBase:
 
 db = DataBase()
 db.insert(lst_in)
+
+# TEST-TASK___________________________________
+res1 = db.select(0, 50)
+
+lstgfghj8gh9jg2 = []
+for d in lst_in:
+    lstgfghj8gh9jg2.append(dict(zip(DataBase.FIELDS, d.split())))
+
+assert res1 == lstgfghj8gh9jg2, "метод select вернул неверные данные"
+
+res2 = db.select(0, 1)
+assert res2 == lstgfghj8gh9jg2[0:2], "некорректно работает метод select"
+
+print(True)

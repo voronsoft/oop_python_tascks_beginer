@@ -68,3 +68,5 @@ class StreamReader:
 
 sr = StreamReader()
 data, result = sr.readlines()
+
+# TEST-TASK___________________________________

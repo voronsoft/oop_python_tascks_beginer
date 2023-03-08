@@ -100,3 +100,10 @@ print(*tr.translate('go'))
 
 # # Результат выведите на экран в виде строки из всех русских слов, связанных со словом go:
 # # Вывод в формате: идти ехать ходить
+
+# TEST-TASK___________________________________
+assert isinstance(tr, Translator)
+
+assert hasattr(Translator, 'add') and hasattr(Translator, 'remove') and hasattr(Translator, 'translate')
+
+assert tr.translate('tree')[0] == "дерево"
