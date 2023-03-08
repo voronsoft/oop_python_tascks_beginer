@@ -35,6 +35,18 @@ milk - молоко
 Вывод в формате: идти ехать ходить
 """
 
+# код не менять !!!
+import io
+import sys
+
+# Создаю объект StringIO
+output = io.StringIO()
+# Перенаправляю стандартный вывод в StringIO
+sys.stdout = output
+
+
+# END !!!
+
 
 # Объявите класс с именем Translator (для перевода с английского на русский) со следующими методами:
 class Translator:
@@ -102,8 +114,14 @@ print(*tr.translate('go'))
 # # Вывод в формате: идти ехать ходить
 
 # TEST-TASK___________________________________
+# Получите данные из StringIO
+output_str = output.getvalue()
+# Верните стандартный вывод
+sys.stdout = sys.__stdout__
 assert isinstance(tr, Translator)
-
 assert hasattr(Translator, 'add') and hasattr(Translator, 'remove') and hasattr(Translator, 'translate')
-
 assert tr.translate('tree')[0] == "дерево"
+assert len(tr.d['go']) == 3, "Не все связки добавленны в словарь"
+assert output_str == 'идти ехать ходить\n', "Формат вывода неправильный"
+print(output_str)
+print("Правильно !")

@@ -14,6 +14,7 @@ play() - для воспроизведения медиа-файла (вывод
 "Воспроизведение filemedia1"
 "Воспроизведение filemedia2"
 """
+# код не менять !!!
 import io
 import sys
 
@@ -23,7 +24,7 @@ output = io.StringIO()
 sys.stdout = output
 
 
-# то что выше не менять !!!
+# END !!!
 
 # Тут напишите ваше решение:
 class MediaPlayer:

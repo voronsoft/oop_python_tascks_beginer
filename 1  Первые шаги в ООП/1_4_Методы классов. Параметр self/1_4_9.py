@@ -37,6 +37,15 @@ Sample Input:
 2 Федор 23 12000
 3 Иван 13 1200
 """
+# код не менять
+import io
+import sys
+
+s = "1 Сергей 35 120000\n2 Федор 23 12000\n3 Иван 13 1200\n"
+stream = io.StringIO(s)
+sys.stdin = stream
+# END
+
 import sys
 
 # программу не менять, только добавить два метода
@@ -85,4 +94,4 @@ assert res1 == lstgfghj8gh9jg2, "метод select вернул неверные
 res2 = db.select(0, 1)
 assert res2 == lstgfghj8gh9jg2[0:2], "некорректно работает метод select"
 
-print(True)
+print("Правильно !")

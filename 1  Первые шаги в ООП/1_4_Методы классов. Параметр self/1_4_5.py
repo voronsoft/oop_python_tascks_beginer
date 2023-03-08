@@ -23,6 +23,16 @@ LIMIT_Y = [0, 10]
 "10 0 2 5 7"
 """
 
+import io
+import sys
+
+# Создаю объект StringIO
+output = io.StringIO()
+# Перенаправляю стандартный вывод в StringIO
+sys.stdout = output
+
+
+# то что выше не менять !!!
 
 # Объявите класс с именем Graph и методами:
 class Graph:
@@ -55,3 +65,23 @@ graph_1.set_data([10, -5, 100, 20, 0, 80, 45, 2, 5, 7])
 graph_1.draw()
 
 # TEST-TASK___________________________________
+try:
+    hasattr(Graph, 'set_data')
+    hasattr(Graph, 'draw')
+except:
+    print("Проверьте методы в классе")
+
+# Перехва вывода в консоль
+# Получаем данные из StringIO (переменной output_str присваиваем то что выводится в консоль)
+output_str = output.getvalue()
+# Возвращаем стандартный вывод в консоль
+sys.stdout = sys.__stdout__
+try:
+    assert output_str == '10 0 2 5 7\n'
+except:
+    print("Пока не правильно !")
+    print(f"Ваш ответ: {output_str}")
+    print(f"Требуется: 10 0 2 5 7")
+else:
+    print(output_str)
+    print("Отлично !")
