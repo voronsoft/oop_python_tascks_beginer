@@ -79,3 +79,14 @@ for i in range(1, len(lst_in)):
     obj_new = ListObject(lst_in[i])
     obj.link(obj_new)
     obj = obj_new
+
+# TEST-TASK___________________________________
+assert isinstance(head_obj, ListObject) and hasattr(ListObject, 'link')
+
+lst_data = []
+h = head_obj
+while h:
+    lst_data.append(h.data)
+    h = h.next_obj
+
+assert lst_in == lst_data, "данные в объектах ListObject не совпадают с прочитанными данными (списком lst_in)"

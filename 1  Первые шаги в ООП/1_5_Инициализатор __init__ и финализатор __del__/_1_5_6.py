@@ -102,3 +102,18 @@ gr.show_bar()
 gr.set_show(False)
 gr.show_table()
 # На экране должны отобразиться две соответствующие строки.
+
+
+# TEST-TASK___________________________________
+assert isinstance(gr, Graph) and hasattr(Graph, 'set_data') and hasattr(Graph, 'show_table') and \
+       hasattr(Graph, 'show_graph') and hasattr(Graph, 'show_bar') and hasattr(Graph, 'set_show')
+
+assert gr.data == data_graph, "данные в объекте класса Graph и в списке data_graph отличаются"
+assert hasattr(gr, 'is_show'), "объект gr не имеет атрибута is_show"
+
+data = [1, 2, 3, 4]
+gr2 = Graph(data)
+gr3 = Graph(data)
+gr3.data.append(5)
+
+assert gr2.data != gr3.data, "локальный атрибут data должен быть уникальным (своим собственным) в каждом объекте класса Graph"

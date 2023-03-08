@@ -38,3 +38,5 @@ for i in range(0, 1000):
     k += 2
 # Для второго объекта в списке points укажите цвет 'yellow'.
 points[1].color = 'yellow'
+
+# TEST-TASK___________________________________
