@@ -94,7 +94,7 @@ class Graph:
 
 
 # Прочитайте из входного потока числовые данные с помощью команды:
-data_graph = list(map(int, input().split()))
+data_graph = list(map(int, "8 11 10 -32 0 7 18".split()))
 # Создайте объект gr класса Graph с набором прочитанных данных, вызовите метод show_bar(),
 gr = Graph(data_graph)
 gr.show_bar()
@@ -117,3 +117,4 @@ gr3 = Graph(data)
 gr3.data.append(5)
 
 assert gr2.data != gr3.data, "локальный атрибут data должен быть уникальным (своим собственным) в каждом объекте класса Graph"
+print("\nПравильный ответ !")

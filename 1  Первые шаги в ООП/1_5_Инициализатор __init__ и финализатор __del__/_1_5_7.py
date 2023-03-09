@@ -117,3 +117,4 @@ def get_config():
 res1 = ("".join(mb.get_config())).replace(" ", "")
 res2 = ("".join(get_config())).replace(" ", "")
 assert res1 == res2, "метод get_config возвратил неверные данные"
+print("Правильно !")

@@ -77,3 +77,5 @@ assert l.sp == (1, 2) and l.ep == (3, 4), "неверные значения в 
 for e in elements:
     if isinstance(e, Line):
         assert e.sp == (0, 0) and e.ep == (0, 0), "в объектах класса Line координаты должны быть равны нулю"
+
+print("Правильно !")

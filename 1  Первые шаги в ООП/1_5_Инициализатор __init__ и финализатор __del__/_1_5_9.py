@@ -35,6 +35,14 @@ Sample Input:
 1.7 Методы класса (classmethod) и статические методы (staticmethod)
 Sample Output:
 """
+# код не менять
+import io
+import sys
+
+s = "1. Первые шаги в ООП\n1.1 Как правильно проходить этот курс\n1.2 Концепция ООП простыми словами\n1.3 Классы и объекты. Атрибуты классов и объектов\n1.4 Методы классов. Параметр self\n1.5 Инициализатор init и финализатор del\n1.6 Магический метод new. Пример паттерна Singleton\n1.7 Методы класса (classmethod) и статические методы (staticmethod)"
+stream = io.StringIO(s)
+sys.stdin = stream
+# END
 
 import sys
 
@@ -90,3 +98,4 @@ while h:
     h = h.next_obj
 
 assert lst_in == lst_data, "данные в объектах ListObject не совпадают с прочитанными данными (списком lst_in)"
+print("Правильно !")
