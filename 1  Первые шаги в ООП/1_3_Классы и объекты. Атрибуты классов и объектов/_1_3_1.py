@@ -18,7 +18,7 @@ temp = []
 
 # TEST-TASK___________________________________
 try:
-    assert temp == 3 and "SergeyBalakirev" in temp and "Data123" in temp and "DataBase" in temp
+    assert len(temp) == 3 and "SergeyBalakirev" in temp and "Data123" in temp and "DataBase" in temp
 
 except:
     print("Пока неправильно попробуйте другие варианты")
