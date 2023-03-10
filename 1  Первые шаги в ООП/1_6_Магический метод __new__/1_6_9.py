@@ -42,3 +42,12 @@ pt = Point(10, 50)
 # и еще один объект pt_clone через вызов метода clone.
 # pt_clone = Point.clone('a')
 pt_clone = pt.clone()
+
+# TEST-TASK___________________________________
+
+assert id(pt) != id(pt_clone), "Ошибка, два объекта имеют одинаковый id. " \
+                               "Нужно что бы объекты были разные, но с одинаковыми данными"
+assert hasattr(pt, 'x') and hasattr(pt, 'y'), "в объекте должны быть 2 атрибута x и y"
+assert hasattr(pt_clone, 'x') and hasattr(pt_clone, 'y'), "в объекте должны быть 2 атрибута x и y"
+assert pt.x == pt_clone.x and pt.y == pt_clone.y, "Атрибуты имеют разные значения"
+print("Правильный ответ !")

@@ -29,3 +29,7 @@ class SingletonFive:
 
 
 objs = [SingletonFive(str(n)) for n in range(10)]  # эту строчку не менять
+
+# TEST-TASK___________________________________
+assert len(set(objs)) == 5, "ошибка, попробуйте ещё раз"
+print("Правильно !")
