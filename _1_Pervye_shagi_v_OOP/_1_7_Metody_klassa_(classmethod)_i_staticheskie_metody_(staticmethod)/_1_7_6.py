@@ -64,3 +64,15 @@ res = Loader.parse_format("1, 2, 3, -5, 10", Factory)
 # На выходе (в переменной res) ожидается получать список из набора целых чисел.
 # Например, для заданной строки, должно получиться:
 # [4, 5, -6]
+
+# TEST-TASK___________________________________
+assert Factory.build_sequence() == [], 'Неправильно отработал метод build_sequence'
+assert type(Factory.build_number('10')) is int, 'Неправильно отработал метод build_number'
+
+try:
+    assert res == [1, 2, 3, -5, 10]
+except:
+    print("Ошибка, в переменной res неправильный результат")
+
+else:
+    print("Правильно !")

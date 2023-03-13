@@ -23,7 +23,17 @@ videos - для хранения добавленных объектов кла�
 После этого с помощью метода add_video класса YouTube, добавьте в него эти два видео и воспроизведите
 (с помощью метода play класса YouTube) сначала первое, а затем, второе видео.
 """
+# код не менять !!!
+import io
+import sys
 
+# Создаю объект StringIO
+output = io.StringIO()
+# Перенаправляю стандартный вывод в StringIO
+sys.stdout = output
+
+
+# END !!!
 
 # Объявите в программе класс Video.
 class Video:
@@ -71,5 +81,28 @@ v2 = Video('Python ООП')
 YouTube.add_video(v1)
 YouTube.add_video(v2)
 
-for i in range(len(YouTube.videos)):
-    YouTube.play(i)
+[YouTube.play(i) for i in range(len(YouTube.videos))]
+
+# TEST-TASK___________________________________
+# Получите данные из StringIO
+output_str = output.getvalue()
+# Верните стандартный вывод
+sys.stdout = sys.__stdout__
+assert issubclass(Video, object), 'Не объявлен класс Video'
+assert issubclass(YouTube, object), 'Не объявлен класс YouTube'
+
+assert hasattr(Video, 'play'), 'Метод play не создан'
+assert hasattr(Video, 'create'), 'Метод create не создан'
+assert hasattr(YouTube, 'add_video'), 'Метод add_video не создан'
+assert hasattr(YouTube, 'play'), 'Метод play не создан'
+
+try:
+    assert output_str == 'воспроизведение видео Python\nвоспроизведение видео Python ООП\n'
+except:
+    print(f'Ваш ответ: \n{output_str}\nА нужно: ')
+    print('воспроизведение видео Python\nВоспроизведение видео Python ООП\n')
+    print('Попробуйте найти ошибку у себя в коде...')
+else:
+    # Выведите данные из переменной
+    print(output_str)
+    print("Правильно !")
