@@ -25,23 +25,26 @@ class Car:
     def __init__(self):
         self.__model = ''
 
+    @property
+    def model(self):
+        """getter"""
+        return self.__model
+
     # записать\изменить
-    def set_model(self, model):
+    @model.setter
+    def model(self, value):
         # Также в объекте-свойстве model должны быть реализованы проверки:
         # - модель автомобиля - это строка;
         # - длина строки модели должна быть в диапазоне [2; 100].
-        if type(model) is str and 2 <= len(model) <= 100:
-            self.__model = model
+        if type(value) is str and 2 <= len(value) <= 100:
+            self.__model = value
 
-    # получить
-    def get_model(self):
-        return self.__model
 
-    model = property(get_model, set_model)
-
-# Объекты класса Car предполагается создавать командой:
-# car = Car()
-# и далее работа с объектом-свойством, например:
-# car.model = "Toyota"
-# car.model = 123456
-# P.S. В программе объявить только класс. На экран ничего выводить не нужно.
+# TEST-TASK___________________________________
+auto = Car()
+assert '_Car__model' in auto.__dict__, 'В объекте класса нет приватного атрибута __model'
+auto.model = 'Toyota'
+assert auto.model == 'Toyota', 'Некорректно работает записать данных в __model'
+assert auto._Car__model == "Toyota", 'Некоректно работает считывание значения с защищенного приватного свойства'
+assert len(auto.__dict__) == 1, 'Объект класса должен содержать всего один защищённый атрибут'
+print("Правильный ответ")

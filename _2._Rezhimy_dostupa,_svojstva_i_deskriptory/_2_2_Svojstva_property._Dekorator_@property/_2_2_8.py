@@ -158,36 +158,23 @@ class DecisionTree:
                 node.right = obj
         return obj
 
-# # ПРОВЕРКА
-# # Эти классы в дальнейшем предполагается использовать следующим образом (эти строчки в программе не писать):
-# a = TreeObj(0)
-# b = TreeObj(1)
-# c = TreeObj(2)
-# root = DecisionTree.add_obj(a)
-# v_11 = DecisionTree.add_obj(b, root)
-# v_12 = DecisionTree.add_obj(c, root, False)
-# l1 = TreeObj(-1, "программист")
-# l0 = TreeObj(-1, "кодер")
-# r1 = TreeObj(-1, "посмотрим")
-# r0 = TreeObj(-1, "нет")
-# DecisionTree.add_obj(l1, v_11)
-# DecisionTree.add_obj(l0, v_11, False)
-# DecisionTree.add_obj(r1, v_12)
-# DecisionTree.add_obj(r0, v_12, False)
-# x = [0, 1, 0]
-# res = DecisionTree.predict(root, x) # будет программистом
-# # P.S. В программе требуется объявить только классы. На экран ничего выводить не нужно.
-# 
-# # ТЕСТ
-# assert hasattr(DecisionTree, 'add_obj') and hasattr(DecisionTree, 'predict'), "в классе DecisionTree должны быть методы add_obj и predict"
-# assert type(TreeObj.left) == property and type(TreeObj.right) == property, "в классе TreeObj должны быть объекты-свойства left и right"
-# root = DecisionTree.add_obj(TreeObj(0))
-# v_11 = DecisionTree.add_obj(TreeObj(1), root)
-# v_12 = DecisionTree.add_obj(TreeObj(2), root, False)
-# DecisionTree.add_obj(TreeObj(-1, "программист"), v_11)
-# DecisionTree.add_obj(TreeObj(-1, "кодер"), v_11, False)
-# DecisionTree.add_obj(TreeObj(-1, "посмотрим"), v_12)
-# DecisionTree.add_obj(TreeObj(-1, "нет"), v_12, False)
-# assert DecisionTree.predict(root, [1, 1, 0]) == 'программист', "неверный вывод решающего дерева"
-# assert DecisionTree.predict(root, [0, 1, 0]) == 'нет', "неверный вывод решающего дерева"
-# assert DecisionTree.predict(root, [0, 1, 1]) == 'посмотрим', "неверный вывод решающего дерева"
+
+# TEST-TASK___________________________________
+assert hasattr(DecisionTree, 'add_obj') and hasattr(DecisionTree, 'predict'), \
+    "в классе DecisionTree должны быть методы add_obj и predict"
+
+assert type(TreeObj.left) == property and type(TreeObj.right) == property, \
+    "в классе TreeObj должны быть объекты-свойства left и right"
+
+root = DecisionTree.add_obj(TreeObj(0))
+v_11 = DecisionTree.add_obj(TreeObj(1), root)
+v_12 = DecisionTree.add_obj(TreeObj(2), root, False)
+DecisionTree.add_obj(TreeObj(-1, "программист"), v_11)
+DecisionTree.add_obj(TreeObj(-1, "кодер"), v_11, False)
+DecisionTree.add_obj(TreeObj(-1, "посмотрим"), v_12)
+DecisionTree.add_obj(TreeObj(-1, "нет"), v_12, False)
+
+assert DecisionTree.predict(root, [1, 1, 0]) == 'программист', "неверный вывод решающего дерева"
+assert DecisionTree.predict(root, [0, 1, 0]) == 'нет', "неверный вывод решающего дерева"
+assert DecisionTree.predict(root, [0, 1, 1]) == 'посмотрим', "неверный вывод решающего дерева"
+print("Правильный ответ !!")

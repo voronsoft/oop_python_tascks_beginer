@@ -60,6 +60,7 @@ assert type(line.get_coords()) == tuple and \
 # проверка метода draw()
 import io
 import sys
+
 # Создаю объект StringIO
 output = io.StringIO()
 # Перенаправляю стандартный вывод в StringIO
@@ -73,6 +74,7 @@ sys.stdout = sys.__stdout__
 # проверяю что данные в output_str это одна строка
 # проверяю что перенос строки в самом конце
 # проверяю что '\n' в строке только 1
-assert type(output_str) == str and output_str[-1:] == '\n' and output_str.count('\n') == 1, "Ошибка, метод draw работает неверно"
+assert type(output_str) == str and output_str[-1:] == '\n' and output_str.count(
+    '\n') == 1, "Ошибка, метод draw работает неверно"
 # end draw
 print('Правильный ответ !')
