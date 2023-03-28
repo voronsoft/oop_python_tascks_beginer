@@ -1,11 +1,11 @@
-from _1_2_1 import temp
-
 # TEST-TASK___________________________________
-try:
-    assert len(temp) == 3 and 'инкапсуляция' in temp and 'полиморфизм' in temp and 'наследование' in temp
-except:
-    print("Пока неправильно ...")
-else:
-    [print(_) for _ in temp]
-    print()
-    print('Правильно !')
+def test_1(answers):
+    try:
+        assert len(
+            answers) == 3 and 'инкапсуляция' in answers and 'полиморфизм' in answers and 'наследование' in answers
+    except:
+        print("Пока неправильно ...")
+    else:
+        [print(_) for _ in answers]
+        print()
+        print('Правильно !')
