@@ -17,5 +17,3 @@ from test1_3.test_1_3_2 import test_2
 
 test_2(temp)
 # END
-
-

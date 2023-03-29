@@ -4,13 +4,12 @@
 model: "Тойота"
 color: "Розовый"
 number: "П111УУ77"
-
-Присвойте переменной temp значение атрибута color
 Выведите на экран значение атрибута color, используя словарь __dict__ класса Car.
 Запустите файл на исполнение
 """
 
 
+# ваш код
 class Car:
     pass
 
@@ -18,18 +17,12 @@ class Car:
 setattr(Car, 'model', "Тойота")
 setattr(Car, 'color', "Розовый")
 setattr(Car, 'number', "П111УУ77")
-
-temp = Car.color
 print(Car.__dict__['color'])
+# end ваш код
 
 # TEST-TASK___________________________________
-assert hasattr(Car, "model"), "В классе нет атрибута model"
-assert hasattr(Car, "color"), "В классе нет атрибута color"
-assert hasattr(Car, "number"), "В классе нет атрибута number"
+from test1_3.test_1_3_5 import test_5
 
-assert Car.model == "Тойота", "Значение атрибута неправильное"
-assert Car.color == "Розовый", "Значение атрибута неправильное"
-assert Car.number == "П111УУ77", "Значение атрибута неправильное"
+test_5(Car)
 
-assert temp == "Розовый", "Неправильное значение в переменной temp"
-print("Правильно !")
+# END

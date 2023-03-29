@@ -18,6 +18,7 @@ P.S. На экран ничего выводить не нужно.
 """
 
 
+# ваш код
 class TravelBlog:
     total_blogs = 0
 
@@ -32,24 +33,11 @@ tb2.name = 'Италия'
 tb2.days = 5
 # Увеличьте значение атрибута total_blogs класса TravelBlog на единицу.
 TravelBlog.total_blogs += 1
+# end ваш код
 
 # TEST-TASK___________________________________
-try:
-    issubclass(TravelBlog, object)
-except NameError:
-    print("Вы не создали класс TravelBlog")
-else:
-    try:
-        isinstance(tb1, TravelBlog) and isinstance(tb2, TravelBlog)
-    except NameError:
-        print("Вы не создали экземпляры класса - tb1 и tb2")
-    else:
-        assert len(tb1.__dict__) == 2 and "name" in tb1.__dict__ and \
-               "days" in tb1.__dict__, "Должно быть два локальных свойства name и days"
-        assert len(tb2.__dict__) == 2 and "name" in tb2.__dict__ and \
-               "days" in tb2.__dict__, "Должно быть два локальных свойства name и days"
-        assert TravelBlog.total_blogs == 2, "Атрибут класса total_blogs, должен быть равен 2м"
+from test1_3.test_1_3_8 import test_8
 
-assert tb1.name == 'Франция' and tb1.days == 6, "Какое то значение локального атрибута tb1 неверное"
-assert tb2.name == 'Италия' and tb2.days == 5, "Какое то значение локального атрибута tb2 неверное"
-print("Правильно !")
+test_8(TravelBlog, tb1, tb2)
+
+# END

@@ -9,6 +9,7 @@ city: 'Москва'
 """
 
 
+# ваш код
 class Person:
     name = 'Сергей Балакирев'
     job = 'Программист'
@@ -17,22 +18,11 @@ class Person:
 
 p1 = Person()
 temp = 'job' in p1.__dict__
+# end ваш код
 
 # TEST-TASK___________________________________
-try:
-    issubclass(Person, object)
-except NameError:
-    print("Вы не создали класс - Person")
+from test1_3.test_1_3_10 import test_10
 
-assert hasattr(Person, 'name') and hasattr(Person, 'job') and hasattr(Person, 'city'), "В классе должно быть 3 атрибута"
+test_10(Person, p1, temp)
 
-try:
-    isinstance(p1, Person)
-
-except NameError:
-    print("Вы не создали экземпляр класса p1")
-
-assert 'job' not in p1.__dict__, "Ошибка, в экземпляре класса p1 не должно быть локального свойства - job"
-assert Person.name == 'Сергей Балакирев' and Person.job == 'Программист' and Person.city == 'Москва', "Неправильно попробуйте снова"
-assert temp is False
-print("Правильно!")
+# END

@@ -1,7 +1,6 @@
-from top_1_3_Klassy_i_obekty._Atributy_klassov_i_obektov.task_1_3_3 import DataBase
-
 # TEST-TASK___________________________________
-def test_3():
+def test_3(x):
+    DataBase = x
     assert hasattr(DataBase, 'pk'), "В классе нет атрибута - pk"
     assert hasattr(DataBase, 'title'), "В классе нет атрибута - title"
     assert hasattr(DataBase, 'author'), "В классе нет атрибута - author"

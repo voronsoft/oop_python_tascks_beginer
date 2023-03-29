@@ -10,7 +10,7 @@ comments: 12
 """
 
 
-# TEST
+# ваш код
 class DataBase:
     pk = 1
     title = "Классы и объекты"
@@ -19,21 +19,11 @@ class DataBase:
     comments = 12
 
 
+# end ваш код
+
 # TEST-TASK___________________________________
 from test1_3.test_1_3_3 import test_3
 
-test_3()
+test_3(DataBase)
+
 # END
-# # TEST-TASK___________________________________
-# assert hasattr(DataBase, 'pk'), "В классе нет атрибута - pk"
-# assert hasattr(DataBase, 'title'), "В классе нет атрибута - title"
-# assert hasattr(DataBase, 'author'), "В классе нет атрибута - author"
-# assert hasattr(DataBase, 'views'), "В классе нет атрибута - views"
-# assert hasattr(DataBase, 'comments'), "В классе нет атрибута - comments"
-#
-# assert DataBase.pk == 1, "Значение атрибута неправильное"
-# assert DataBase.title == "Классы и объекты", "Значение атрибута неправильное"
-# assert DataBase.author == "Сергей Балакирев", "Значение атрибута неправильное"
-# assert DataBase.views == 14356, "Значение атрибута неправильное"
-# assert DataBase.comments == 12, "Значение атрибута неправильное"
-# print("Правильно !")

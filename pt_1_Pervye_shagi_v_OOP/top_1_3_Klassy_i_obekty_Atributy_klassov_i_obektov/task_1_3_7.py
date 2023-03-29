@@ -11,6 +11,7 @@ eng: "Python"
 """
 
 
+# ваш код
 class Dictionary:
     rus = 'Питон'
     eng = 'Python'
@@ -18,14 +19,11 @@ class Dictionary:
 
 temp = getattr(Dictionary, 'rus_word', False)
 print(temp)
+# end ваш код
 
 # TEST-TASK___________________________________
-try:
-    issubclass(Dictionary, object)
-except NameError:
-    print("Вы не создали класс - Dictionary")
+from test1_3.test_1_3_7 import test_7
 
-assert hasattr(Dictionary, 'rus') and hasattr(Dictionary, 'eng'), "В классе должно быть два атрибута - rus, eng"
-assert hasattr(Dictionary, 'rus_word') == False, "Переменно rus_word не должно быть в классе"
-assert temp is False, "Значение присвоенное переменной temp неверное !!"
-print('Всё правильно, так держать !')
+test_7(Dictionary, temp)
+
+# END

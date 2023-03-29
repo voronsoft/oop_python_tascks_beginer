@@ -10,6 +10,7 @@ pages: 2
 """
 
 
+# ваш код
 class Notes:
     uid = 1005435
     title = "Шутка"
@@ -20,13 +21,11 @@ class Notes:
 temp = getattr(Notes, 'author')
 print(getattr(Notes, 'author'))
 
-# TEST-TASK___________________________________
-assert hasattr(Notes, 'uid'), "В классе отсутствует атрибут - uid"
-assert hasattr(Notes, 'title'), "В классе отсутствует атрибут - title"
-assert hasattr(Notes, 'author'), "В классе отсутствует атрибут - author"
-assert hasattr(Notes, 'pages'), "В классе отсутствует атрибут - pages"
+# end ваш код
 
-assert Notes.uid == 1005435 and Notes.title == "Шутка" and Notes.author == "И.С. Бах" and Notes.pages == 2, "Значение в каком то атрибуте несоответствуют заданию"
-assert getattr(Notes, "author") == "И.С. Бах", 'Неправильное значение атрибута author '
-assert temp == "И.С. Бах", "Неверное значение в переменной temp"
-print("Правильно !")
+# TEST-TASK___________________________________
+from test1_3.test_1_3_6 import test_6
+
+test_6(Notes, temp)
+
+# END
