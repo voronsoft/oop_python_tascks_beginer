@@ -17,6 +17,7 @@ P.S. На экран в программе ничего выводить не н
 """
 
 
+# ваш код:
 class Point:
     def __init__(self, x, y, color='black'):
         self.x = x
@@ -38,16 +39,10 @@ for i in range(0, 1000):
     k += 2
 # Для второго объекта в списке points укажите цвет 'yellow'.
 points[1].color = 'yellow'
+# end ваш код
 
 # TEST-TASK___________________________________
-p1 = Point(10, 20)
-p2 = Point(12, 5, 'red')
-assert isinstance(p1, Point), "p1 не создан"
-assert isinstance(p2, Point), "p2 не создан"
+from test1_5.test_1_5_3 import test_3
 
-assert hasattr(p1, 'x') and hasattr(p1, "y") and hasattr(p1, "color"), "В объекте должно быть 3 атрибута"
-assert p1.color == "black", "color по умолчанию должен принимать значение black"
-assert len(points) == 1000, "длина points не равна 1000"
-assert points[1].color == 'yellow', "ошибка, для второго объекта в списке points укажите цвет 'yellow'"
-assert points[10].x - points[11].x == -2, "ошибка, в каждом следующем объекте x и y должны увеличиваться на 2 !!"
-print("Правильно !")
+test_3(Point, points)
+# END

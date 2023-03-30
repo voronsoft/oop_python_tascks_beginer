@@ -44,39 +44,17 @@ stream = io.StringIO(s)
 sys.stdin = stream
 # END
 
-import sys
-
+# ваш код:
 # здесь объявляются все необходимые классы
-
 # считывание списка из входного потока (эту строку не менять)
 lst_in = list(map(str.strip, sys.stdin.readlines()))  # список lst_in в программе не менять
 
 
-# lst_in = ['1. Первые шаги в ООП',
-#           '1.1 Как правильно проходить этот курс',
-#           '1.2 Концепция ООП простыми словами',
-#           '1.3 Классы и объекты. Атрибуты классов и объектов',
-#           '1.4 Методы классов. Параметр self',
-#           '1.5 Инициализатор init и финализатор del',
-#           '1.6 Магический метод new. Пример паттерна Singleton',
-#           '1.7 Методы класса (classmethod) и статические методы (staticmethod)']
-
-
-# здесь создаются объекты классов и вызываются нужные методы
-
-# Для этого объявите в программе класс ListObject, объекты которого создаются командой:
-# obj = ListObject(data)
-# Каждый объект класса ListObject должен содержать локальные свойства:
-# next_obj - ссылка на следующий присоединенный объект (если следующего объекта нет, то next_obj = None);
-# data - данные объекта в виде строки.
 class ListObject:
     def __init__(self, data, next_obj=None):
         self.data = data
         self.next_obj = next_obj
 
-    # В самом классе ListObject должен быть объявлен метод:
-    # link(self, obj) - для присоединения объекта obj такого же класса к текущему объекту self
-    # (то есть, атрибут next_obj объекта self должен ссылаться на obj).
     def link(self, obj):
         self.next_obj = obj
 
@@ -87,15 +65,10 @@ for i in range(1, len(lst_in)):
     obj_new = ListObject(lst_in[i])
     obj.link(obj_new)
     obj = obj_new
+# end ваш код
 
 # TEST-TASK___________________________________
-assert isinstance(head_obj, ListObject) and hasattr(ListObject, 'link')
+from test1_5.test_1_5_9 import test_9
 
-lst_data = []
-h = head_obj
-while h:
-    lst_data.append(h.data)
-    h = h.next_obj
-
-assert lst_in == lst_data, "данные в объектах ListObject не совпадают с прочитанными данными (списком lst_in)"
-print("Правильно !")
+test_9(head_obj, ListObject, lst_in)
+# END

@@ -5,24 +5,26 @@
 
 my_money = Money(100)
 your_money = Money(1000)
-Здесь при создании объектов указывается количество денег, которое должно сохраняться в локальном свойстве (атрибуте) money каждого экземпляра класса.
+Здесь при создании объектов указывается количество денег,
+которое должно сохраняться в локальном свойстве (атрибуте) money каждого экземпляра класса.
 
 P.S. На экран в программе ничего выводить не нужно.
 """
 
 
-# здесь объявляйте класс Money
+# ваш код
 class Money:
     def __init__(self, s):
         self.money = s
 
 
+# end ваш код
+
 my_money = Money(100)
 your_money = Money(1000)
 
 # TEST-TASK___________________________________
-assert hasattr(my_money, "money"), "Пока неправильно"
-assert hasattr(your_money, "money"), "Пока неправильно"
-print(f"my_money {my_money.__dict__}")
-print(f"your_money {your_money.__dict__}")
-print("Правильно !")
+from test1_5.test_1_5_2 import test_2
+
+test_2(my_money, your_money)
+# END

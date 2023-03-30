@@ -44,6 +44,7 @@ P.S. Отображать на экране ничего не нужно, тол
 """
 
 
+# ваш код:
 # Объявите в программе следующие несколько классов:
 # CPU - класс для описания процессоров;
 # Объекты классов должны иметь следующие локальные свойства:
@@ -99,22 +100,10 @@ class MotherBoard:
 mb = MotherBoard('Asrok', 'Intel 1666', 'Kingston 8192', 'Godram 8192', 'Kingston 8192', 'Godram 8192', 'Godram 8192')
 # для проверки вывода по условию метода get_config(self)
 # print(mb.get_config())
-
+# end ваш код
 
 # TEST-TASK___________________________________
-assert isinstance(mb, MotherBoard) and hasattr(MotherBoard, 'get_config')
+from test1_5.test_1_5_7 import test_7
 
-
-def get_config():
-    mem_str = "; ".join([f"{x.name} - {x.volume}" for x in mb.mem_slots])
-
-    return [f"Материнская плата: {mb.name}",
-            f"Центральный процессор: {mb.cpu.name}, {mb.cpu.fr}",
-            f"Слотов памяти: {mb.total_mem_slots}",
-            f"Память: {mem_str}"]
-
-
-res1 = ("".join(mb.get_config())).replace(" ", "")
-res2 = ("".join(get_config())).replace(" ", "")
-assert res1 == res2, "метод get_config возвратил неверные данные"
-print("Правильно !")
+test_7(mb, MotherBoard)
+# END

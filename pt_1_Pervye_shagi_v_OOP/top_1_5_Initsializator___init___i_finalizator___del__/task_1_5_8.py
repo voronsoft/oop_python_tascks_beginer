@@ -40,6 +40,7 @@ P.S. Отображать на экране ничего не нужно, тол
 """
 
 
+# ваш код:
 # Объявите в программе класс Cart (корзина), объекты которого создаются командой:
 # cart = Cart()
 # Каждый объект класса Cart должен иметь локальное свойство goods - список объектов для покупки
@@ -115,54 +116,10 @@ cart.add(Cup('Кружка', '100'))
 # Названия и цены придумайте сами.
 # Проверка сгенерированного списка товаров
 # print(cart.get_list())
-
+# end ваш код
 
 # TEST-TASK___________________________________
-# Проверка класса Cart
-x = Cart()
-assert hasattr(x, 'goods') and len(x.goods) == 0, " в объекте класса Cart нет атрибута goods"
-assert hasattr(x, 'add'), "У объекта нет метода add"
-assert hasattr(x, 'remove'), "У объекта нет метода remove"
-assert hasattr(x, 'get_list'), "У объекта нет метода get_list"
-# ___
-# Проверка класса Table - столы;
-x = Table('наименование', '100')
-assert hasattr(x, 'name') and hasattr(x, 'price'), "В классе должны быть 2 атрибута name и price"
-# ___
-# Проверка класса TV - телевизоры;
-x = TV('наименование', '100')
-assert hasattr(x, 'name') and hasattr(x, 'price'), "В классе должны быть 2 атрибута name и price"
-# ___
-# Проверка класса Notebook - ноутбуки;
-x = Notebook('наименование', '100')
-assert hasattr(x, 'name') and hasattr(x, 'price'), "В классе должны быть 2 атрибута name и price"
-# ___
-# Проверка класса Cup - кружки.
-x = Cup('наименование', '100')
-assert hasattr(x, 'name') and hasattr(x, 'price'), "В классе должны быть 2 атрибута name и price"
-# ___
+from test1_5.test_1_5_8 import test_8
 
-cart = Cart()
-# Добавьте в него:
-# два телевизора (TV),
-for i in ('tv1 1000', 'tv2 2000'):
-    cart.add(TV(*i.split()))
-# один стол (Table),
-cart.add(Table('Стол', '555'))
-# два ноутбука (Notebook)
-for i in ('nout1 3000', 'nout2 4000'):
-    cart.add(Notebook(*i.split()))
-# одну кружку (Cup).
-cart.add(Cup('Кружка', '100'))
-
-# проверка объектов в списке cart.goods
-counts = {}
-for obj in cart.goods:
-    class_name = type(obj).__name__
-    if class_name in counts:
-        counts[class_name] += 1
-    else:
-        counts[class_name] = 1
-
-assert counts == {'TV': 2, 'Table': 1, 'Notebook': 2, 'Cup': 1}, "количество объектов неправильное"
-print("Правильный ответ !")
+test_8(Cart, Table, TV, Notebook, Cup)
+# END

@@ -23,6 +23,7 @@ P.S. На экран в программе ничего выводить не н
 """
 
 
+# ваш код:
 # Объявите три класса геометрических фигур: Line, Rect, Ellipse.
 # Должна быть возможность создавать объекты каждого класса следующими командами:
 # g1 = Line(a, b, c, d)
@@ -63,19 +64,10 @@ for i in range(len(elements)):
     if isinstance(elements[i], Line):
         elements[i].sp = (0, 0)
         elements[i].ep = (0, 0)
+# end ваш код
 
 # TEST-TASK___________________________________
-assert len(elements) == 217
+from test1_5.test_1_5_4 import test_4
 
-for e in elements:
-    assert isinstance(e, Line) or isinstance(e, Rect) or isinstance(e, Ellipse), \
-        "в списке elements должны быть только объекты классов Line, Rect, Ellipse"
-
-l = Line(1, 2, 3, 4)
-assert l.sp == (1, 2) and l.ep == (3, 4), "неверные значения в атрибутах sp, ep класса Line"
-
-for e in elements:
-    if isinstance(e, Line):
-        assert e.sp == (0, 0) and e.ep == (0, 0), "в объектах класса Line координаты должны быть равны нулю"
-
-print("Правильно !")
+test_4(elements, Line, Rect, Ellipse)
+# END
