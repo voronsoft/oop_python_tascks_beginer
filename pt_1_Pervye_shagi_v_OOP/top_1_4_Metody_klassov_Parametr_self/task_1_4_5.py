@@ -23,17 +23,17 @@ LIMIT_Y = [0, 10]
 "10 0 2 5 7"
 """
 
+# не изменять !!
 import io
 import sys
 
-# Создаю объект StringIO
-output = io.StringIO()
-# Перенаправляю стандартный вывод в StringIO
-sys.stdout = output
+console_out = io.StringIO()  # Создаем буфер
+sys.stdout = console_out  # Перенаправляем стандартный вывод (stdout) в буфер
 
 
-# то что выше не менять !!!
+# end
 
+# ваш код:
 # Объявите класс с именем Graph и методами:
 class Graph:
     # методами:
@@ -63,25 +63,33 @@ graph_1.set_data([10, -5, 100, 20, 0, 80, 45, 2, 5, 7])
 # На экране должна появиться строка с соответствующим набором чисел, записанных через пробел.
 # Например (вывод без кавычек): "10 0 2 5 7"
 graph_1.draw()
+# end ваш код
 
 # TEST-TASK___________________________________
-try:
-    hasattr(Graph, 'set_data')
-    hasattr(Graph, 'draw')
-except:
-    print("Проверьте методы в классе")
 
-# Перехва вывода в консоль
-# Получаем данные из StringIO (переменной output_str присваиваем то что выводится в консоль)
-output_str = output.getvalue()
-# Возвращаем стандартный вывод в консоль
-sys.stdout = sys.__stdout__
-try:
-    assert output_str == '10 0 2 5 7\n'
-except:
-    print("Пока не правильно !")
-    print(f"Ваш ответ: {output_str}")
-    print(f"Требуется: 10 0 2 5 7")
-else:
-    print(output_str)
-    print("Отлично !")
+from test1_4.test_1_4_5 import test_5  # импортируем функцию для проверки
+
+output = console_out.getvalue()  # Получаем содержимое буфера в переменную (для проверки)
+sys.stdout = sys.__stdout__  # Возвращаем стандартный вывод (stdout) в нормальное состояние
+test_5(Graph, output)  # проверяем класс и то что будет выведено в консоль
+
+# try:
+#     hasattr(Graph, 'set_data')
+#     hasattr(Graph, 'draw')
+# except:
+#     print("Проверьте методы в классе")
+#
+# # Перехват вывода в консоль
+# # Получаем данные из StringIO (переменной output_str присваиваем то что выводится в консоль)
+# output_str = output.getvalue()
+# # Возвращаем стандартный вывод в консоль
+# sys.stdout = sys.__stdout__
+# try:
+#     assert output_str == '10 0 2 5 7\n'
+# except:
+#     print("Пока не правильно !")
+#     print(f"Ваш ответ: {output_str}")
+#     print(f"Требуется: 10 0 2 5 7")
+# else:
+#     print(output_str)
+#     print("Отлично !")

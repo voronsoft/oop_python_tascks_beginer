@@ -8,27 +8,22 @@ class Stepik:
 my_st = Stepik()
 
 Выберите все верные варианты вызова метода next_task()
+
+my_st.next_task(Stepik)
+next_task(my_st)
+next_task(Stepik)
+my_st.next_task()
+Stepik.my_st.next_task()
+Stepik.next_task(my_st)
 """
 
-# Создайте список temp с правильными ответами через запятую
-# Пример temp = ['ответ1', 'ответ2']
-# Запустите файл на исполнение
-
 # Вставьте правильные ответы в переменную
+# Пример temp = ['ответ', 'ответ' ]
 temp = []
-# END
-
-# my_st.next_task(Stepik)
-# next_task(my_st)
-# next_task(Stepik)
-# my_st.next_task()
-# Stepik.my_st.next_task()
-# Stepik.next_task(my_st)
+# Запустите файл на исполнение для проверки
 
 # TEST-TASK___________________________________
-try:
-    assert len(temp) == 2 and "my_st.next_task()" in temp and "Stepik.next_task(my_st)" in temp
-except:
-    print("Неправильно, попробуйте снова")
-else:
-    print("Правильно !")
+from test1_4.test_1_4_6 import test_6
+
+test_6(temp)
+# END

@@ -1,8 +1,8 @@
 """
 Видео-разбор подвига (решение смотреть только после своей попытки): https://youtu.be/ljahVEppmxM
 
-Из входного потока читаются строки данных с помощью команды:
-lst_in = list(map(str.strip, sys.stdin.readlines()))  # считывание списка строк из входного потока
+Подаваемые данные:
+lst_in = ['1 Сергей 35 120000', '2 Федор 23 12000', '3 Иван 13 1200']
 в формате: id, name, old, salary (записанные через пробел). Например:
 
 1 Сергей 35 120000
@@ -37,19 +37,9 @@ Sample Input:
 2 Федор 23 12000
 3 Иван 13 1200
 """
-# код не менять
-import io
-import sys
-
-s = "1 Сергей 35 120000\n2 Федор 23 12000\n3 Иван 13 1200\n"
-stream = io.StringIO(s)
-sys.stdin = stream
-# END
-
-import sys
 
 # программу не менять, только добавить два метода
-lst_in = list(map(str.strip, sys.stdin.readlines()))  # считывание списка строк из входного потока
+lst_in = ['1 Сергей 35 120000', '2 Федор 23 12000', '3 Иван 13 1200']
 
 
 class DataBase:
@@ -79,19 +69,8 @@ class DataBase:
             self.lst_data.append(i)
 
 
-db = DataBase()
-db.insert(lst_in)
-
 # TEST-TASK___________________________________
-res1 = db.select(0, 50)
+from test1_4.test_1_4_9 import test_9
 
-lstgfghj8gh9jg2 = []
-for d in lst_in:
-    lstgfghj8gh9jg2.append(dict(zip(DataBase.FIELDS, d.split())))
-
-assert res1 == lstgfghj8gh9jg2, "метод select вернул неверные данные"
-
-res2 = db.select(0, 1)
-assert res2 == lstgfghj8gh9jg2[0:2], "некорректно работает метод select"
-
-print("Правильно !")
+test_9(DataBase, lst_in)  # проверка вашего решения
+# END

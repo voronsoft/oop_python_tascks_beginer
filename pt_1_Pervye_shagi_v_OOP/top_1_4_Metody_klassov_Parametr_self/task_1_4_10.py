@@ -35,19 +35,17 @@ milk - молоко
 Вывод в формате: идти ехать ходить
 """
 
-# код не менять !!!
+# не изменять !!
 import io
 import sys
 
-# Создаю объект StringIO
-output = io.StringIO()
-# Перенаправляю стандартный вывод в StringIO
-sys.stdout = output
+console_out = io.StringIO()  # Создаем буфер
+sys.stdout = console_out  # Перенаправляем стандартный вывод (stdout) в буфер
 
 
-# END !!!
+# end
 
-
+# ваш код:
 # Объявите класс с именем Translator (для перевода с английского на русский) со следующими методами:
 class Translator:
     d = dict()
@@ -81,9 +79,9 @@ class Translator:
             return self.d[eng]
 
 
-# Создайте экземпляр tr класса Translator 
+# # Создайте экземпляр tr класса Translator 
 tr = Translator()
-
+# 
 # # и вызовите метод add для следующих связок:
 # # tree - дерево
 tr.add(*'tree - дерево'.split(' - '))
@@ -110,18 +108,13 @@ tr.remove('car')
 # # С помощью метода translate() переведите слово go.
 print(*tr.translate('go'))
 
-# # Результат выведите на экран в виде строки из всех русских слов, связанных со словом go:
-# # Вывод в формате: идти ехать ходить
+# Результат выведите на экран в виде строки из всех русских слов, связанных со словом go:
+# Вывод в формате: идти ехать ходить
+# end ваш код
 
 # TEST-TASK___________________________________
-# Получите данные из StringIO
-output_str = output.getvalue()
-# Верните стандартный вывод
-sys.stdout = sys.__stdout__
-assert isinstance(tr, Translator)
-assert hasattr(Translator, 'add') and hasattr(Translator, 'remove') and hasattr(Translator, 'translate')
-assert tr.translate('tree')[0] == "дерево"
-assert len(tr.d['go']) == 3, "Не все связки добавленны в словарь"
-assert output_str == 'идти ехать ходить\n', "Формат вывода неправильный"
-print(output_str)
-print("Правильно !")
+from test1_4.test_1_4_10 import test_10  # импортируем функцию для проверки
+
+output = console_out.getvalue()  # Получаем содержимое буфера в переменную (для проверки)
+sys.stdout = sys.__stdout__  # Возвращаем стандартный вывод (stdout) в нормальное состояние
+test_10(Translator, tr, output)  # проверяем класс, объект tr и то что будет выведено в консоль

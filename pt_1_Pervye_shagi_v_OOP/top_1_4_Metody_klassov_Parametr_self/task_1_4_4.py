@@ -14,19 +14,18 @@ play() - для воспроизведения медиа-файла (вывод
 "Воспроизведение filemedia1"
 "Воспроизведение filemedia2"
 """
-# код не менять !!!
+# не изменять !!
 import io
 import sys
 
-# Создаю объект StringIO
-output = io.StringIO()
-# Перенаправляю стандартный вывод в StringIO
-sys.stdout = output
+console_out = io.StringIO()  # Создаем буфер
+sys.stdout = console_out  # Перенаправляем стандартный вывод (stdout) в буфер
 
 
-# END !!!
+# end
 
-# Тут напишите ваше решение:
+
+# ваш код:
 class MediaPlayer:
     def open(self, file):
         self.filename = file
@@ -43,20 +42,11 @@ media2.open("filemedia2")
 
 media1.play()
 media2.play()
+# end ваш код
 
 # TEST-TASK___________________________________
-# Получите данные из StringIO
-output_str = output.getvalue()
-# Верните стандартный вывод
-sys.stdout = sys.__stdout__
+from test1_4.test_1_4_4 import test_4  # импортируем функцию для проверки
 
-try:
-    assert output_str == 'Воспроизведение filemedia1\nВоспроизведение filemedia2\n'
-except:
-    print(f'Ваш ответ: \n{output_str}\nА нужно: ')
-    print('Воспроизведение filemedia1\nВоспроизведение filemedia2\n')
-    print('Попробуйте найти ошибку у себя в коде...')
-else:
-    # Выведите данные из переменной
-    print(output_str)
-    print("Правильно !")
+output = console_out.getvalue()  # Получаем содержимое буфера в переменную (для проверки)
+sys.stdout = sys.__stdout__  # Возвращаем стандартный вывод (stdout) в нормальное состояние
+test_4(MediaPlayer, output)  # проверяем класс и то что будет выведенно в консоль
