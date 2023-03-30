@@ -18,4 +18,3 @@ from test_1_2.test_1_2_6 import test_6
 
 test_6(temp)
 # END
-
