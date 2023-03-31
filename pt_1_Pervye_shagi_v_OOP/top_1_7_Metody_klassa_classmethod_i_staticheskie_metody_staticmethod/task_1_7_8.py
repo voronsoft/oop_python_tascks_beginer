@@ -30,6 +30,7 @@ P.S. В программе только объявить класс. На экр
 from string import ascii_lowercase, digits
 
 
+# ваш код:
 class CardCheck:
     # Для проверки допустимых символов в классе должен быть прописан атрибут:
     CHARS_FOR_NAME = ascii_lowercase.upper() + digits
@@ -84,17 +85,10 @@ class CardCheck:
 # Предполагается использовать класс CardCheck следующим образом (эти строчки в программе не писать):
 # is_number = CardCheck.check_card_number("1234-5678-9012-0000")
 # is_name = CardCheck.check_name("SERGEI BALAKIREV")
+# end ваш код
 
 # TEST-TASK___________________________________
-from string import ascii_lowercase, digits
+from test1_7.test_1_7_8 import test_8
 
-assert issubclass(CardCheck, object), 'не объявлен класс CardCheck'
-assert hasattr(CardCheck, 'check_card_number'), 'Отсутствует метод check_card_number'
-assert hasattr(CardCheck, 'check_name'), 'Отсутствует метод check_name'
-
-assert CardCheck.check_card_number("1234-5678-9012-0000"), 'Метод работает неправильно'
-assert CardCheck.check_card_number("12345678-9012-0000") is False, 'Метод работает неправильно'
-
-assert CardCheck.check_name("SERGEI BALAKIREV"), 'Метод check_name работает неправильно'
-assert CardCheck.check_name("фы фвв") is False, 'Метод check_name работает неправильно'
-print('Правильный ответ !')
+test_8(CardCheck)
+# END
