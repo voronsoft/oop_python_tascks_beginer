@@ -33,6 +33,7 @@ P.S. В программе на экран ничего выводить не н
 """
 
 
+# ваш код
 # Здесь объявляется класс Factory
 # Для реализации этой идеи необходимо вначале программы прописать класс Factory с двумя методами:
 # build_sequence(self) - для создания начального пустого списка (метод должен возвращать пустой список);
@@ -60,18 +61,10 @@ class Loader:
         return seq
 
 
+# end ваш код
+
 # TEST-TASK___________________________________
-ld = Loader()
-s = '4, 5, -6.5, -0.5'
-res = ld.parse_format(s, Factory())
-#
-assert hasattr(Factory, "build_sequence")
-assert hasattr(Factory, "build_number")
-#
-x = Factory()
-assert x.build_sequence() == [] and len(x.build_sequence()) == 0, \
-    "ошибка, метод build_sequence должен возвращать пустой список"
-assert type(x.build_number('4.5')) == float and type(x.build_number('4')) == float, \
-    "ошибка, метод build_number работает неправильно"
-print(f"Результат: {res}")
-print("Правильно, так держать !")
+from test1_6.test_1_6_10 import test_10
+
+test_10(Loader, Factory)
+# END

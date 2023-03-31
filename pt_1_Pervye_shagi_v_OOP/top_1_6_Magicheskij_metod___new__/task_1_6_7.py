@@ -15,6 +15,7 @@ P.S. В программе на экран ничего выводить не н
 """
 
 
+# ваш код:
 class SingletonFive:
     temp = None
 
@@ -29,7 +30,10 @@ class SingletonFive:
 
 
 objs = [SingletonFive(str(n)) for n in range(10)]  # эту строчку не менять
+# end ваш код
 
 # TEST-TASK___________________________________
-assert len(set(objs)) == 5, "ошибка, попробуйте ещё раз"
-print("Правильно !")
+from test1_6.test_1_6_7 import test_7
+
+test_7(objs)
+# END
