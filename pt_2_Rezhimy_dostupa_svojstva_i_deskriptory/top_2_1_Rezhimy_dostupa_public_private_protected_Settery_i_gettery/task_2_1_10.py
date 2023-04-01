@@ -31,6 +31,7 @@ from string import ascii_lowercase, ascii_uppercase, digits
 from random import randint, choice
 
 
+# ваш код:
 class EmailValidator:
     chars_from_email = ascii_lowercase + ascii_uppercase + digits + '_.@'
 
@@ -102,21 +103,10 @@ class EmailValidator:
 # drand_mail = EmailValidator.get_random_email()
 # P.S. В программе требуется объявить только класс. На экран ничего выводить не нужно.
 
+# end ваш код
+
 # TEST-TASK___________________________________
-assert EmailValidator.check_email("sc_lib@list.ru") == True and \
-       EmailValidator.check_email("sc_lib@list_ru") == False and \
-       EmailValidator.check_email("sc@lib@list_ru") == False and \
-       EmailValidator.check_email("sc.lib@list_ru") == False and \
-       EmailValidator.check_email("sclib@list.ru") == True and \
-       EmailValidator.check_email("sc.lib@listru") == False and \
-       EmailValidator.check_email("sc..lib@list.ru") == False, \
-    "метод check_email отработал некорректно"
+from test2_1.test_2_1_10 import test_10
 
-m = EmailValidator.get_random_email()
-assert EmailValidator.check_email(m) == True, \
-    "метод check_email забраковал сгенерированный email методом get_random_email"
-
-assert EmailValidator() is None, "при создании объекта класса EmailValidator возвратилось значение отличное от None"
-
-assert EmailValidator._EmailValidator__is_email_str('abc'), "метод __is_email_str() вернул False для строки"
-print("Правильный ответ !!")
+test_10(EmailValidator)
+# END

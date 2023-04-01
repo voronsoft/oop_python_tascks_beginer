@@ -18,6 +18,7 @@ P.S. На экран ничего выводить не нужно.
 """
 
 
+# ваш код:
 class Clock:
     def __init__(self, time=0):
         # приватная локальная переменная time для хранения текущего времени, целое число
@@ -52,17 +53,10 @@ class Clock:
 # clock = Clock(время)
 # Создайте объект clock класса Clock и установите время, равным 4530.
 clock = Clock(4530)
+# end ваш код
 
 # TEST-TASK___________________________________
-assert isinstance(clock, Clock) and hasattr(Clock, 'set_time') and hasattr(Clock, 'get_time'), \
-    "в классе Clock присутствуют не все методы"
+from test2_1.test_2_1_3 import test_3
 
-assert clock.get_time() == 4530, "текущее время в объекте clock не равно 4530"
-
-clock.set_time(10)
-assert clock.get_time() == 10, "неверное текущее время, некорректно работает метод set_time"
-clock.set_time(-10)
-assert clock.get_time() == 10, "неверное текущее время, некорректно работает метод set_time"
-clock.set_time(1000001)
-assert clock.get_time() == 10, "неверное текущее время, некорректно работает метод set_time"
-print("Правильный ответ !")
+test_3(clock, Clock)
+# END

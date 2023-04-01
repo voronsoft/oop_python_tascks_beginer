@@ -5,23 +5,14 @@ self.data - приватный режим доступа (private)
 self._word - защищенный режим доступа (protected)
 self.__buffer - публичный режим доступа (public)
 """
-# Создайте список temp с правильными ответами через запятую
-# Пример temp = ['self.data - ответ', 'self.data - ответ1']
-# Запустите файл на исполнение
 
 # Вставьте правильные ответы в переменную
+# Пример temp = ['ответ', 'ответ' ]
 temp = []
-# END
+# Запустите файл на исполнение для проверки
 
 # TEST-TASK___________________________________
-try:
-    assert len(temp) == 3 and "self.data - публичный режим доступа (public)" in temp and \
-           "self._word - защищенный режим доступа (protected)" in temp and \
-           "self.__buffer - приватный режим доступа (private)" in temp
+from test2_1.test_2_1_1 import test_1
 
-except:
-    print("Пока неправильно попробуйте другие варианты")
-else:
-    [print(_) for _ in temp]
-    print()
-    print("Правильно !")
+test_1(temp)
+# END

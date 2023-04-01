@@ -29,6 +29,7 @@ P.S. На экран ничего выводить не нужно.
 """
 
 
+# ваш код:
 # pt = Point(x, y)
 # где x, y - координаты точки на плоскости (целые или вещественные числа).
 # При этом в объектах класса Point должны формироваться следующие локальные свойства:
@@ -110,23 +111,10 @@ rect = Rectangle(0, 0, 20, 34)
 # r2.set_coords(Point(5, 5), Point(6, 6))
 # r2.draw()
 
+# end ваш код
+
 # TEST-TASK___________________________________
-assert isinstance(rect, Rectangle) and hasattr(Rectangle, 'set_coords') and hasattr(Rectangle, 'get_coords') and \
-       hasattr(Rectangle, 'draw'), "в классе Rectangle присутствуют не все методы"
+from test2_1.test_2_1_8 import test_8
 
-r = Rectangle(1, 2.6, 3.3, 4)
-r.set_coords(Point(1, 2), Point(3, 4))
-sp, ep = r.get_coords()
-a, b = sp.get_coords()
-c, d = ep.get_coords()
-assert a == 1 and b == 2 and c == 3 and d == 4, "метод get_coords вернул неверные значения координат"
-
-r = Rectangle(Point(1, 2), Point(3, 4))
-sp, ep = r.get_coords()
-a, b = sp.get_coords()
-c, d = ep.get_coords()
-assert a == 1 and b == 2 and c == 3 and d == 4, "метод get_coords вернул неверные значения координат"
-
-assert isinstance(r._Rectangle__sp, Point) and isinstance(r._Rectangle__ep, Point), \
-    "атрибуты __sp и __ep должны ссылаться на объекты класса Point"
-print('Правильно')
+test_8(rect, Rectangle, Point)
+# END
