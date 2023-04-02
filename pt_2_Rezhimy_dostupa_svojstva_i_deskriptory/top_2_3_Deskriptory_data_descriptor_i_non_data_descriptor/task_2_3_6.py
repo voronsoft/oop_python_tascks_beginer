@@ -23,6 +23,7 @@ P.S. На экран в программе выводить ничего не н
 """
 
 
+# ваш код:
 # Объявите дескриптор данных FloatValue, который бы устанавливал и возвращал вещественные значения.
 # Descriptor
 class FloatValue:
@@ -84,24 +85,13 @@ for i in range(len(table.cells)):
         k.value = x
         x += 1.0
 
+# Вставьте правильные ответы в переменную
+# Пример temp = ['ответ', 'ответ' ]
+temp = []
+# Запустите файл на исполнение для проверки
+
 # TEST-TASK___________________________________
-a = Cell()
+from test2_3.test_2_3_6 import test_6
 
-assert isinstance(table, TableSheet)
-assert len(table.cells) == 5 and len(table.cells[0]) == 3
-
-assert type(table.cells) == list
-
-res = [int(x.value) for row in table.cells for x in row]
-assert res == list(range(1, 16))
-
-table.cells[0][0].value = 1.0
-x = table.cells[1][0].value
-
-try:
-    table.cells[0][0].value = 'a'
-except TypeError:
-    assert True
-else:
-    assert False, "не сгенерировалось исключение TypeError"
-print("Правильно !")
+test_6(Cell, table, TableSheet)
+# END
