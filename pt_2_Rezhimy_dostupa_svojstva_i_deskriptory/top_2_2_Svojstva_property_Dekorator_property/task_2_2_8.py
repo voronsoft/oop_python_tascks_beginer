@@ -68,6 +68,7 @@ P.S. В программе требуется объявить только кл
 """
 
 
+# ваш код:
 # Для реализации решающих деревьев в программе следует объявить два класса:
 # TreeObj - для описания вершин и листьев решающего дерева;
 class TreeObj:
@@ -159,22 +160,10 @@ class DecisionTree:
         return obj
 
 
+# end ваш код
+
 # TEST-TASK___________________________________
-assert hasattr(DecisionTree, 'add_obj') and hasattr(DecisionTree, 'predict'), \
-    "в классе DecisionTree должны быть методы add_obj и predict"
+from test2_2.test_2_2_8 import test_8
 
-assert type(TreeObj.left) == property and type(TreeObj.right) == property, \
-    "в классе TreeObj должны быть объекты-свойства left и right"
-
-root = DecisionTree.add_obj(TreeObj(0))
-v_11 = DecisionTree.add_obj(TreeObj(1), root)
-v_12 = DecisionTree.add_obj(TreeObj(2), root, False)
-DecisionTree.add_obj(TreeObj(-1, "программист"), v_11)
-DecisionTree.add_obj(TreeObj(-1, "кодер"), v_11, False)
-DecisionTree.add_obj(TreeObj(-1, "посмотрим"), v_12)
-DecisionTree.add_obj(TreeObj(-1, "нет"), v_12, False)
-
-assert DecisionTree.predict(root, [1, 1, 0]) == 'программист', "неверный вывод решающего дерева"
-assert DecisionTree.predict(root, [0, 1, 0]) == 'нет', "неверный вывод решающего дерева"
-assert DecisionTree.predict(root, [0, 1, 1]) == 'посмотрим', "неверный вывод решающего дерева"
-print("Правильный ответ !!")
+test_8(DecisionTree, TreeObj)
+# END

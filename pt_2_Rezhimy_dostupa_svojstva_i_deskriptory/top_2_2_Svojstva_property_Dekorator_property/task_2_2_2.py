@@ -14,26 +14,13 @@ pr = property(); pr = pr.setter(set_pr); pr = pr.getter(get_pr); pr = pr.deleter
 pr = property(get_pr)
 """
 
-# Создайте список temp с правильными ответами через запятую
-# Пример temp = [ответ', 'ответ']
-# Запустите файл на исполнение
-
 # Вставьте правильные ответы в переменную
+# Пример temp = ['ответ', 'ответ' ]
 temp = []
-# END
+# Запустите файл на исполнение для проверки
 
 # TEST-TASK___________________________________
-try:
-    assert len(temp) == 5 and \
-           "pr = property(get_pr, set_pr)" in temp and \
-           "pr = property(get_pr, set_pr, del_pr)" in temp and \
-           "pr = property(); pr = pr.setter(set_pr); pr = pr.getter(get_pr)" in temp and \
-           "pr = property(); pr = pr.setter(set_pr); pr = pr.getter(get_pr); pr = pr.deleter(del_pr)" in temp and \
-           "pr = property(get_pr)" in temp
+from test2_2.test_2_2_2 import test_2
 
-except:
-    print("Пока неправильно попробуйте другие варианты")
-else:
-    [print(_) for _ in temp]
-    print()
-    print("Правильно !")
+test_2(temp)
+# END
