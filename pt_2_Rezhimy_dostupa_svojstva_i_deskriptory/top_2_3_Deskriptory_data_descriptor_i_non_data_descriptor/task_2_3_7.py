@@ -145,6 +145,7 @@ assert a.st == "dапарпароп", "дескриптор StringValue сохр
 # код не менять !!!
 import io
 import sys
+
 # Создаю объект StringIO
 output = io.StringIO()
 # Перенаправляю стандартный вывод в StringIO
