@@ -37,6 +37,7 @@ P.S. На экран ничего выводить не нужно.
 """
 
 
+# ваш код:
 class Shop:
     """Shop - класс для управления магазином в целом;"""
 
@@ -108,63 +109,10 @@ class Product:
             object.__delattr__(self, item)
 
 
-# ПРОВЕРКА
-# Пример использования классов (в программе эти строчки не писать):
-# shop = Shop("Балакирев и К")
-# book = Product("Python ООП", 100, 1024)
-# shop.add_product(book)
-# shop.add_product(Product("Python", 150, 512))
-# for p in shop.goods:
-#     print(f"{p.name}, {p.weight}, {p.price}")
-# # P.S. На экран ничего выводить не нужно.
-# shop.remove_product(p)
+# end ваш код
 
 # TEST-TASK___________________________________
-assert issubclass(Shop, object), "Класс Book не является подклассом object, скорее всего не создан"
-assert issubclass(Product, object), "Класс Product не является подклассом object, скорее всего не создан"
+from test3_1.test_3_1_4 import test_4
 
-# проверка атрибутов в классах
-shop = Shop("Балакирев и К")
-# проверка названия
-assert 'Балакирев и К' in shop.__dict__.values(), "ошибка в инициализаторе, не создается название магазина "
-
-assert hasattr(shop, "goods"), "Не создан локальный атрибут - goods"
-assert hasattr(shop, 'add_product'), "Метод add_product не определен в объекте"
-assert hasattr(shop, 'remove_product'), "Метод add_product не определен в объекте"
-
-# проверка атрибутов в классах
-book = Product("Python ООП", 100, 1024)
-
-assert hasattr(book, 'id'), "Не создан локальный атрибут - id"
-assert type(book.id) == int, "номер id должен быть целым числом"
-
-assert hasattr(book, 'weight'), "Не создан локальный атрибут - weight"
-assert type(book.weight) in (int, float) and book.weight > 0, \
-    "weight должен быть целое или вещественное положительное число"
-
-assert hasattr(book, 'price'), "Не создан локальный атрибут - price"
-assert type(book.price) in (int, float) and book.price > 0, \
-    "price должна быть целое или вещественное положительное число "
-
-# проверка, что номера id уникальны
-lst = [Product("Python ООП", 100, 1024).id for _ in range(0, 20)]
-assert any(False if lst[_] in lst[_ + 1:] else True for _ in range(len(lst))), "ошибка id не уникальны !!!"
-
-# проверка add_product
-shop.add_product(Product("Python ООП", 100, 1024))
-x = Product("Test", 10, 10)
-shop.add_product(x)
-assert shop.goods[1] == x, "метод add_product отработал некоректно"
-
-# проверка remove_product
-shop.remove_product(x)
-assert x not in shop.goods, "метод remove_product отработал некоректно"
-
-try:
-    del x.id
-except AttributeError:
-    assert True
-else:
-    assert False, "не сгенерировалось исключение AttributeError при попытке удаления из продукта, атрибута id"
-
-print("Правильный ответ !")
+test_4(Shop, Product)
+# END
