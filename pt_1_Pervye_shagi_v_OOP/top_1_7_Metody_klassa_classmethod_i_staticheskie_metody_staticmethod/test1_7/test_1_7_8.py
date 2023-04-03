@@ -1,6 +1,10 @@
 # TEST-TASK___________________________________
 def test_8(CardCheck):
-    assert issubclass(CardCheck, object), 'не объявлен класс CardCheck'
+    try:
+        issubclass(CardCheck, object)
+    except NameError:
+        print("Вы не создали класс - CardCheck")
+
     assert hasattr(CardCheck, 'check_card_number'), 'Отсутствует метод check_card_number'
     assert hasattr(CardCheck, 'check_name'), 'Отсутствует метод check_name'
 

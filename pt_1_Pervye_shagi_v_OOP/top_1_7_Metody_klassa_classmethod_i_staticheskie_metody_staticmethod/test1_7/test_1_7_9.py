@@ -1,7 +1,14 @@
 # TEST-TASK___________________________________
 def test_9(Video, YouTube, output_str):
-    assert issubclass(Video, object), 'Не объявлен класс Video'
-    assert issubclass(YouTube, object), 'Не объявлен класс YouTube'
+    try:
+        issubclass(Video, object)
+    except NameError:
+        print("Вы не создали класс - Video")
+
+    try:
+        issubclass(YouTube, object)
+    except NameError:
+        print("Вы не создали класс - YouTube")
 
     assert hasattr(Video, 'play'), 'Метод play не создан'
     assert hasattr(Video, 'create'), 'Метод create не создан'
