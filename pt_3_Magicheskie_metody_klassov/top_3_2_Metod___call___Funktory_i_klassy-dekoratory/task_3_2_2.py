@@ -21,6 +21,8 @@ P.S. Выводить на экран ничего не нужно, только
 
 P.P.S. Дополнительное домашнее задание: попробуйте реализовать этот же функционал с использованием замыканий функций.
 """
+
+# ваш код:
 from random import randint, choice  # функция для генерации целых случайных значений в диапазоне [a; b]
 
 
@@ -42,5 +44,10 @@ class RandomPassword:
 # ПРОВЕРКА __call__
 rnd = RandomPassword("qwertyuiopasdfghjklzxcvbnm0123456789!@#$%&*", 5, 20)
 lst_pass = [rnd() for _ in range(3)]
+# end ваш код
 
-# РЕШЕНИЕ через замыкания
+# TEST-TASK___________________________________
+from test3_2.test_3_2_2 import test_2
+
+test_2(rnd, lst_pass)
+# END

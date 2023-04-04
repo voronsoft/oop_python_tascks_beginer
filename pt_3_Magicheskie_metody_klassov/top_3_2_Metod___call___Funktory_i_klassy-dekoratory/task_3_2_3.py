@@ -20,6 +20,7 @@ P.S. Ваша задача только объявить класс ImageFileAcc
 """
 
 
+# ваш код:
 class ImageFileAcceptor:
     def __init__(self, extensions):
         self.extensions = extensions
@@ -28,21 +29,11 @@ class ImageFileAcceptor:
         if str(*args).split('.')[-1] in self.extensions:
             return args
 
-# # ПРОВЕРКА
-# filenames = ["boat.jpg", "web.png", "text.txt", "python.doc", "ava.jpg", "forest.jpeg", "eq_1.png", "eq_2.png"]
-# acceptor = ImageFileAcceptor(('jpg', 'bmp', 'jpeg'))
-# image_filenames = filter(acceptor, filenames)
-# print(list(image_filenames))  # ["boat.jpg", "ava.jpg", "forest.jpeg"]
-# 
-# # ТЕСТ
-# fs = ["boat.jpg", "web.png", "text.txt", "python.doc", "ava.8.jpg", "forest.jpeg", "eq_1.png", "eq_2.png", "my.html",
-#       "data.shtml"]
-# acceptor = ImageFileAcceptor(("jpg", "png"))
-# res = filter(acceptor, fs)
-# assert set(res) == set(["boat.jpg", "web.png", "ava.8.jpg", "eq_1.png",
-#                         "eq_2.png"]), "с помощью объекта класса ImageFileAcceptor был сформирован неверный список файлов"
-# #
-# acceptor = ImageFileAcceptor(("jpeg", "html"))
-# res = filter(acceptor, fs)
-# assert set(res) == set(
-#     ["forest.jpeg", "my.html"]), "с помощью объекта класса ImageFileAcceptor был сформирован неверный список файлов"
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_2.test_3_2_3 import test_3
+
+test_3(ImageFileAcceptor)
+# END

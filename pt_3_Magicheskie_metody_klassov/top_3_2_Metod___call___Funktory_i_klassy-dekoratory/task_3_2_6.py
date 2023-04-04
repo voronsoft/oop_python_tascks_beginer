@@ -25,6 +25,7 @@ P.S. На экран ничего выводить не нужно.
 """
 
 
+# ваш код:
 class RenderList:
     def __init__(self, teg):
         self.teg = teg if teg in ('ol', 'ul') else 'ul'
@@ -32,16 +33,12 @@ class RenderList:
     def __call__(self, *args, **kwargs):
         return '\n'.join([f'<{self.teg}>', *map(lambda x: f'<li>{x}</li>', args[0]), f'</{self.teg}>'])
 
-# # ПРОВЕРКА
-# lst = ["Пункт меню 1", "Пункт меню 2", "Пункт меню 3"]
-# render = RenderList("ol")
-# html = render(lst)
-# print(html)
-# print()
-# render = RenderList("ul")
-# html = render(lst)
-# print(html)
-# print()
-# render = RenderList("odssf")
-# html = render(lst)
-# print(html)
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_2.test_3_2_6 import test_6
+
+test_6(RenderList)
+
+# END

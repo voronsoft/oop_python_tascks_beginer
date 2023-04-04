@@ -16,12 +16,13 @@ P.S. На экран ничего выводить не нужно.
 """
 
 
+# ваш код:
 class InputDigits:
 
     def __init__(self, string):
         self.string = string
 
-    def __call__(self, string, *args, **kwargs):
+    def __call__(self, string):
         lst = list(map(int, string.split(' ')))
         return lst
 
@@ -31,6 +32,13 @@ def input_dg(x):
     return x
 
 
-# ПРОВЕРКА
 st = input()
 res = input_dg(st)
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_2.test_3_2_9 import test_9
+
+test_9(InputDigits, input_dg)
+
+# END

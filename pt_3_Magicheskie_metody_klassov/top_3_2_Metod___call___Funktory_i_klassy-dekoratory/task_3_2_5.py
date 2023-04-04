@@ -20,6 +20,7 @@ P.S. На экран ничего выводить не нужно.
 """
 
 
+# ваш код:
 class DigitRetrieve:
     def __init__(self):
         self.num = '-.'
@@ -39,13 +40,12 @@ class DigitRetrieve:
         else:
             return None
 
-# # ПРОВЕРКА
-# dg = DigitRetrieve()
-# d1 = dg("123")   # 123 (целое число)
-# d2 = dg("45.54")   # None (не целое число)
-# d3 = dg("-56")   # -56 (целое число)
-# d4 = dg("12fg")  # None (не целое число)
-# d5 = dg("abc")   # None (не целое число)
-# d6 = dg('-5')
-# st = ["123", "abc", "-56.4", "0", "-5"]
-# digits = list(map(dg, st))  # [123, None, None, 0, -5]
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_2.test_3_2_5 import test_5
+
+test_5(DigitRetrieve)
+
+# END

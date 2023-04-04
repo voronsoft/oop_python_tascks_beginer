@@ -29,6 +29,7 @@ def get(self, func, request, *args, **kwargs): ...
 """
 
 
+# ваш код:
 class HandlerGET:
     def __init__(self, func):
         self.fn = func
@@ -48,18 +49,11 @@ class HandlerGET:
         return f"GET: {func(request)}"
 
 
-# # ПРОВЕРКА
-# # ТЕСТ
-@HandlerGET
-def index(request):
-    return "главная страница сайта"
+# end ваш код
 
+# TEST-TASK___________________________________
+from test3_2.test_3_2_7 import test_7
 
-res = index({"method": "GET"})
-# assert res == "GET: главная страница сайта", "декорированная функция вернула неверные данные"
-# res = index({"method": "POST"})
-# assert res is None, "декорированная функция вернула неверные данные"
-# res = index({"method": "POST2"})
-# assert res is None, "декорированная функция вернула неверные данные"
-# res = index({})
-# assert res == "GET: главная страница сайта", "декорированная функция вернула неверные данные"
+test_7(HandlerGET)
+
+# END

@@ -1,7 +1,7 @@
 """Видео-разбор подвига (решение смотреть только после своей попытки): https://youtu.be/H4cJ0fBVHpc
 
-Подвиг 10 (развитие подвига 9). Объявите класс-декоратор InputValues с параметром render -
-функция или объект для преобразования данных из строк в другой тип данных.
+Подвиг 10 (развитие подвига 9). Объявите класс-декоратор InputValues с параметром render - функция
+или объект для преобразования данных из строк в другой тип данных.
 Чтобы реализовать такой декоратор в инициализаторе __init__() следует указать параметр render,
 а магический метод __call__() определяется как функция-декоратор:
 
@@ -37,34 +37,33 @@ res = input_dg()
 """
 
 
-class RenderDigit:
-    """объект для преобразования"""
-
-    def __call__(self, string, *args, **kwargs):
-        if string.isdigit() and '.' not in string:
-            return int(string)
-        elif string[0] == '-' and string[1:].isdigit():
-            return int(string)
-        else:
-            return None
-
-
-@RenderDigit
+# ваш код:
 class InputValues:
-    """для преобразования данных из строк в другой тип данных"""
-
-    def __init__(self, render):  # render - ссылка на функцию или объект для преобразования
+    def __init__(self, render):
         self.render = render
 
-    def __call__(self, func, *args, **kwargs):  # func - ссылка на декорируемую функцию
+    def __call__(self, func):
+        """InputValues"""
         def wrapper(*args, **kwargs):
-            return list(map(self.render, func(*args, **kwargs).split()))
+            return [self.render(x) for x in func().split()]
 
         return wrapper
 
 
-# ПРОВЕРКА
-# render = RenderDigit()
-input_dg = InputValues(input)
+class RenderDigit:
+    def __call__(self, *args, **kwargs):
+        """RenderDigit"""
+        return int(args[0]) if args[0].isnumeric() or args[0][0] == "-" and args[0][1:].isnumeric() else None
+
+
+@InputValues(render=RenderDigit())
+def input_dg():
+    return input()
+
 res = input_dg()
 print(res)
+# end ваш код
+# нет теста для задания ... недостаточно знаний 
+
+
+

@@ -73,6 +73,7 @@ class LoginForm:
 
 
 # здесь прописывайте классы валидаторов: LengthValidator и CharsValidator
+# ваш код:
 class LengthValidator:
     """Проверка длины данных в диапазоне [min_length; max_length]"""
 
@@ -100,9 +101,12 @@ class CharsValidator:
         else:
             return False
 
-# # ТЕСТ
-# # Пример использования класса LoginForm (в программе не писать):
-# lg = LoginForm("Вход на сайт", validators=[LengthValidator(3, 50), CharsValidator(ascii_lowercase + digits)])
-# lg.post({"login": "root", "password": "panda"})
-# if lg.is_validate():
-#     print("Дальнейшая обработка данных формы")
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_2.test_3_2_4 import test_4
+
+test_4(LengthValidator, CharsValidator, LoginForm)
+
+# END
