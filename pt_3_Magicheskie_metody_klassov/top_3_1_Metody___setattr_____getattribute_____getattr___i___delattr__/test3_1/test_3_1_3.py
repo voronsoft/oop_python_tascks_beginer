@@ -1,6 +1,9 @@
 # TEST-TASK___________________________________
 def test_3(Book, book):
-    assert issubclass(Book, object), "Класс Book не является подклассом object, скорее всего не создан"
+    try:
+        issubclass(Book, object)
+    except NameError:
+        print("Вы не создали класс - Book")
 
     assert book.__dict__ == {
         'title': 'Python ООП',

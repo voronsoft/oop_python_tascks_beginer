@@ -1,7 +1,14 @@
 # TEST-TASK___________________________________
 def test_4(Shop, Product):
-    assert issubclass(Shop, object), "Класс Book не является подклассом object, скорее всего не создан"
-    assert issubclass(Product, object), "Класс Product не является подклассом object, скорее всего не создан"
+    try:
+        issubclass(Shop, object)
+    except NameError:
+        print("Вы не создали класс - Shop")
+
+    try:
+        issubclass(Product, object)
+    except NameError:
+        print("Вы не создали класс - Product")
 
     # проверка атрибутов в классах
     shop = Shop("Балакирев и К")
