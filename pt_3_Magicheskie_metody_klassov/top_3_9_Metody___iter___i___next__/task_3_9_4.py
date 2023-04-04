@@ -51,7 +51,8 @@ g = GeomRange(1, 1.2, 2)
 it = iter(g);
 res = next(g)
 #
-for x in g: print(x)
+for x in g:
+    print(x)
 #
 res = next(g);
 res = next(g)
