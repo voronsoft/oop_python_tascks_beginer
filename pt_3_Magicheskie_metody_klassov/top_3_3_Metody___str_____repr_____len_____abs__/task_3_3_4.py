@@ -25,6 +25,7 @@ P.S. В программе нужно только объявить класс, 
 """
 
 
+# ваш код:
 class WordString:
 
     def __init__(self, string=''):
@@ -50,14 +51,14 @@ class WordString:
 
     def __call__(self, indx, *args, **kwargs):
         """Должно возвращаться слово по его индексу (indx - порядковый номер слова в строке, начиная с 0)"""
+
         return self.__string.split(' ')[indx]
 
-# # TEST
-# # Пример пользования классом WordString (эти строчки в программе писать не нужно):
-# words = WordString()
-# words.string = "       1 2 3       4 5 6 7  "
-# n = len(words)
-# first = "" if n == 0 else words(0)
-# print(words.string)
-# print(f"Число слов: {n}; первое слово: {first}")
-# # P.S. В программе нужно только объявить класс, выводить в консоль ничего не нужно.
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_3.test_3_3_4 import test_4
+
+test_4(WordString)
+# END

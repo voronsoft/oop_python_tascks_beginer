@@ -7,15 +7,37 @@ print(book)
 "Книга: {title}; {author}; {pages}"
 Например:
 "Книга: Муму; Тургенев; 123"
-Прочитайте из входного потока строки с информацией по книге командой:
-lst_in = list(map(str.strip, sys.stdin.readlines()))
-(строки идут в порядке: title, author, pages). Создайте объект класса Book и выведите его строковое представление в консоль.
+Прочитайте строки с информацией по книге командой:
+s = "Python ООП\nБалакирев С.М.\n1024"
+lst_in = list(map(str.strip, s.splitlines()))
+(строки идут в порядке: title, author, pages).
+Создайте объект book класса Book и выведите его строковое представление в консоль.
+
+Sample Input:
+Python ООП
+Балакирев С.М.
+1024
+
+Sample Output:
+Книга: Python ООП; Балакирев С.М.; 1024
+Напишите программу. Тестируется через s
 """
+# не изменять !!
+import io
 import sys
 
-# здесь пишите программу
+console_out = io.StringIO()  # Создаем буфер
+sys.stdout = console_out  # Перенаправляем стандартный вывод (stdout) в буфер
 
-lst_in = list(map(str.strip, sys.stdin.readlines()))  # считывание списка из входного потока (эту строчку не менять)
+s = "Python ООП\nБалакирев С.М.\n1024"
+lst_in = list(map(str.strip, s.splitlines()))
+
+
+# end
+
+
+# здесь пишите программу
+# ваш код:
 
 
 class Book:
@@ -28,6 +50,14 @@ class Book:
         return f"Книга: {self.title}; {self.author}; {self.pages}"
 
 
-# ТЕСТ
 book = Book(lst_in[0], lst_in[1], lst_in[2])
 print(book)
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_3.test_3_3_2 import test_2
+
+output = console_out.getvalue()  # Получаем содержимое буфера в переменную (для проверки)
+sys.stdout = sys.__stdout__  # Возвращаем стандартный вывод (stdout) в нормальное состояние
+test_2(Book, book, output)
+# END

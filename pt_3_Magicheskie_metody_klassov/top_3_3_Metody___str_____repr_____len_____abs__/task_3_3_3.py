@@ -22,6 +22,7 @@ P.S. В программе нужно только объявить класс, 
 """
 
 
+# ваш код:
 class Model:
 
     def __init__(self, id=None, fio=None, old=None):
@@ -44,7 +45,15 @@ class Model:
         else:
             return 'Model'
 
+
 # # TEST
 # model = Model()
 # model.query(id=1, fio='Sergey', old=33)
 # print(model)
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_3.test_3_3_3 import test_3
+
+test_3(Model)
+# END

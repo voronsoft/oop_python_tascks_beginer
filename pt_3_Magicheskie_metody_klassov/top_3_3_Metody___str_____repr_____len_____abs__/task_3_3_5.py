@@ -46,6 +46,7 @@ P.S. На экран в программе ничего выводить не н
 """
 
 
+# ваш код:
 # Для этого объявите класс LinkedList который будет представлять связный список в целом и иметь набор следующих методов:
 class LinkedList:
 
@@ -185,32 +186,11 @@ class ObjList:
     def data(self, data):
         self.__data = data
 
-# # ТЕСТ
-# ln = LinkedList()
-# ln.add_obj(ObjList("Сергей"))
-# ln.add_obj(ObjList("Балакирев"))
-# ln.add_obj(ObjList("Python ООП"))
-# ln.remove_obj(2)
-# assert len(ln) == 2, "функция len вернула неверное число объектов в списке, возможно, неверно работает метод remove_obj()"
-# ln.add_obj(ObjList("Python"))
-# assert ln(2) == "Python", "неверное значение атрибута __data, взятое по индексу"
-# assert len(ln) == 3, "функция len вернула неверное число объектов в списке"
-# assert ln(1) == "Балакирев", "неверное значение атрибута __data, взятое по индексу"
-# 
-# n = 0
-# h = ln.head
-# while h:
-#     assert isinstance(h, ObjList)
-#     h = h._ObjList__next
-#     n += 1
-# 
-# assert n == 3, "при перемещении по списку через __next не все объекты перебрались"
-# 
-# n = 0
-# h = ln.tail
-# while h:
-#     assert isinstance(h, ObjList)
-#     h = h._ObjList__prev
-#     n += 1
-# 
-# assert n == 3, "при перемещении по списку через __prev не все объекты перебрались"
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_3.test_3_3_5 import test_5
+
+test_5(LinkedList, ObjList)
+# END

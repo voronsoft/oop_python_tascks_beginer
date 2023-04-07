@@ -7,21 +7,20 @@ dt = DeltaClock(clock1, clock2)
 
 Эти объекты должны создаваться командой:
 clock = Clock(hours, minutes, seconds)
+Должны содержать локальные атрибуты hours, minutes, seconds
 где hours, minutes, seconds - часы, минуты, секунды (целые неотрицательные числа).
 
 В классе Clock также должен быть (по крайней мере) один метод (возможны и другие):
-
 - get_time() - возвращает текущее время в секундах (то есть, значение hours * 3600 + minutes * 60 + seconds).
 
+Объекты класса DeltaClock должны содержать только 2 локальных атрибута объекта класса Clock не больше, не меньше
 После создания объекта dt класса DeltaClock, с ним должны выполняться команды:
-
 str_dt = str(dt)   # возвращает строку разницы времен clock1 - clock2 в формате: часы: минуты: секунды
-len_dt = len(dt)   # разницу времен clock1 - clock2 в секундах (целое число)
+len_dt = len(dt)   # возвращает разницу времен clock1 - clock2 в секундах (целое число)
 print(dt)   # отображает строку разницы времен clock1 - clock2 в формате: часы: минуты: секунды
 Если разность получается отрицательной, то разницу времен считать нулевой.
 
 Пример использования классов (эти строчки в программе писать не нужно):
-
 dt = DeltaClock(Clock(2, 45, 0), Clock(1, 15, 0))
 print(dt) # 01: 30: 00
 len_dt = len(dt) # 5400
@@ -31,6 +30,7 @@ P.S. На экран ничего выводить не нужно, только
 """
 
 
+# ваш код:
 class DeltaClock:
     def __init__(self, a, b):
         self.a = a
@@ -45,7 +45,7 @@ class DeltaClock:
         return f'{h:02}: {m:02}: {s:02}'
 
     def __len__(self):
-        """ возвращает разницу времен clock1 - clock2 в секундах (целое число)"""
+        """Возвращает разницу времен clock1 - clock2 в секундах (целое число)"""
         x = self.a.get_time() - self.b.get_time()
         return x if x > 0 else 0
 
@@ -68,10 +68,11 @@ class Clock:
         """возвращает текущее время в секундах (то есть, значение hours * 3600 + minutes * 60 + seconds)"""
         return self.hours * 3600 + self.minutes * 60 + self.seconds
 
-# # TEST
-# a = Clock(2, 45, 0)
-# b = Clock(1, 15, 0)
-# dt = DeltaClock(a, b)
-# print(a.get_time())
-# print(dt)  # 01: 30: 00
-# len_dt = len(dt)  # 5400
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_3.test_3_3_8 import test_8
+
+test_8(Clock, DeltaClock)
+# END

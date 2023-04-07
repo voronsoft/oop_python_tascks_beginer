@@ -27,13 +27,15 @@ res_len = len(vector3D) # res_len = 3
 res_abs = abs(vector3D)
 P.S. На экран ничего выводить не нужно, только объявить класс RadiusVector.
 """
+
+# ваш код:
 from math import sqrt
 
 
 class RadiusVector:
     def __init__(self, *num):
         num = [*num]
-        if len(num) == 1 and type(num[0]) == int and num[0] > 1:
+        if len(num) == 1 and type(num[0]) == int and num[0] >= 1:
             self.cord = [0 for i in range(num[0])]
 
         if len(num) > 1:
@@ -59,11 +61,11 @@ class RadiusVector:
     def __abs__(self):
         return sqrt(sum([i * i for i in self.cord]))
 
-# TEST
-# vector3D = RadiusVector(3)
-# vector3D.set_coords(3, -5.6, 8)
-# a, b, c = vector3D.get_coords()
-# vector3D.set_coords(3, -5.6, 8, 10, 11) # ошибки быть не должно, последние две координаты игнорируются
-# vector3D.set_coords(1, 2) # ошибки быть не должно, меняются только первые две координаты
-# res_len = len(vector3D) # res_len = 3
-# res_abs = abs(vector3D)
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_3.test_3_3_7 import test_7
+
+test_7(RadiusVector)
+# END

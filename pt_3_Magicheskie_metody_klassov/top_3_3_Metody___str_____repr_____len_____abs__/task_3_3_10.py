@@ -17,6 +17,8 @@ P.S. На экран ничего выводить не нужно, только
 """
 
 
+# ваш код:
+
 class PolyLine:
     def __init__(self, *args):
         self.lst_coords = list(args)
@@ -36,7 +38,11 @@ class PolyLine:
     def get_coords(self):
         return self.lst_coords
 
-# # TEST
-# poly = PolyLine((1, 2), (3, 5), (0, 10), (-1, 8))
-# poly.add_coord(10, 20)
-# poly.remove_coord(0)
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_3.test_3_3_10 import test_10
+
+test_10(PolyLine)
+# END
