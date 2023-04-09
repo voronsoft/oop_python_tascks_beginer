@@ -41,6 +41,7 @@ P.S. В программе требуется только объявить кл
 """
 
 
+# ваш код:
 class Budget:
     """Для управления семейным бюджетом"""
 
@@ -86,18 +87,11 @@ class Item:
     def __radd__(self, other):
         return self.money + other
 
-# # TEST
-# my_budget = Budget()
-# my_budget.add_item(Item("Курс по Python ООП", 2000))
-# my_budget.add_item(Item("Курс по Django", 5000.01))
-# my_budget.add_item(Item("Курс по NumPy", 0))
-# my_budget.add_item(Item("Курс по C++", 1500.10))
-#
-# # вычисление общих расходов
-# s = 0
-# for x in my_budget.get_items():
-#     s = s + x
-# #
-# a = Item("Курс по Python ООП", 2000)
-# b = Item("Курс по Django", 5000.01)
-# x = a + b
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_4.test_3_4_8 import test_8
+
+test_8()
+# END
