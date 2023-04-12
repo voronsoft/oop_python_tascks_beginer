@@ -1,7 +1,7 @@
 # TEST-TASK___________________________________
 def test_1(temp):
     try:
-        assert len(temp) == 4 and \
+        assert len(temp) == 6 and \
                "__add__()--для реализации оператора сложения +" in temp and \
                "__sub__()--для реализации оператора вычитания -" in temp and \
                "__mul__()--для реализации оператора умножения *" in temp and \
