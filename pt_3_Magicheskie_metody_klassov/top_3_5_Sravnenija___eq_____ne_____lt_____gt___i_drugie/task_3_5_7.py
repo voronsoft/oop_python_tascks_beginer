@@ -29,6 +29,7 @@ P.S. На экран в программе ничего выводить не н
 """
 
 
+# ваш код:
 class FileAcceptor:
     def __init__(self, *args):
         self.lst = args
@@ -48,16 +49,11 @@ class FileAcceptor:
     def __add__(self, other):
         return FileAcceptor(*tuple(set(self.lst + other.lst)))
 
-# TEST
-# acceptor = FileAcceptor('jpg', 'bmp', 'jpeg')
-# acceptor('filename.py')
-# filenames = ["boat.jpg", "ans.web.png", "text.txt", "www.python.doc", "my.ava.jpg", "forest.jpeg", "eq_1.png", "eq_2.xls"]
-# filenames1 = list(filter(acceptor, filenames))
-# 
-# acceptor1 = FileAcceptor("jpg", "jpeg", "png")
-# acceptor2 = FileAcceptor("png", "bmp")
-# acceptor12 = acceptor1 + acceptor2    # ("jpg", "jpeg", "png", "bmp")
-# 
-# acceptor_images = FileAcceptor("jpg", "jpeg", "png")
-# acceptor_docs = FileAcceptor("txt", "doc", "xls")
-# filenames = list(filter(acceptor_images + acceptor_docs, filenames))
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_5.test_3_5_7 import test_7
+
+test_7(FileAcceptor)
+# END

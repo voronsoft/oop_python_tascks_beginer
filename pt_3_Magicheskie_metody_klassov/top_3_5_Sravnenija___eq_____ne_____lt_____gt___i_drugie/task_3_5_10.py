@@ -37,6 +37,7 @@ P.S. В программе только объявить классы, выво�
 """
 
 
+# ваш код:
 class Box:
     """Ящик"""
 
@@ -100,16 +101,11 @@ class Thing:
     def __ne__(self, other):  # !=
         return self.name.lower() != other.name.lower() or self.mass != other.mass
 
-# # TEST
-# b1 = Box()
-# b2 = Box()
-#
-# b1.add_thing(Thing('мел', 100))
-# b1.add_thing(Thing('тряпка', 200))
-# b1.add_thing(Thing('доска', 2000))
-#
-# b2.add_thing(Thing('тряпка', 200))
-# b2.add_thing(Thing('мел', 100))
-# b2.add_thing(Thing('доска', 2000))
-#
-# res = b1 == b2  # True
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_5.test_3_5_10 import test_10
+
+test_10(Box, Thing)
+# END

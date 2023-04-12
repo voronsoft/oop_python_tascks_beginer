@@ -56,6 +56,7 @@ P.S. В программе на экран ничего выводить не н
 """
 
 
+# ваш код:
 class CentralBank:
     rates = {'rub': 72.5, 'dollar': 1.0, 'euro': 1.15}  # курс валюты по отношению к доллару
 
@@ -87,74 +88,70 @@ class CentralBank:
             return obj_cash.volume / e
 
 
-# DESCRIPTOR
-class Descriptor:
-    """Дескриптор"""
-
-    def __set_name__(self, owner, name):
-        """Формируем имя"""
-        self.name = "__" + name
-
-    def __get__(self, instance, owner):
-        """Получить значение"""
-        return instance.__dict__[self.name]
-
-    def __set__(self, instance, value):
-        """Записать значение"""
-        instance.__dict__[self.name] = value
-
-
-# END
-
-
 class MoneyR:  # - для рублевых кошельков
-    cb = Descriptor()
-    volume = Descriptor()
-
     # __cb - ссылка на класс CentralBank (центральный банк, изначально None);
     # __volume - объем денежных средств в кошельке (если не указано, то 0).
     def __init__(self, volume=0):
-        self.cb = None
-        self.volume = volume
+        self.__cb = None
+        self.__volume = volume
+
+    # ########## property
+    @property
+    def cb(self):
+        return self.__cb
+
+    @cb.setter
+    def cb(self, value):
+        self.__cb = value
+
+    @property
+    def volume(self):
+        return self.__volume
+
+    @volume.setter
+    def volume(self, value):
+        self.__volume = value
+
+    # ########## end property
 
     # ########## операции сравнения
     def __gt__(self, other):  # >
-        """Rub"""
+        """Rub >"""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) > CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __lt__(self, other):  # <
-        """Rub"""
+        """Rub <"""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) < CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __eq__(self, other):  # ==
-        """Rub"""
+        """Rub =="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return abs(CentralBank.exchange(self) - CentralBank.exchange(other)) < 0.1  # 0.1
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __ne__(self, other):  # !=
-        """Rub"""
+        """Rub !="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) != CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __ge__(self, other):  # >=
-        """Rub"""
+        """Rub >="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) >= CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __le__(self, other):  # <=
-        """Rub"""
+        """Rub <="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) <= CentralBank.exchange(other)
         else:
@@ -164,53 +161,69 @@ class MoneyR:  # - для рублевых кошельков
 
 
 class MoneyD:  # - для долларовых кошельков
-    cb = Descriptor()
-    volume = Descriptor()
-
     # __cb - ссылка на класс CentralBank (центральный банк, изначально None);
     # __volume - объем денежных средств в кошельке (если не указано, то 0).
     def __init__(self, volume=0):
-        self.cb = None
-        self.volume = volume
+        self.__cb = None
+        self.__volume = volume
+
+    # ########## property
+    @property
+    def cb(self):
+        return self.__cb
+
+    @cb.setter
+    def cb(self, value):
+        self.__cb = value
+
+    @property
+    def volume(self):
+        return self.__volume
+
+    @volume.setter
+    def volume(self, value):
+        self.__volume = value
+
+    # ########## end property
 
     # ########## операции сравнения
     def __gt__(self, other):  # >
-        """D"""
+        """D >"""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) > CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __lt__(self, other):  # <
-        """D"""
+        """D <"""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) < CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __eq__(self, other):  # ==
-        """D"""
+        """D =="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return abs(CentralBank.exchange(self) - CentralBank.exchange(other)) < 0.1  # 0.1
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __ne__(self, other):  # !=
-        """D"""
+        """D !="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) != CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __ge__(self, other):  # >=
-        """D"""
+        """D >="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) >= CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __le__(self, other):  # <=
-        """D"""
+        """D <="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) <= CentralBank.exchange(other)
         else:
@@ -220,53 +233,69 @@ class MoneyD:  # - для долларовых кошельков
 
 
 class MoneyE:  # - для евро-кошельков
-    cb = Descriptor()
-    volume = Descriptor()
-
     # __cb - ссылка на класс CentralBank (центральный банк, изначально None);
     # __volume - объем денежных средств в кошельке (если не указано, то 0).
     def __init__(self, volume=0):
-        self.cb = None
-        self.volume = volume
+        self.__cb = None
+        self.__volume = volume
+
+    # ########## property
+    @property
+    def cb(self):
+        return self.__cb
+
+    @cb.setter
+    def cb(self, value):
+        self.__cb = value
+
+    @property
+    def volume(self):
+        return self.__volume
+
+    @volume.setter
+    def volume(self, value):
+        self.__volume = value
+
+    # ########## end property
 
     # ########## операции сравнения
     def __gt__(self, other):  # >
-        """E"""
+        """E >"""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) > CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __lt__(self, other):  # <
-        """E"""
+        """E <"""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) < CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __eq__(self, other):  # ==
-        """E"""
+        """E =="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return abs(CentralBank.exchange(self) - CentralBank.exchange(other)) < 0.1  # 0.1
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __ne__(self, other):  # !=
-        """E"""
+        """E !="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) != CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __ge__(self, other):  # >=
-        """E"""
+        """E >="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) >= CentralBank.exchange(other)
         else:
             raise ValueError('Неизвестен курс валют')
 
     def __le__(self, other):  # <=
-        """E"""
+        """E <="""
         if self.cb == CentralBank and other.cb == CentralBank:
             return CentralBank.exchange(self) <= CentralBank.exchange(other)
         else:
@@ -274,26 +303,11 @@ class MoneyE:  # - для евро-кошельков
 
     # ########## END операции сравнения
 
-# # TEST
-# bank = CentralBank()
-# rub = MoneyR(800)  # с нулевым балансом
-# rub1 = MoneyR(800.005)  # с нулевым балансом
-# dl = MoneyD(1501.25)  # с балансом в 1501.25 долларов
-# euro = MoneyE(100)  # с балансом в 100 евро
-# CentralBank.register(rub)
-# CentralBank.register(rub1)
-# CentralBank.register(dl)
-# CentralBank.register(euro)
-# x = dl > rub
-# x1 = dl < rub
-#
-# x2 = dl >= euro
-# x3 = dl <= euro
-#
-# x4 = rub == euro
-# x5 = rub != euro
-# x6 = euro > rub
-# x7 = euro < dl
-# x8 = euro > dl
-# x9 = dl < euro
-# x10 = rub == rub1
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_5.test_3_5_8 import test_8
+
+test_8(CentralBank, MoneyR, MoneyE, MoneyD)
+# END
