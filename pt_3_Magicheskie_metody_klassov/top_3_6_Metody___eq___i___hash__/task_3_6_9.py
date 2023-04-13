@@ -30,10 +30,11 @@ Sample Input:
 Sample Output:
 """
 
-s_inp = input()  # эту строку (переменную s_inp) в программе не менять
+# s_inp = input()  # эту строку (переменную s_inp) в программе не менять
 
 
-# s_inp = '1 2 3; 4 5 6.78; 1 2 3; 3 1 2.5'
+# ваш код:
+s_inp = '1 2 3; 4 5 6.78; 1 2 3; 3 1 2.5'
 
 
 class Dimensions:
@@ -59,9 +60,17 @@ class Dimensions:
 
 # # TEST
 # Сформируйте на основе прочитанной строки список lst_dims из объектов класса Dimensions.
-# После этого отсортируйте этот список по возрастанию (неубыванию) хэшей этих объектов так,
+# После этого отсортируйте этот список по возрастанию (не убыванию) хэшей этих объектов так,
 # чтобы объекты с равными хэшами стояли друг за другом.
 s = [[int(k) if k.isdigit() else float(k) for k in i.split()] for i in s_inp.split('; ')]
 lst_dims = [Dimensions(*_) for _ in s]
 lst_dims = sorted(lst_dims, key=hash)
 h = [hash(i) for i in lst_dims]
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_6.test_3_6_9 import test_9
+
+test_9(Dimensions, lst_dims, s_inp)
+# END

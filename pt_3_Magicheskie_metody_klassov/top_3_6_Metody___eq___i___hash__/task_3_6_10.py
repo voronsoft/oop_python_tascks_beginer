@@ -24,6 +24,7 @@ tr() - возвращает площадь треугольника (можно 
 
 P.S. На экран ничего выводить не нужно, только объявить класс Triangle.
 """
+# ваш код:
 from math import sqrt
 
 
@@ -83,26 +84,10 @@ class Triangle:
         return s
 
 
-# TEST
-tr = Triangle(5, 4, 3)
-assert tr.a == 5 and tr.b == 4 and tr.c == 3, "дескрипторы вернули неверные значения"
-#
-try:
-    tr = Triangle(-5, 4, 3)
-except ValueError:
-    assert True
-else:
-    assert False, "не сгенерировалось исключение ValueError"
-#
-#
-try:
-    tr = Triangle(10, 1, 1)
-except ValueError:
-    assert True
-else:
-    assert False, "не сгенерировалось исключение ValueError"
-#
-#
-tr = Triangle(5, 4, 3)
-assert len(tr) == 12, "функция len вернула неверное значение"
-assert 5.9 < tr() < 6.1, "метод __call__ вернул неверное значение"
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_6.test_3_6_10 import test_10
+
+test_10(Triangle)
+# END
