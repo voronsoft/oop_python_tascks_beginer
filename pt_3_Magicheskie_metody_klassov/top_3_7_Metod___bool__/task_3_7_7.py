@@ -28,6 +28,7 @@ P.S. На экран ничего выводить не нужно.
 """
 
 
+# ваш код:
 class Ellipse:
 
     def __init__(self, *args):
@@ -65,10 +66,10 @@ for i in lst_geom:
     if all((hasattr(i, 'x1'), hasattr(i, 'x2'), hasattr(i, 'y1'), hasattr(i, 'y2'))):
         i.get_coords()
 
-# TEST
-# el1 = Ellipse()  # без создания локальных атрибутов x1, y1, x2, y2
-# el2 = Ellipse(1, 1, 2, 2)
-# q_1 = bool(el2)
-# q_2 = bool(el1)
-# q_3 = el2.get_coords() # YES
-# #el1.get_coords() # AttributeError('нет координат для извлечения')
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_7.test_3_7_7 import test_7
+
+test_7(Ellipse, lst_geom)
+# END

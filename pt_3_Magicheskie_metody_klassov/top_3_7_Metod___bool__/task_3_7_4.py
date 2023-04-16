@@ -13,7 +13,10 @@ bool(player)
 
 С помощью команды:
 
-lst_in = list(map(str.strip, sys.stdin.readlines()))
+lst_in = ['Балакирев; 34; 2048',
+          'Mediel; 27; 0',
+          'Влад; 18; 9012',
+          'Nina P; 33; 0']
 считываются строки из входного потока в список строк lst_in. Каждая строка записана в формате:
 
 "имя; возраст; очки"
@@ -42,16 +45,12 @@ lst_in = ['Балакирев; 34; 2048',
 Sample Output:
 """
 
-import sys
-
+# ваш код:
 # считывание списка из входного потока (эту строчку и список lst_in не менять)
-lst_in = list(map(str.strip, sys.stdin.readlines()))
-
-
-# lst_in = ['Балакирев; 34; 2048',
-#           'Mediel; 27; 0',
-#           'Влад; 18; 9012',
-#           'Nina P; 33; 0']
+lst_in = ['Балакирев; 34; 2048',
+          'Mediel; 27; 0',
+          'Влад; 18; 9012',
+          'Nina P; 33; 0']
 
 
 class Player:
@@ -74,3 +73,10 @@ players = [Player(*i.split(';')) for i in lst_in]
 # Отфильтруйте этот список (создайте новый: players_filtered), оставив всех игроков с числом очков больше нуля.
 # Используйте для этого стандартную функцию filter() совместно с функцией bool() языка Python.
 players_filtered = list(filter(bool, players))
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_7.test_3_7_4 import test_4
+
+test_4(Player, players, lst_in, players_filtered)
+# END

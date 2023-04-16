@@ -10,6 +10,7 @@ bool(line)
 P.S. На экран ничего выводить не нужно. Только объявить класс.
 """
 
+# ваш код:
 from math import sqrt
 
 
@@ -32,6 +33,11 @@ class Line:
     def __len__(self):
         return True if sqrt((self.x1 - self.x2) ** 2 + (self.y1 - self.y2) ** 2) > 1 else False
 
-# TEST
-# line = Line(0, 0, 0, 1)
-# x = bool(line)
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_7.test_3_7_6 import test_6
+
+test_6(Line)
+# END
