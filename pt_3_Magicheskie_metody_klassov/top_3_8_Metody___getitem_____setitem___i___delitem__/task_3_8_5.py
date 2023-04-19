@@ -52,6 +52,7 @@ P.P.S. В качестве домашнего задания
 """
 
 
+# ваш код:
 # Вам необходимо написать программу для удобного обращения с таблицами однотипных данных
 # (чисел, строк, булевых значений и т.п.), то есть, все ячейки таблицы должны представлять какой-то один указанный тип.
 # Для этого в программе необходимо объявить три класса:
@@ -123,21 +124,12 @@ class TableValues:  # для работы с таблицей в целом.
     def __setitem__(self, key, value):
         self.cells[key[0]][key[1]].value = value
 
-# # TEST
-# tb = TableValues(3, 2, cell=CellInteger)
-# tb[0, 0] = 1
-# assert tb[0, 0] == 1, "некорректно работает запись и/или считывание значения в ячейку таблицы по индексам"
-# 
-# try:
-#     tb[2, 1] = 1.5
-# except ValueError:
-#     assert True
-# else:
-#     assert False, "не сгенерировалось исключение ValueError"
-# 
-# for row in tb.cells:
-#     for x in row:
-#         assert isinstance(x, CellInteger), "коллекция cells должна содержать только объекты класса  CellInteger"
-# 
-# cell = CellInteger(10)
-# assert cell.value == 10, "дескриптор value вернул неверное значение"
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_8.test_3_8_5 import test_5
+
+test_5(TableValues, CellInteger)
+
+# END

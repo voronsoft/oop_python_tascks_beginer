@@ -42,6 +42,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class SparseTable:
     def __init__(self):
         # В каждом объекте этого класса должны создаваться локальные публичные атрибуты:
@@ -108,37 +109,12 @@ class Cell:
     def __init__(self, value):
         self.value = value
 
-# TEST
-# st = SparseTable()
-# st.add_data(2, 5, Cell(25))
-# st.add_data(1, 1, Cell(11))
-# assert st.rows == 3 and st.cols == 6, "неверные значения атрибутов rows и cols"
-# #
-# try:
-#     v = st[3, 2]
-# except ValueError:
-#     assert True
-# else:
-#     assert False, "не сгенерировалось исключение ValueError"
-# #
-# st[3, 2] = 100
-# assert st[3, 2] == 100, "неверно отработал оператор присваивания нового значения в ячейку таблицы"
-# assert st.rows == 4 and st.cols == 6, "неверные значения атрибутов rows и cols"
-# #
-# st.remove_data(1, 1)
-# try:
-#     v = st[1, 1]
-# except ValueError:
-#     assert True
-# else:
-#     assert False, "не сгенерировалось исключение ValueError"
-# #
-# try:
-#     st.remove_data(1, 1)
-# except IndexError:
-#     assert True
-# else:
-#     assert False, "не сгенерировалось исключение IndexError"
-# #
-# d = Cell('5')
-# assert d.value == '5', "неверное значение атрибута value в объекте класса Cell, возможно, некорректно работает инициализатор класса"
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test3_8.test_3_8_10 import test_10
+
+test_10(SparseTable, Cell)
+
+# END
