@@ -145,24 +145,25 @@ class TicTacToe:
 
         # проверка поля по горизонтали
         win_human_row = any(
-            [all(_) for _ in [[True if j.value == self.HUMAN_X else False for j in i] for i in self.pole]])
+                [all(_) for _ in [[True if j.value == self.HUMAN_X else False for j in i] for i in self.pole]])
         win_comp_row = any(
-            [all(_) for _ in [[True if j.value == self.COMPUTER_O else False for j in i] for i in self.pole]])
+                [all(_) for _ in [[True if j.value == self.COMPUTER_O else False for j in i] for i in self.pole]])
 
         # проверка поля по вертикали
         win_human_col = any(
-            [all([True if self.pole[i][_].value == self.HUMAN_X else False for i in range(len(self.pole))]) for _ in
-             range(len(self.pole))])
+                [all([True if self.pole[i][_].value == self.HUMAN_X else False for i in range(len(self.pole))]) for _ in
+                 range(len(self.pole))])
         win_comp_col = any(
-            [all([True if self.pole[i][_].value == self.COMPUTER_O else False for i in range(len(self.pole))]) for _ in
-             range(len(self.pole))])
+                [all([True if self.pole[i][_].value == self.COMPUTER_O else False for i in range(len(self.pole))]) for _
+                 in
+                 range(len(self.pole))])
 
         # проверка поля по диагоналям
         win_human_diag = all([self.pole[i][i].value == self.HUMAN_X for i in range(len(self.pole))]) or all(
-            [self.pole[i][-1 - i].value == self.HUMAN_X for i in range(len(self.pole))])
+                [self.pole[i][-1 - i].value == self.HUMAN_X for i in range(len(self.pole))])
 
         win_comp_diag = all([self.pole[i][i].value == self.COMPUTER_O for i in range(len(self.pole))]) or all(
-            [self.pole[i][-1 - i].value == self.COMPUTER_O for i in range(len(self.pole))])
+                [self.pole[i][-1 - i].value == self.COMPUTER_O for i in range(len(self.pole))])
 
         # Кто выиграл проверяем
         if any([win_human_row, win_human_col, win_human_diag]):
@@ -179,8 +180,8 @@ class TicTacToe:
     def free_cell_check(self):
         """Проверка свободных клеток"""
         answer = any(
-            [(True if self.pole[j][i].value == self.FREE_CELL else False) for j in range(len(self.pole)) for i in
-             range(len(self.pole))])
+                [(True if self.pole[j][i].value == self.FREE_CELL else False) for j in range(len(self.pole)) for i in
+                 range(len(self.pole))])
         return answer
 
     def human_go(self):
@@ -211,9 +212,11 @@ class TicTacToe:
         if self.free_cell_check and self.human != True:
             while True:
                 x = choice(
-                    range(len(self.pole)))  # random.choice(sequence) - случайный элемент непустой последовательности.
+                        range(
+                                len(self.pole)))  # random.choice(sequence) - случайный элемент непустой последовательности.
                 y = choice(
-                    range(len(self.pole)))  # random.choice(sequence) - случайный элемент непустой последовательности.
+                        range(
+                                len(self.pole)))  # random.choice(sequence) - случайный элемент непустой последовательности.
                 # проверяем пустая ли клетка
                 if self.pole[x][y].value == 0:
                     # комп ставит нолик
@@ -272,71 +275,10 @@ class Cell:
         else:
             return False
 
-# TEST PROGRAM
-# game = TicTacToe()
-# game.init()
-# step_game = 0
-# while game:
-#     game.show()
-#
-#     if step_game % 2 == 0:
-#         game.human_go()
-#     else:
-#         game.computer_go()
-#
-#     step_game += 1
-#
-# game.show()
-#
-# if game.is_human_win:
-#     print("Поздравляем! Вы победили!")
-# elif game.is_computer_win:
-#     print("Все получится, со временем")
-# else:
-#     print("Ничья.")
-# #
-# #
-# TEST BALAKIREV
-# cell = Cell()
-# assert cell.value == 0, "начальное значение атрибута value объекта класса Cell должно быть равно 0"
-# assert bool(cell), "функция bool для объекта класса Cell вернула неверное значение"
-# cell.value = 1
-# assert bool(cell) == False, "функция bool для объекта класса Cell вернула неверное значение"
-# 
-# assert hasattr(TicTacToe, 'show') and hasattr(TicTacToe, 'human_go') and hasattr(TicTacToe,
-#                                                                                  'computer_go'), "класс TicTacToe должен иметь методы show, human_go, computer_go"
-# 
-# game = TicTacToe()
-# assert bool(game), "функция bool вернула неверное значения для объекта класса TicTacToe"
-# assert game[0, 0] == 0 and game[2, 2] == 0, "неверные значения ячеек, взятые по индексам"
-# game[1, 1] = TicTacToe.HUMAN_X
-# assert game[1, 1] == TicTacToe.HUMAN_X, "неверно работает оператор присваивания нового значения в ячейку игрового поля"
-# 
-# game[0, 0] = TicTacToe.COMPUTER_O
-# assert game[
-#            0, 0] == TicTacToe.COMPUTER_O, "неверно работает оператор присваивания нового значения в ячейку игрового поля"
-# 
-# game.init()
-# assert game[0, 0] == TicTacToe.FREE_CELL and game[
-#     1, 1] == TicTacToe.FREE_CELL, "при инициализации игрового поля все клетки должны принимать значение из атрибута FREE_CELL"
-# 
-# try:
-#     game[3, 0] = 4
-# except IndexError:
-#     assert True
-# else:
-#     assert False, "не сгенерировалось исключение IndexError"
-# 
-# game.init()
-# assert game.is_human_win == False and game.is_computer_win == False and game.is_draw == False, "при инициализации игры атрибуты is_human_win, is_computer_win, is_draw должны быть равны False, возможно не пересчитывается статус игры при вызове метода init()"
-# 
-# game[0, 0] = TicTacToe.HUMAN_X
-# game[1, 1] = TicTacToe.HUMAN_X
-# game[2, 2] = TicTacToe.HUMAN_X
-# assert game.is_human_win and game.is_computer_win == False and game.is_draw == False, "некорректно пересчитываются атрибуты is_human_win, is_computer_win, is_draw. Возможно не пересчитывается статус игры в момент присвоения новых значения по индексам: game[i, j] = value"
-# 
-# game.init()
-# game[0, 0] = TicTacToe.COMPUTER_O
-# game[1, 0] = TicTacToe.COMPUTER_O
-# game[2, 0] = TicTacToe.COMPUTER_O
-# assert game.is_human_win == False and game.is_computer_win and game.is_draw == False, "некорректно пересчитываются атрибуты is_human_win, is_computer_win, is_draw. Возможно не пересчитывается статус игры в момент присвоения новых значения по индексам: game[i, j] = value"
+
+# end ваш код
+# TEST-TASK___________________________________
+from test3_10.test_3_10_1 import test_1
+
+test_1(Cell, TicTacToe)
+# END
