@@ -32,6 +32,7 @@ P.S. В программе нужно объявить только класс. 
 """
 
 
+# ваш код:
 class Person:
     def __init__(self, fio, job, old, salary, year_job):
         self.fio = str(fio)  # ФИО сотрудника (строка);
@@ -84,11 +85,10 @@ class Person:
         else:
             raise StopIteration
 
-# # TEST
-# pers = Person('Гейтс Б.', 'бизнесмен', 61, 1000000, 46)
-# # print(pers[0])
-# pers[0] = 'Балакирев С.М.'
-# # print(pers[0])
-# for v in pers:
-#     print(v)
-# #pers[5] = 123 # IndexError
+
+# end ваш код
+# TEST-TASK___________________________________
+from test3_9.test_3_9_5 import test_5
+
+test_5(Person)
+# END

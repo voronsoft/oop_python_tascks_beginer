@@ -35,6 +35,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 # В классе Stack должны быть методы:
 # push_back(obj) - для добавления нового объекта obj в конец стека;
 # push_front(obj) - для добавления нового объекта obj в начало стека.
@@ -126,22 +127,10 @@ class StackObj:
         self.data = str(data)  # ссылка на данные объекта (строка)
         self.next = None  # ссылка на следующий объект стека (если его нет, то next = None).
 
-# TEST
-# st = Stack()
-# st.push_back(StackObj("1"))
-# st.push_front(StackObj("2"))
-# #
-# assert st[0] == "2" and st[1] == "1", "неверные значения данных из объектов стека, при обращении к ним по индексу"
-# #
-# st[0] = "0"
-# assert st[0] == "0", "получено неверное значение из объекта стека, возможно, некорректно работает присваивание нового значения объекту стека"
-# #
-# for obj in st:
-#     assert isinstance(obj, StackObj), "при переборе стека через цикл должны возвращаться объекты класса StackObj"
-# #
-# try:
-#     a = st[3]
-# except IndexError:
-#     assert True
-# else:
-#     assert False, "не сгенерировалось исключение IndexError"
+
+# end ваш код
+# TEST-TASK___________________________________
+from test3_9.test_3_9_8 import test_8
+
+test_8(Stack, StackObj)
+# END
