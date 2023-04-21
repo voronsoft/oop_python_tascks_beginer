@@ -1,10 +1,5 @@
-Подвиг
-3.
-Имеется
-следующий
-фрагмент
-программы:
-
+"""
+Подвиг 3. Имеется следующий фрагмент программы:
 
 class Table:
     def __init__(self, model, color):
@@ -31,24 +26,13 @@ class RoundTable(Table):
 rt = RoundTable('PC', 'brown', 500, 750)
 tb = Table('Home', 'white')
 
-Выберите
-все
-пункты, в
-которых
-команды
-будут
-выполнены
-без
-ошибок.
+Выберите все пункты, в которых команды будут выполнены без ошибок.
 
-m = tb.model
 
-rt.set_params('Home', 'red', 700, 1000)
-
-color = rt.color
-
+    m = tb.model
+    rt.set_params('Home', 'red', 700, 1000)
+    color = rt.color
 tb.set_params('PC', 'brown', 500, 750)
-
 h = tb.height
-
-rt.set_model_and_color('Home', 'red')
+    rt.set_model_and_color('Home', 'red')
+"""
