@@ -59,6 +59,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class Layer:
     def __init__(self, name='Layer'):
         self.name = name
@@ -104,17 +105,11 @@ class NetworkIterator:
             yield temp
             temp = temp.next_layer
 
-# # MY TEST
-# 
-# # TEST
-# nt = Input(12)
-# layer = nt(Dense(nt.inputs, 1024, 'relu'))
-# layer = layer(Dense(layer.inputs, 2048, 'relu'))
-# layer = layer(Dense(layer.inputs, 10, 'softmax'))
-# 
-# n = 0
-# for x in NetworkIterator(nt):
-#     assert isinstance(x, Layer), "итератор должен возвращать объекты слоев с базовым классом Layer"
-#     n += 1
-# 
-# assert n == 4, "итератор перебрал неверное число слоев"
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_1.test_4_1_9 import test_9
+
+test_9(Input, Dense, NetworkIterator, Layer)
+# END

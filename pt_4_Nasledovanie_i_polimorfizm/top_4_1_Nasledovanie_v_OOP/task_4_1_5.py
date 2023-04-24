@@ -13,7 +13,7 @@
 name - наименование товара (строка);
 price - цена товара (вещественное число);
 weight - вес товара (вещественное число);
-dims = (lenght, width, depth) - длина, ширина, глубина - габариты товара (вещественные числа);
+dims = (length, width, depth) - длина, ширина, глубина - габариты товара (вещественные числа);
 
 - для электронных товаров: id, name, price, memory, frm
 где id - идентификатор товара (целое число);
@@ -60,6 +60,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 # Для реализации этой логики объявите в программе базовый класс с именем Thing (вещь, предмет),
 # объекты которого могут создаваться командой:
 # th = Thing(name, price)
@@ -82,7 +83,7 @@ class Thing:
         self.name = str(name)  # наименование товара (строка)
         self.price = float(price)  # цена товара (вещественное число)
         self.weight = weight  # вес товара (вещественное число)
-        self.dims = dims  # (lenght, width, depth)- длина, ширина, глубина - габариты товара (вещественные числа)
+        self.dims = dims  # (length, width, depth)- длина, ширина, глубина - габариты товара (вещественные числа)
         self.memory = memory  # занимаемый размер (в байтах - целое число)
         self.frm = frm  # формат данных (строка: pdf, docx и т.п.)
         self.id = self.gen_id()  # идентификатор товара (целое число)
@@ -102,7 +103,7 @@ class Table(Thing):  # - для столов;
     def __init__(self, name, price, weight, dims):
         super().__init__(name, price)
         self.weight = float(weight)  # вес товара (вещественное число)
-        self.dims = dims  # (lenght, width, depth)- длина, ширина, глубина - габариты товара (вещественные числа)
+        self.dims = dims  # (length, width, depth)- длина, ширина, глубина - габариты товара (вещественные числа)
 
 
 # book = ElBook(name, price, memory, frm)
@@ -115,20 +116,11 @@ class ElBook(Thing):  # - для электронных книг.
         self.memory = int(memory)  # занимаемый размер (в байтах - целое число)
         self.frm = str(frm)  # формат данных (строка: pdf, docx и т.п.)
 
-# # TEST
-# th1 = Thing('Phone1', 20)
-# th2 = Thing('Phone2', 20)
-# th3 = Thing('Phone3', 20)
-# 
-# table1 = Table('Стол1', 250, 20.5, (1.0, 0.6, 0.4))
-# table2 = Table('Стол2', 250, 20.5, (1.0, 0.6, 0.4))
-# table3 = Table('Стол3', 250, 20.5, (1.0, 0.6, 0.4))
-# 
-# book1 = ElBook('Книга1', 115.3, 200, 'txt')
-# book2 = ElBook('Книга2', 115.3, 200, 'txt')
-# book3 = ElBook('Книга3', 115.3, 200, 'txt')
-# 
-# table = Table("Круглый", 1024, 812.55, (700, 750, 700))
-# book = ElBook("Python ООП", 2000, 2048, 'pdf')
-# print(*table.get_data())
-# print(*book.get_data())
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_1.test_4_1_5 import test_5
+
+test_5(Table, Thing, ElBook)
+# END

@@ -84,29 +84,12 @@ class GenericView:
         # return "Это был метод delete"
 
 
+# ваш код:
 # здесь объявляйте остальные классы
-#
-# Вам необходимо объявить дочерний класс с именем DetailView, объекты которого можно создавать командами:
-# dv = DetailView()  # по умолчанию methods=('GET',)
-# dv = DetailView(methods=('PUT', 'POST'))
-
-
 class DetailView(GenericView):
-    # Для инициализации атрибута methods следует вызывать инициализатор базового класса GenericView.
     def __init__(self, methods=('GET',)):
         super().__init__(methods)
 
-    # Далее, в классе DetailView нужно определить метод:
-    # def render_request(self, request, method): ...
-    # который бы имитировал выполнение поступившего на сервер запроса.
-    # Здесь request - словарь с набором данных запроса;
-    # method - тип запроса (строка: 'get' или 'post' и т.д.).
-    #
-    # В методе render_request() необходимо выполнить проверку:
-    # является ли указанный метод (method) разрешенным (присутствует в коллекции methods).
-    # Если это не так, то генерировать исключение командой:
-    # raise TypeError('данный запрос не может быть выполнен')
-    # Если проверка проходит, то выполнить соответствующий метод (или get(), или post(), или put() и т.д. с возвращением результата их работы).
     def render_request(self, request, method):
         if method in self.methods:
             if method == 'GET':
@@ -120,18 +103,10 @@ class DetailView(GenericView):
         else:
             raise TypeError('данный запрос не может быть выполнен')
 
-    # Наконец, в дочернем классе DetailView следует переопределить метод get() для нужной нам обработки GET-запросов.
-    # В этом методе нужно выполнить проверку, что параметр request является словарем. Если это не так, то генерировать исключение:
-    # raise TypeError('request не является словарем')
-    # Сделать проверку, что в словаре request присутствует ключ url. Если его нет, то генерировать исключение:
-    # raise TypeError('request не содержит обязательного ключа url')
-    # Если же все проверки проходят, то вернуть строку в формате:
-    # "url: <request['url']>"
     def get(self, request):
         if isinstance(request, dict):
 
             if 'url' in request:
-                # вернуть строку в формате url: https://site.ru/home
                 return f"url: {request['url']}"
             else:
                 raise TypeError('request не содержит обязательного ключа url')
@@ -139,10 +114,11 @@ class DetailView(GenericView):
         else:
             raise TypeError('request не является словарем')
 
-# # TEST
-# dv0 = DetailView()  # по умолчанию methods=('GET',)
-# dv1 = DetailView(methods=('PUT', 'POST'))
-# #
-# # # Например:
-# dv = DetailView()
-# html = dv.render_request({'url': 'https://site.ru/home'}, 'GET')  # вернёт - строку 'url: https://site.ru/home'
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_1.test_4_1_6 import test_6
+
+test_6(DetailView, GenericView)
+# END

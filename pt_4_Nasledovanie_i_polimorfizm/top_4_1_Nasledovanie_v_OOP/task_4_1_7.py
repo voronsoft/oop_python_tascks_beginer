@@ -20,6 +20,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class Singleton:
     temp = None
 
@@ -36,7 +37,11 @@ class Game(Singleton):
         else:
             self.name = self.temp.name
 
-# # TEST
-# game1 = Game('mario')
-# game2 = Game('polo')
-# game3 = Game('koko')
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_1.test_4_1_7 import test_7
+
+test_7(Game, Singleton)
+# END

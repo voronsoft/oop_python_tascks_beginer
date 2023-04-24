@@ -36,3 +36,14 @@ tb.set_params('PC', 'brown', 500, 750)
 h = tb.height
     rt.set_model_and_color('Home', 'red')
 """
+
+# Вставьте правильные ответы в переменную
+# Пример temp = ['ответ', 'ответ' ]
+temp = [""]
+# Запустите файл на исполнение для проверки
+
+# TEST-TASK___________________________________
+from test4_1.test_4_1_3 import test_3
+
+test_3(temp)
+# END

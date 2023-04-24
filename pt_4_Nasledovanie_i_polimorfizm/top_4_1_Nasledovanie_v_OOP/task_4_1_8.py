@@ -43,6 +43,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class Validator:
     def _is_valid(self, data):
         """Должен возвращать булево значение True, если данные (data) корректны и False - в противном случае."""
@@ -78,8 +79,11 @@ class FloatValidator(Validator):  # - для проверки, что data - FLO
         else:
             return False
 
-# # TEST
-# integer_validator = IntegerValidator(-10, 10)
-# float_validator = FloatValidator(-1, 1)
-# res1 = integer_validator(10)  # исключение не генерируется (проверка проходит)
-# res2 = float_validator(10)  # исключение ValueError
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_1.test_4_1_8 import test_8
+
+test_8(IntegerValidator, FloatValidator, Validator)
+# END
