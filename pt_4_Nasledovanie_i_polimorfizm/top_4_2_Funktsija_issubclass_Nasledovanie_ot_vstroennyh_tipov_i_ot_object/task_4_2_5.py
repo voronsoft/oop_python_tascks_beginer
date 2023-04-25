@@ -46,6 +46,7 @@ P.S. В программе на экран выводить ничего не н
 """
 
 
+# ваш код:
 class Protists:
     def __init__(self, name, weight, old):
         self.name = str(name)  # наименование (или имя) объекта (строка)
@@ -124,3 +125,11 @@ lst_animals = [i for i in lst_objs if isinstance(i, Animals)]
 lst_plants = [i for i in lst_objs if isinstance(i, Plants)]
 # lst_mammals - все объекты, относящиеся к млекопитающим (Mammals).
 lst_mammals = [i for i in lst_objs if isinstance(i, Mammals)]
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_2.test_4_2_5 import test_5
+
+test_5(Plants, Protists, Mosses, Flowering, Animals, Worms, Mammals, Human, Monkeys, Monkey, Worm, Person, Flower,
+       lst_animals, lst_plants, lst_mammals)
+# END

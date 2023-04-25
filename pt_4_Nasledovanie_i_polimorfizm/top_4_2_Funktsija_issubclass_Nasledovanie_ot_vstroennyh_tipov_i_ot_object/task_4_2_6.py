@@ -20,6 +20,7 @@ P.S. В программе нужно объявить только класс. 
 """
 
 
+# ваш код:
 class Tuple(tuple):
     def __init__(self, x):
         super().__init__()
@@ -28,9 +29,9 @@ class Tuple(tuple):
         other = tuple(self) + tuple(other)
         return Tuple(other)
 
-# # TEST
-# # Пример использования класса (эти строчки в программе не писать):
-# t = Tuple([1, 2, 3])
-# t = t + "Python"
-# print(t)  # (1, 2, 3, 'P', 'y', 't', 'h', 'o', 'n')
-# t = (t + "Python") + "ООП"
+
+# TEST-TASK___________________________________
+from test4_2.test_4_2_6 import test_6
+
+test_6(Tuple)
+# END

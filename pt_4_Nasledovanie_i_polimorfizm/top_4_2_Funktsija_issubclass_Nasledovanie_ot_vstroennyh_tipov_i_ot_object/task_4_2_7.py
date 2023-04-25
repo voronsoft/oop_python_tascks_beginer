@@ -5,7 +5,7 @@
 video = VideoItem(title, descr, path)
 где title - заголовок видео (строка);
 descr - описание видео (строка);
-path - путь к видеофайлу.
+path - путь к видео файлу.
 В каждом объекте класса VideoItem должны создаваться соответствующие атрибуты: title, descr, path.
 
 Затем, нужно создать класс для формирования оценки видео в баллах от 0 до 5.
@@ -35,6 +35,7 @@ P.S. В программе нужно объявить только класс. 
 """
 
 
+# ваш код:
 class VideoRating:
     def __init__(self, num=0):
         self.verify(num)
@@ -61,14 +62,12 @@ class VideoItem:
     def __init__(self, title, descr, path):
         self.title = title  # заголовок видео (строка)
         self.descr = descr  # описание видео (строка)
-        self.path = path  # путь к видеофайлу
+        self.path = path  # путь к видео файлу
         self.rating = VideoRating()
 
-# # TEST
-# v = VideoItem('Курс по Python ООП', 'Подробный курс по Python ООР', 'D:/videos/python_oop.mp4')
-# print(v.rating.rating)  # 0
-# v.rating.rating = 5
-# print(v.rating.rating)  # 5
-# title = v.title
-# descr = v.descr
-# v.rating.rating = 6  # ValueError
+
+# TEST-TASK___________________________________
+from test4_2.test_4_2_7 import test_7
+
+test_7(VideoItem, VideoRating)
+# END

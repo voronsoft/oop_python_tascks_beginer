@@ -19,3 +19,14 @@ phone = IPhone()
 функция issubclass(phone, SmartPhone) вернет True, так как объект phone связан с базовым классом SmartPhone
 функция issubclass(SmartPhone, IPhone) вернет True, так как SmartPhone связан с дочерним классом IPhone
 """
+
+# Вставьте правильные ответы в переменную
+# Пример temp = ['ответ', 'ответ' ]
+temp = []
+# Запустите файл на исполнение для проверки
+
+# TEST-TASK___________________________________
+from test4_2.test_4_2_2 import test_2
+
+test_2(temp)
+# END

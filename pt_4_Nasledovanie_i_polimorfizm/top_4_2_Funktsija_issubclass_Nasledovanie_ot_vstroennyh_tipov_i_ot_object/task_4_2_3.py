@@ -18,6 +18,7 @@ s[0] = 10.5 # TypeError
 P.S. В программе нужно объявить только класс. На экран выводить ничего не нужно."""
 
 
+# ваш код:
 class ListInteger(list):
     def __init__(self, lst):
         for _ in lst:
@@ -37,9 +38,11 @@ class ListInteger(list):
         else:
             super().append(value)
 
-# # TEST
-# s = ListInteger((1, 2, 3))
-# s[1] = 10
-# s.append(11)
-# print(s)
-# s[0] = 10.5  # TypeError
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_2.test_4_2_3 import test_3
+
+test_3(ListInteger)
+# END

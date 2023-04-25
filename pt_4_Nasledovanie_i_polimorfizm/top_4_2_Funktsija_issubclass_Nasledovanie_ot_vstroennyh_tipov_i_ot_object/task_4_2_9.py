@@ -25,6 +25,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class IteratorAttrs:
     def __iter__(self):
         for key, val in self.__dict__.items():
@@ -37,9 +38,9 @@ class SmartPhone(IteratorAttrs):
         self.size = size
         self.memory = int(memory)
 
-# # TEST
-# phone = SmartPhone('iPhone', (10, 20), 1024)
-# #
-# for attr, value in phone:
-#     print(attr, value)
-# assert phone.model == "iPhone" and phone.size == (10, 20) and phone.memory == 1024, "неверные значения атрибутов объекта класса SmartPhone"
+
+# TEST-TASK___________________________________
+from test4_2.test_4_2_9 import test_9
+
+test_9(SmartPhone, IteratorAttrs)
+# END

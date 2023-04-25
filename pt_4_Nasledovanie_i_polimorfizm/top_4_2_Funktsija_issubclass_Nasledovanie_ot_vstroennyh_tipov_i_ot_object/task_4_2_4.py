@@ -46,6 +46,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class Thing:
     """Товар"""
 
@@ -91,16 +92,11 @@ class DictShop(dict):
         else:
             raise TypeError('ключами могут быть только объекты класса Thing')
 
-# # TEST
-# th_1 = Thing('Лыжи', 11000, 1978.55)
-# th_2 = Thing('Книга', 1500, 256)
-# th_3 = Thing('Книга', 1500, 256)
-# dict_things = DictShop()
-# dict_things[th_1] = th_1
-# dict_things[th_2] = th_2
-# dict_things[th_3] = th_3
-# 
-# for x in dict_things:
-#     print(x.name)
-# 
-# dict_things[1] = th_1  # исключение TypeError
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_2.test_4_2_4 import test_4
+
+test_4(Thing, DictShop)
+# END
