@@ -14,6 +14,7 @@ P.S. В программе нужно объявить только класс. 
 """
 
 
+# ваш код:
 class SoftList(list):
     def __getitem__(self, item):
         if -len(self) <= item < len(self):
@@ -21,9 +22,11 @@ class SoftList(list):
         else:
             return False
 
-# # TEST
-# sl = SoftList("python")
-# sl[0] # 'p'
-# sl[-1] # 'n'
-# sl[6] # False
-# sl[-7] # False
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_3.test_4_3_8 import test_8
+
+test_8(SoftList)
+# END

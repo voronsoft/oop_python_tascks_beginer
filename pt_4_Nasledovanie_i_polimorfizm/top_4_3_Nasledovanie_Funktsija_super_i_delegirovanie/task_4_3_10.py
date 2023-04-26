@@ -20,6 +20,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class ItemAttrs:
     def __init__(self, x, y):
         self.lst = [x, y]
@@ -39,8 +40,11 @@ class Point(ItemAttrs):
     def __init__(self, x, y):
         super().__init__(x, y)
 
-# # TEST
-# pt = Point(1, 2.5)
-# x = pt[0]   # 1
-# y = pt[1]   # 2.5
-# pt[0] = 10
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_3.test_4_3_10 import test_10
+
+test_10(Point)
+# END

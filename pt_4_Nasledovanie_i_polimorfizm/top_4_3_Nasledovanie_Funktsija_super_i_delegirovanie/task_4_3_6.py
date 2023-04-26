@@ -58,6 +58,7 @@ class Router:
         cls.app[path] = func
 
 
+# ваш код:
 # здесь объявляйте декоратор Callback
 class Callback:
     def __init__(self, path, router_cls):
@@ -67,13 +68,11 @@ class Callback:
     def __call__(self, func):
         self.__router_cls.add_callback(self.__path, func)
 
-# # TEST
-# @Callback('/', Router)
-# def index():
-#     return '<h1>Главная</h1>'
-# 
-# 
-# route = Router.get('/')
-# if route:
-#     ret = route()
-#     print(ret)
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_3.test_4_3_6 import test_6
+
+test_6(Callback, Router)
+# END

@@ -24,6 +24,7 @@ P.S. В программе нужно объявить только класс. 
 """
 
 
+# ваш код:
 class StringDigit(str):
     def __init__(self, st):
         if not self.isdigit():
@@ -35,39 +36,11 @@ class StringDigit(str):
     def __radd__(self, other):
         return StringDigit(str(other) + str(self))
 
-# # MY TEST
-# sd = StringDigit("2455752345950")
-# sd1 = sd + "123"
-# sd2 = "123" + sd
-# 
-# # TEST
-# sd = StringDigit("123")
-# assert str(sd) == "123", "неверно работает метод __str__ класса StringDigit"
-# #
-# try:
-#     sd2 = StringDigit("123a")
-# except ValueError:
-#     assert True
-# else:
-#     assert False, "не сгенерировалось исключение ValueError"
-# #
-# #
-# sd = sd + "345"
-# assert sd == "123345", "неверно отработал оператор +"
-# #
-# sd = "0" + sd
-# assert sd == "0123345", "неверно отработал оператор +"
-# #
-# try:
-#     sd = sd + "12d"
-# except ValueError:
-#     assert True
-# else:
-#     assert False, "не сгенерировалось исключение ValueError при выполнении оператора +"
-# #
-# try:
-#     sd = "12d" + sd
-# except ValueError:
-#     assert True
-# else:
-#     assert False, "не сгенерировалось исключение ValueError при выполнении оператора +"
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_3.test_4_3_9 import test_9
+
+test_9(StringDigit)
+# END

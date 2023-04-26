@@ -26,6 +26,7 @@ class Vector:
     def set_coords(self, *coords, reverse=False):
         c = list(coords)
         self.__coords = c if not reverse else c[::-1]
+
 Декоратор integer_params_decorated должен проверять, чтобы все передаваемые аргументы в методы класса
 (кроме первого self) были целыми числами (имели тип int).
 Если это не так, то должно генерироваться исключение командой:
@@ -42,9 +43,9 @@ P.S. В программе нужно объявить только класс. 
 """
 
 
-# РЕШЕНИЕ
-# здесь объявляйте функцию-декоратор
+# ваш код:
 # ===================
+# здесь объявляйте функцию-декоратор
 def integer_params_decorated(func):
     def wrapper(self, *args, **kwargs):
         if not all(type(x) == int for x in args):
@@ -57,7 +58,7 @@ def integer_params_decorated(func):
 
 
 # ===================
-
+# end ваш код
 
 def integer_params(cls):
     methods = {k: v for k, v in cls.__dict__.items() if callable(v)}
@@ -83,7 +84,18 @@ class Vector:
         self.__coords = c if not reverse else c[::-1]
 
 
+# TEST-TASK___________________________________
+from test4_3.test_4_3_7 import test_7
+
+test_7()
+# END
+
 # TEST
 vector = Vector(1, 2)
 print(vector[1])
-vector[1] = 20.4  # TypeError
+try:
+    vector[1] = 20.4  # TypeError
+except TypeError:
+    assert True
+else:
+    assert False, "ошибка, не сгенерировалась ошибка TypeError"

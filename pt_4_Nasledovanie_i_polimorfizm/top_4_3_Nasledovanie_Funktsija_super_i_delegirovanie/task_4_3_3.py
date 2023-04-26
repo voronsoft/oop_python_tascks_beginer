@@ -26,6 +26,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class Book:
     def __init__(self, title: str, author: str, pages: int, year: int):
         self.title = title  # заголовок книги (строка)
@@ -40,5 +41,11 @@ class DigitBook(Book):
         self.size = size  # размер книги в байтах (целое число)
         self.frm = frm  # формат книги (строка: 'pdf', 'doc', 'fb2', 'txt')
 
-# # TEST
-# obj = DigitBook('Title', 'Norov', 155, 1977, 1333, 'doc')
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_3.test_4_3_3 import test_3
+
+test_3(DigitBook, Book)
+# END
