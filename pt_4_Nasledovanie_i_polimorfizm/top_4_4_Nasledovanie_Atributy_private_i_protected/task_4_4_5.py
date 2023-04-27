@@ -22,6 +22,7 @@ P.S. В программе нужно объявить только класс �
 """
 
 
+# ваш код:
 class Animal:
 
     def __init__(self, name, kind, old):
@@ -54,6 +55,11 @@ class Animal:
         self.__old = value
 
 
-# TEST
 animals = [Animal('Васька', 'дворовый кот', 5), Animal('Рекс', 'немецкая овчарка', 8), Animal('Кеша', 'попугай', 3)]
-# assert type(Animal.name) == property and type(Animal.kind) == property and type(Animal.old) == property, "класс Animal должен содержать объекты-свойства name, kind, old"
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_4.test_4_4_5 import test_5
+
+test_5(Animal, animals)
+# END

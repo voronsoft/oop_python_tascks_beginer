@@ -41,6 +41,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class Aircraft:
     def __init__(self, model, mass, speed, top):
         self.verify_data([model, mass, speed, top])
@@ -50,7 +51,7 @@ class Aircraft:
         self._top = top  # - максимальная высота полета (любое положительное число).
 
     def verify_data(self, lst):
-        if type(lst[0]) == str and all(True if type(i) in (int, float) and i >= 0 else False for i in lst[1:]):
+        if type(lst[0]) == str and all(True if type(i) in (int, float) and i > 0 else False for i in lst[1:]):
             return True
         else:
             raise TypeError('неверный тип аргумента')
@@ -70,7 +71,7 @@ class PassengerAircraft(Aircraft):  # - пассажирский самолет;
         self._chairs = chairs  # число пассажирских мест (целое положительное число)
 
     def verify_chairs(self, vol):
-        if type(vol) == int and vol >= 0:
+        if type(vol) == int and vol > 0:
             return True
         else:
             raise TypeError('неверный тип аргумента')
@@ -89,9 +90,16 @@ class WarPlane(Aircraft):  # - военный самолет.
             raise TypeError('неверный тип аргумента')
 
 
-# TEST
 planes = [PassengerAircraft('МС-21', 1250, 8000, 12000.5, 140),
           PassengerAircraft('SuperJet', 1145, 8640, 11034, 80),
           WarPlane('Миг-35', 7034, 25000, 2000, {"ракета": 4, "бомба": 10}),
           WarPlane('Су-35', 7034, 34000, 2400, {"ракета": 4, "бомба": 7})
           ]
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_4.test_4_4_8 import test_8
+
+test_8(PassengerAircraft, Aircraft, WarPlane)
+# END

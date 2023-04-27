@@ -16,6 +16,7 @@ class LinuxFileDialog:
         self.__title = title # заголовок диалогового окна
         self.__path = path  # начальный каталог с файлами
         self.__exts = exts  # кортеж из отображаемых расширений файлов
+
 Вам необходимо объявить класс с именем FileDialogFactory (фабрика классов), который бы при выполнении команды:
 dlg = FileDialogFactory(title, path, exts)
 возвращал объект класса WindowsFileDialog, если CURRENT_OS равна строке 'windows',
@@ -53,6 +54,7 @@ class LinuxFileDialog:
         self.__exts = exts  # кортеж из отображаемых расширений файлов
 
 
+# ваш код:
 # здесь объявляйте класс FileDialogFactory
 class FileDialogFactory:
     def __new__(cls, *args, **kwargs):
@@ -70,7 +72,14 @@ class FileDialogFactory:
         return LinuxFileDialog(title, path, exts)
 
 
-# TEST
-# Подумайте, как это правильно сделать, чтобы не создавался объект самого класса,
-# а лишь возвращался объект или класса WindowsFileDialog, или класса LinuxFileDialog.
-dlg = FileDialogFactory('Изображения', 'd:/images/', ('jpg', 'gif', 'bmp', 'png'))
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_4.test_4_4_10 import test_10, test_10a
+
+CURRENT_OS = 'windows'
+test_10(FileDialogFactory, WindowsFileDialog, LinuxFileDialog)
+
+CURRENT_OS = 'linux'
+test_10a(FileDialogFactory, WindowsFileDialog, LinuxFileDialog)
+# END

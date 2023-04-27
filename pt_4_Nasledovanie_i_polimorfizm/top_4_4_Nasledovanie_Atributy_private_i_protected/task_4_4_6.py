@@ -45,6 +45,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ваш код:
 class Furniture:
     """Мебель"""
 
@@ -74,9 +75,11 @@ class Furniture:
 
     def __setattr__(self, key, value):
         if key == '_name':
-            object.__setattr__(self, key, value)
+
+            object.__setattr__(self, key, self.__verify_name(value))
         elif key == '_weight':
-            object.__setattr__(self, key, value)
+
+            object.__setattr__(self, key, self.__verify_weight(value))
         else:
             object.__setattr__(self, key, value)
 
@@ -126,14 +129,11 @@ class Table(Furniture):  # - для представления столов.
         else:
             raise TypeError('вес должен быть положительным числом')
 
-# # TEST
-# f = Furniture('Стол', 1.0)
-# # Данные методы следует вызывать всякий раз при записи новых значений в атрибуты _name и _weight (а также при их создании).
-# f._name = 'Стул'  # _name == 'Стул'
-#
-# cl = Closet('шкаф-купе', 342.56, True, 3)
-# chair = Chair('стул', 14, 55.6)
-# tb = Table('стол', 34.5, 75, 10)
-# print(cl.get_attrs())
-# print(chair.get_attrs())
-# print(tb.get_attrs())
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_4.test_4_4_6 import test_6
+
+test_6(Furniture, Closet, Chair, Table)
+# END

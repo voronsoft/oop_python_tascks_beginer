@@ -91,6 +91,7 @@ P.S. В программе нужно объявить только классы
 """
 
 
+# ==========================
 class Observer:
     def update(self, data):
         pass
@@ -127,6 +128,9 @@ class Data:
         self.wet = wet  # влажность
 
 
+# ==========================
+
+# ваш код:
 # здесь объявляйте дочерние классы TemperatureView, PressureView и WetView
 class TemperatureView(Observer):
     """Cлушатель для отображения информации о температуре"""
@@ -148,23 +152,11 @@ class WetView(Observer):
     def update(self, data):
         print(f'Текущая влажность {data.wet}')
 
-# # TEST
-# subject = Subject()
-# tv = TemperatureView()
-# pr = PressureView()
-# wet = WetView()
-# 
-# subject.add_observer(tv)
-# subject.add_observer(pr)
-# subject.add_observer(wet)
-# 
-# subject.change_data(Data(23, 150, 83))
-# # # выведет строчки:
-# # # Текущая температура 23
-# # # Текущее давление 150
-# # # Текущая влажность 83
-# subject.remove_observer(wet)
-# subject.change_data(Data(24, 148, 80))
-# # # выведет строчки:
-# # # Текущая температура 24
-# # # Текущее давление 148
+
+# end ваш код
+
+# TEST-TASK___________________________________
+from test4_4.test_4_4_7 import test_7
+
+test_7(Subject, TemperatureView, PressureView, WetView, Data, Observer)
+# END
