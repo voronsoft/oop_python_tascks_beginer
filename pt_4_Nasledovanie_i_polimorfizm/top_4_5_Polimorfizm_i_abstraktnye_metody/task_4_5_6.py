@@ -67,6 +67,7 @@ P.S. В программе требуется объявить только кл
 from abc import ABC, abstractmethod
 
 
+# ваш код:
 # здесь объявляйте классы
 class Model(ABC):
     @abstractmethod
@@ -102,7 +103,10 @@ class ModelForm(Model):
     def get_pk(self):
         return self._id
 
-# # TEST
-# form = ModelForm("Логин", "Пароль")
-# print(form.get_pk())
-# # P.S. В программе требуется объявить только классы. На экран выводить ничего не нужно.
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_5.test_4_5_6 import test_6
+
+test_6(Model, ABC, ModelForm)
+# END

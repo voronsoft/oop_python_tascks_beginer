@@ -27,6 +27,7 @@ P.S. В программе требуется объявить только кл
 """
 
 
+# ваш код:
 class Food:
     def __init__(self, name, weight, calories):
         self._name = str(name)
@@ -51,8 +52,10 @@ class FishFood(Food):
         super().__init__(name, weight, calories)
         self._fish = fish  # fish - вид рыбы (семга, окунь, сардина и т.д.)
 
-# # TEST
-# bf = BreadFood("Бородинский хлеб", 34.5, 512, False)
-# sf = SoupFood("Черепаший суп", 520, 890.5, False)
-# ff = FishFood("Консерва рыбная", 340, 1200, "семга")
-# # P.S. В программе требуется объявить только классы. На экран выводить ничего не нужно.
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_5.test_4_5_10 import test_10
+
+test_10(Food, BreadFood, SoupFood, FishFood)
+# END

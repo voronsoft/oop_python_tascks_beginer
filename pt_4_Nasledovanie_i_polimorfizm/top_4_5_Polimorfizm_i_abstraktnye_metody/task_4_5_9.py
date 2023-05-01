@@ -40,6 +40,7 @@ P.S. В программе требуется объявить только кл
 """
 
 
+# ваш код:
 class Track:
     start_x = None
     start_y = None
@@ -114,10 +115,10 @@ class PointTrack:
     def __str__(self):
         return f"PointTrack: {self.x}, {self.y}"
 
-# # TEST
-# tr = Track(0,0)
-# tr = Track(PointTrack(10, 10), PointTrack(1.2, -0.5), PointTrack(2.4, -1.5))
-# tr.add_back(PointTrack(1.4, 0))
-# tr.pop_front()
-# for pt in tr.points:
-#     print(pt)
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_5.test_4_5_9 import test_9
+
+test_9(Track, PointTrack)
+# END

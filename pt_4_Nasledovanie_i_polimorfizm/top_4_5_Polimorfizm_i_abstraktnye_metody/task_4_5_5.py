@@ -33,6 +33,7 @@ P.S. В программе требуется объявить только кл
 """
 
 
+# ваш код:
 class Validator:
     # По идее, этот метод возвращает булево значение True, если данные (data) корректны с точки зрения валидатора, и False - в противном случае.
     # Но в базовом классе Validator он должен генерировать исключение командой:
@@ -65,9 +66,10 @@ class FloatValidator(Validator):
     def __call__(self, *args, **kwargs):
         return self._is_valid(*args)
 
-# # TEST
-# float_validator = FloatValidator(0, 10.5)
-# res_1 = float_validator(1)  # False (целое число, а не вещественное)
-# res_2 = float_validator(1.0)  # True
-# res_3 = float_validator(-1.0)  # False (выход за диапазон [0; 10.5])
-# # P.S. В программе требуется объявить только классы. На экран выводить ничего не нужно.
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_5.test_4_5_5 import test_5
+
+test_5(Validator, FloatValidator)
+# END

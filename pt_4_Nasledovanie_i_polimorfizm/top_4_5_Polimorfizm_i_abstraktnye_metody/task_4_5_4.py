@@ -22,6 +22,7 @@ P.S. В программе требуется объявить только кл
 """
 
 
+# ваш код:
 class ShopInterface:
     def get_id(self):
         raise NotImplementedError('в классе не переопределен метод get_id')
@@ -44,9 +45,10 @@ class ShopItem(ShopInterface):
     def get_id(self):
         return self.__id
 
-# # TEST
-# sh1 = ShopItem('имя', 0.10, 100)
-# id_sh1 = sh1.get_id()
-#
-# sh2 = ShopItem('имя', 0.10, 100)
-# id_sh2 = sh2.get_id()
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_5.test_4_5_4 import test_4
+
+test_4(ShopItem, ShopInterface)
+# END

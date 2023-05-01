@@ -15,6 +15,7 @@ class Transport(ABC):
     @abstractmethod
     def speed(self):
         # Абстрактный объект-свойство
+        
 Используя эту информацию и информацию о модуле abc из подвига 6,
 объявите базовый класс с именем CountryInterface со следующими абстрактными методами и свойствами:
 name - абстрактное свойство (property), название страны (строка);
@@ -44,6 +45,7 @@ P.S. В программе требуется объявить только кл
 from abc import ABC, abstractmethod
 
 
+# ваш код:
 # здесь объявляйте классы
 
 class CountryInterface(ABC):
@@ -102,10 +104,10 @@ class Country(CountryInterface):
     def get_info(self):  # метод для получения сводной информации о стране.
         return f'{self.__name}: {self.__square}, {self.__population}'
 
-# #TEST
-# country = Country("Россия", 140000000, 324005489.55)
-# name = country.name
-# pop = country.population
-# country.population = 150000000
-# country.square = 354005483.0
-# print(country.get_info()) # Россия: 354005483.0, 150000000
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_5.test_4_5_8 import test_8
+
+test_8(CountryInterface, ABC, Country)
+# END
