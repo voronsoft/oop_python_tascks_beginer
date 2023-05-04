@@ -53,6 +53,7 @@ P.S. В программе требуется объявить только кл
 
 class MoneyOperators:
     def __add__(self, other):
+        """sdfaf"""
         if type(other) in (int, float):
             return self.__class__(self.money + other)
 
@@ -61,8 +62,6 @@ class MoneyOperators:
 
         return self.__class__(self.money + other.money)
 
-    # ваш код:
-    # здесь объявляйте еще один метод
     def __radd__(self, other):
         if type(other) in (int, float):
             return self.__class__(other + self.money)
@@ -85,7 +84,6 @@ class MoneyOperators:
             return self.__class__(other - self.money)
 
 
-# ваш код:
 # здесь объявляйте класс Money
 class Money:
     def __init__(self, value):
@@ -119,15 +117,5 @@ class MoneyD(Money, MoneyOperators):
 # TEST-TASK___________________________________
 from test4_6.test_4_6_9 import test_9
 
-test_9()
+test_9(MoneyOperators, Money, MoneyR, MoneyD)
 # END
-
-# TEST
-# m1 = MoneyR(100)
-# m2 = MoneyR(2)
-# m = m1 + 10
-# print(m)  # MoneyR: 11
-# m = m1 - 5.4
-# m = m1 - m2  # TypeError
-# m = 10 - m1  # TypeError
-# P.S. В программе требуется объявить только классы. На экран выводить ничего не нужно.
