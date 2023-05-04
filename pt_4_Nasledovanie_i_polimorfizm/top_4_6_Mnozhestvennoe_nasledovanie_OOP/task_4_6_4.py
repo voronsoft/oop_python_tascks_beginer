@@ -35,6 +35,7 @@ P.S. В программе требуется объявить только кл
 """
 
 
+# ваш код:
 class Digit:  # (число)
     def __init__(self, value):  # где value - числовое значение.
         self.value = value if self.verify_num(value) else None
@@ -94,8 +95,6 @@ class Negative(Digit):  # (отрицательное)
 
 
 # После этого объявите следующие дочерние классы:
-#
-#
 class PrimeNumber(Integer, Positive):  # - простые числа; наследуется от классов Integer и Positive;
     def verify_num(self, num):
         """Проверка, что число простое и положительное"""
@@ -114,15 +113,6 @@ class FloatPositive(Float, Positive):  # - наследуется от клас�
             raise TypeError('значение не соответствует типу объекта')
 
 
-# TEST
-# a_int_float = Digit(10)
-# b_int = Integer(5)
-# c_float = Float(10.10)
-# d_int_float_positive = Positive(6.6)
-# e_nt_float_negative = Negative(-10.3)
-# f_PrimeNumber = PrimeNumber(4)
-# g_FloatPositive = FloatPositive(8.8)
-
 # Создайте три объекта класса PrimeNumber и пять объектов класса FloatPositive с произвольными допустимыми для них значениями.
 # Сохраните все эти объекты в виде списка digits.
 digits = [PrimeNumber(3), PrimeNumber(1), PrimeNumber(4),
@@ -139,3 +129,10 @@ lst_positive = list(filter(lambda x: x if isinstance(x, Positive) else None, dig
 
 # lst_float - все объекты, относящиеся к классу Float.
 lst_float = list(filter(lambda x: x if isinstance(x, Float) else None, digits))
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_6.test_4_6_4 import test_4
+
+test_4(Digit, Integer, Float, Positive, Negative, PrimeNumber, FloatPositive, digits, lst_positive, lst_float)
+# END
