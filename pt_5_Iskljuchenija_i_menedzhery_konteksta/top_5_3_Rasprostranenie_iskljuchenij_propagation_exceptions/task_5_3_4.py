@@ -66,7 +66,7 @@ class ValidatorString:
 
         if len(self.chars) > 0 and any([True if i in self.chars else False for i in string]) and isinstance(string,
                                                                                                             str) and self.min_length <= len(
-                string) <= self.max_length:
+            string) <= self.max_length:
             return string
         elif len(self.chars) == 0 and isinstance(string, str) and self.min_length <= len(string) <= self.max_length:
             return string
