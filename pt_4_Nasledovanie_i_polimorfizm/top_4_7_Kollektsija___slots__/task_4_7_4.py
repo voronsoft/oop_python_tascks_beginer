@@ -22,6 +22,7 @@ P.S. В программе следует объявить только клас
 """
 
 
+# ваш код:
 class Person:
     __slots__ = ['_fio', '_old', '_job']
 
@@ -31,6 +32,12 @@ class Person:
         self._job = str(job)
 
 
-# TEST
 persons = [Person('Суворов', 52, 'полководец'), Person('Рахманинов', 50, 'пианист, композитор'),
            Person('Балакирев', 34, 'программист и преподаватель'), Person('Пушкин', 32, 'поэт и писатель')]
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_7.test_4_7_4 import test_4
+
+test_4(Person, persons)
+# END

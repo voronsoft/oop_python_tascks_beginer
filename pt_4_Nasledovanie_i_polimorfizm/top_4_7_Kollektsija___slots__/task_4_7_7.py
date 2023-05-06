@@ -41,6 +41,7 @@ P.S. В программе следует объявить только клас
 """
 
 
+# ваш код:
 class Note:
     """Нота"""
 
@@ -97,3 +98,10 @@ notes = Notes()
 # nota = notes[2]  # ссылка на ноту ми
 # notes[3]._ton = -1 # изменение тональности ноты фа
 # note = Note('до', -1)
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_7.test_4_7_7 import test_7
+
+test_7(Note, Notes, notes)
+# END

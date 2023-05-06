@@ -36,6 +36,7 @@ P.S. В программе следует объявить только клас
 """
 
 
+# ваш код:
 class Star:
     """Звезда"""
     __slots__ = ['_name', '_massa', '_temp']
@@ -100,3 +101,10 @@ stars = [RedGiant('Альдебаран', 5, 3600, 'красный гигант'
 
 # Затем, с помощью функций isinstance() и filter() сформируйте новый список с именем white_dwarfs, состоящий только из белых карликов (WhiteDwarf).
 white_dwarfs = [*filter(lambda x: x if isinstance(x, WhiteDwarf) else None, stars)]
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_7.test_4_7_6 import test_6
+
+test_6(Star, WhiteDwarf, YellowDwarf, RedGiant, Pulsar, stars, white_dwarfs)
+# END

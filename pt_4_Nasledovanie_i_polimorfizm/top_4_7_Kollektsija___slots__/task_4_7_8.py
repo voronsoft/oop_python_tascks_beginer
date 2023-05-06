@@ -83,6 +83,7 @@ class Function:
         obj._bias = self._bias + other
         return obj
 
+    # ваш код:
     # здесь добавляйте еще один магический метод для умножения
     def __mul__(self, other):
         if type(other) not in (int, float):
@@ -93,6 +94,7 @@ class Function:
         return obj
 
 
+# ваш код:
 # здесь объявляйте класс Linear
 class Linear(Function):
     """Линейная функция y = k*x + b"""
@@ -110,21 +112,10 @@ class Linear(Function):
         y = self._k * x + self._b
         return y
 
-# TEST
-#  создание объекта линейной функции с параметрами k и b.
-# obj = Linear(1, 0.5)
-#
-# создание объекта со значениями параметров k и b, взятыми из объекта obj.
-# linear = Linear(obj)  # этот вариант используется в базовом классе в методе __add__()
-#
-# Вариант 1 (с прибавлением)
-# f = Linear(1, 0.5)
-# f2 = f + 10  # изменение смещения (атрибут _bias)
-# y1 = f(0)  # 0.5
-# y2 = f2(0)  # 10.5
-#
-# Вариант 2 (с умножение)
-# f = Linear(1, 0.5)
-# f2 = f * 5    # изменение амплитуды (атрибут _amplitude)
-# y1 = f(0)     # 0.5
-# y2 = f2(0)    # 2.5
+
+# end ваш код
+# TEST-TASK___________________________________
+from test4_7.test_4_7_8 import test_8
+
+test_8()
+# END
