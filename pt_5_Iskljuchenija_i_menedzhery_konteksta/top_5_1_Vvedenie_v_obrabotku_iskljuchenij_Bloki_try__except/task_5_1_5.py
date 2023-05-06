@@ -14,8 +14,18 @@ pt = Point(1, 2)
 
 Реализовать проверку следует с помощью блоков try/except.
 
-Подсказка: при обращении к несуществующему атрибуту генерируется исключение AttributeError.
+ПОДСКАЗКА: при обращении к несуществующему атрибуту генерируется исключение AttributeError.
 """
+
+# не изменять !!
+import io
+import sys
+
+console_out = io.StringIO()  # Создаем буфер
+sys.stdout = console_out  # Перенаправляем стандартный вывод (stdout) в буфер
+
+
+# end
 
 
 class Point:
@@ -24,9 +34,21 @@ class Point:
         self._y = y
 
 
-# TEST
 pt = Point(1, 2)
+
+# ваш код:
 try:
     pt.z
 except AttributeError:
     print('Атрибут с именем z не существует')
+# end ваш код
+
+# TEST-TASK___________________________________
+output = console_out.getvalue()  # Получаем содержимое буфера в переменную (для проверки)
+sys.stdout = sys.__stdout__  # Возвращаем стандартный вывод (stdout) в нормальное состояние
+print(output)
+
+assert output == 'Атрибут с именем z не существует\n', \
+    "при ошибке AttributeError нужно вывести текст - Атрибут с именем z не существует"
+
+print("Правильное решение!")

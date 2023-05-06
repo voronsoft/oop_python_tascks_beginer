@@ -19,13 +19,13 @@ P.S. В программе нужно только сформировать сп
 
 Sample Input:
 hello 1 world -2 4.5 True
-Sample Output:
 """
 
-
 # считывание строки и разбиение ее по пробелам
-# lst_in = input().split()
+lst_in = input().split()
 
+
+# ваш код:
 def verify(value):
     try:
         if int(value):
@@ -40,5 +40,5 @@ def verify(value):
             return value
 
 
-lst_in = input().split()
 lst_out = list(map(verify, lst_in))
+# end ваш код
